@@ -691,7 +691,8 @@ jobs:
             macos-x64) app=freelens/dist/mac/ProLens.app; exe=$app/Contents/MacOS/ProLens; res=$app/Contents/Resources; want='x86_64' ;;
             macos-arm64) app=freelens/dist/mac-arm64/ProLens.app; exe=$app/Contents/MacOS/ProLens; res=$app/Contents/Resources; want='arm64' ;;
             windows-x64) app=freelens/dist/win-unpacked; exe=$app/ProLens.exe; res=$app/resources; want='x86-64' ;;
-            windows-arm64) app=freelens/dist/win-arm64-unpacked; exe=$app/ProLens.exe; res=$app/resources; want='Aarch64' ;;
+            # file says "Aarch64" or, in newer versions, "ARM64" for an arm64 PE.
+            windows-arm64) app=freelens/dist/win-arm64-unpacked; exe=$app/ProLens.exe; res=$app/resources; want='Aarch64|ARM64' ;;
           esac
           ext=""
           [[ $OS == windows ]] && ext=.exe
@@ -706,7 +707,7 @@ jobs:
             fi
             desc=$(file -b "$f")
             echo "$f: $desc"
-            if [[ $desc != *"$want"* ]]; then
+            if [[ ! $desc =~ $want ]]; then
               echo "::error::$f is not built for $ARCH ($desc)"
               status=1
             fi
