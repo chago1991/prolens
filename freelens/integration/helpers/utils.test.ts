@@ -5,7 +5,6 @@
 
 import { basename } from "node:path";
 import { describe, expect, it } from "vitest";
-
 import { appPaths } from "./utils";
 
 describe("appPaths", () => {
