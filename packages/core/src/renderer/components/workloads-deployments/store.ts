@@ -62,9 +62,15 @@ export class DeploymentStore extends KubeObjectStore<Deployment, DeploymentApi> 
     return status;
   }
 
+  // The same match as `podStore.getByLabel`, among the pods of the
+  // deployment's namespace only rather than every pod of the cluster.
   getChildPods(deployment: Deployment) {
-    return this.dependencies.podStore
-      .getByLabel(deployment.getTemplateLabels())
-      .filter((pod) => pod.getNs() === deployment.getNs());
+    const templateLabels = deployment.getTemplateLabels();
+
+    return this.dependencies.podStore.getPodsByNamespace(deployment.getNs()).filter((pod) => {
+      const podLabels = pod.getLabels();
+
+      return templateLabels.every((label) => podLabels.includes(label));
+    });
   }
 }

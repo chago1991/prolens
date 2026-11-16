@@ -64,6 +64,11 @@
   <icon type="stock">prolens</icon>
   <content_rating type="oars-1.1"></content_rating>
   <releases>
+    <release version="1.1.0" date="2026-11-16">
+      <description translatable="no">
+        <p>Architecture Explorer with dependency and root-cause analysis, faster handling of large clusters, and approval of Secret reads through watch paths.</p>
+      </description>
+    </release>
     <release version="1.0.0" date="2026-11-14">
       <description translatable="no">
         <p>First ProLens release: AI assistants with per-request approval of cluster changes, a theme engine, and ProLens branding.</p>

@@ -19,6 +19,14 @@ export const maxConcurrentLogRequests = 5;
 export const maxCombinedLogLines = 100_000;
 
 /**
+ * The tab of a single pod holds at most this many lines: more than a combined
+ * tab, so that scrolling back still reaches far, but not without end. A tab
+ * that stays open refreshes every few seconds, and without a limit it would
+ * keep every line the pod ever wrote while the tab is open.
+ */
+export const maxSinglePodLogLines = 250_000;
+
+/**
  * "All logs" of a combined logs tab reads at most this many bytes, shared out
  * between its pods with `limitBytes`: the logs that fit in their share are
  * read whole, and the longer ones share what is left for their most recent

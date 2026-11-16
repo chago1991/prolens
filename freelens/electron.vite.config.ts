@@ -308,6 +308,32 @@ function runtimeRequireExternalsPlugin() {
   };
 }
 
+// Marks the modules of packages that declare no `sideEffects` in their
+// package.json, but have none, as free of side effects, so that the renderer
+// bundle keeps only the parts it uses. Without it, the bundler has to assume
+// that every module of such a package matters and keeps all of them.
+//
+// @kubernetes/client-node: the renderer uses `KubeConfig` and `dumpYaml` (and
+// registers the API factories of common/cluster without calling them), yet
+// the bundle carried all of its generated API models, about a third of the
+// renderer's source. Its modules only declare classes, functions and
+// constants. The main process is not affected: it loads the package from
+// node_modules unbundled.
+function sideEffectFreePackagesPlugin(packageNames: string[]) {
+  const markers = packageNames.map((name) => `/node_modules/${name}/`);
+
+  return {
+    name: "freelens:side-effect-free-packages",
+    transform(code: string, id: string) {
+      if (!markers.some((marker) => id.replaceAll("\\", "/").includes(marker))) {
+        return null;
+      }
+
+      return { code, map: null, moduleSideEffects: false };
+    },
+  };
+}
+
 // Set the renderer's public base path for the packaged build.
 //
 // The packaged app loads the renderer from the Freelens proxy web root
@@ -376,6 +402,7 @@ export default defineConfig({
       react(),
       runtimeRequireExternalsPlugin(),
       rendererBuildBasePlugin("/build/"),
+      sideEffectFreePackagesPlugin(["@kubernetes/client-node"]),
     ],
     server: {
       // Same serving architecture as the webpack dev server it replaces: the

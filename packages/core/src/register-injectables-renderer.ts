@@ -9,6 +9,8 @@ import { registerInjectables as registerCommonInjectables } from "./common/regis
 import { registerInjectables as registerExtensionsInjectables } from "./extensions/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesAiToolsInjectables } from "./features/ai-tools/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesAiToolsRendererInjectables } from "./features/ai-tools/renderer/register-injectables";
+import { registerInjectables as registerFeaturesFeaturesArchitectureExplorerInjectables } from "./features/architecture-explorer/register-injectables";
+import { registerInjectables as registerFeaturesFeaturesArchitectureExplorerRendererInjectables } from "./features/architecture-explorer/renderer/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesClusterActivationRendererInjectables } from "./features/cluster/activation/renderer/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesClusterDeleteDialogRendererInjectables } from "./features/cluster/delete-dialog/renderer/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesClusterExecuteRendererInjectables } from "./features/cluster/execute/renderer/register-injectables";
@@ -60,6 +62,8 @@ export function registerInjectables(di: DiContainerForInjection): void {
   registerExtensionsInjectables(di);
   registerFeaturesFeaturesAiToolsRendererInjectables(di);
   registerFeaturesFeaturesAiToolsInjectables(di);
+  registerFeaturesFeaturesArchitectureExplorerRendererInjectables(di);
+  registerFeaturesFeaturesArchitectureExplorerInjectables(di);
   registerFeaturesFeaturesClusterInjectables(di);
   registerFeaturesFeaturesClusterActivationRendererInjectables(di);
   registerFeaturesFeaturesClusterDeleteDialogRendererInjectables(di);

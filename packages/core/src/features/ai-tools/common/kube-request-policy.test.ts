@@ -24,6 +24,15 @@ describe("parseKubeApiPath", () => {
     ["/api/v1/namespaces", { resource: "namespaces", name: undefined, namespace: undefined, subresource: undefined }],
     ["/version", {}],
     ["/apis", {}],
+    ["/api/v1/watch/secrets", { resource: "secrets", name: undefined, namespace: undefined, subresource: undefined }],
+    [
+      "/api/v1/watch/namespaces/shop/secrets/db",
+      { resource: "secrets", name: "db", namespace: "shop", subresource: undefined },
+    ],
+    [
+      "/apis/apps/v1/watch/namespaces/shop/deployments",
+      { resource: "deployments.apps", name: undefined, namespace: "shop", subresource: undefined },
+    ],
   ])("parses %s", (path, expected) => {
     expect(parseKubeApiPath(path)).toEqual(expected);
   });
@@ -84,6 +93,19 @@ describe("classifyKubeRequest", () => {
     ["GET", "/api/v1/namespaces/shop/services/web/proxy/admin", "interactive", "proxy services web in namespace shop"],
   ])("asks before %s %s", (method, url, reason, action) => {
     expect(classifyKubeRequest(method, url)).toEqual({ kind: "approval", reason, action });
+  });
+
+  it.each([
+    "/api/v1/watch/secrets",
+    "/api/v1/watch/namespaces/shop/secrets",
+    "/api/v1/watch/namespaces/shop/secrets/db-password",
+    "/api/v1/namespaces/shop/secrets?watch=true",
+  ])("asks before reading Secrets through the watch %s", (url) => {
+    expect(classifyKubeRequest("GET", url)).toMatchObject({ kind: "approval", reason: "secret" });
+  });
+
+  it("lets a watch of other resources through the legacy watch path", () => {
+    expect(classifyKubeRequest("GET", "/api/v1/watch/namespaces/shop/pods")).toEqual({ kind: "read" });
   });
 
   it("asks before any upgrade, whatever its path", () => {

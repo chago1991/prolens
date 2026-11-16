@@ -1,52 +1,58 @@
-# ProLens v1.0.0
+# ProLens v1.1.0
 
-The first release of ProLens, a Kubernetes IDE for macOS, Windows and Linux
-based on [Freelens](https://github.com/freelensapp/freelens). ProLens installs
-next to Freelens and keeps its own settings, so both can be used on the same
-machine.
+ProLens 1.1 adds the Architecture Explorer, makes large clusters much faster,
+and fixes a gap in the approval of AI requests.
 
 ## Highlights
 
-### AI assistants in the cluster terminal
+### Architecture Explorer
 
-- Ask AI starts a command-line assistant in the terminal of a cluster, with a
-  prompt that describes the cluster, or the resource it was opened from.
-  Claude Code, OpenAI Codex CLI, Gemini CLI, GitHub Copilot CLI and OpenCode
-  are detected automatically, and any other tool can be set up as a custom
-  command.
-- ProLens checks the cluster requests of an assistant itself, not only through
-  instructions in the prompt. Reads pass. Changes to the cluster, `exec`,
-  `attach`, port forwarding and reading Secrets wait until you allow that exact
-  request in a dialog; unanswered requests are denied after two minutes.
-- Context sent to an assistant never includes the values of Secrets.
+- **Architecture** in the cluster sidebar draws how the cluster's resources
+  are connected: workloads, pods, nodes, Services and EndpointSlices,
+  Ingresses and Gateway API routes, ConfigMaps, Secrets, ServiceAccounts,
+  claims, volumes, storage classes and network policies (Cilium included).
+- **Explore dependencies**, in the menu of every resource, shows what the
+  resource needs and what it affects, and names the likely root cause of a
+  problem with its evidence, such as a crash-looping pod, a missing
+  ConfigMap, a pending claim or a Service whose selector matches nothing.
+- Every link says how it is known: observed (recorded by the cluster),
+  referenced (named in a spec) or inferred (from selectors or defaults), with
+  the evidence to check it against the YAML. Missing objects are shown as
+  such.
+- Views for the cluster, a namespace, the network, routing, storage and
+  scheduling; search, filters, grouping, collapsible groups, draggable nodes,
+  and export as SVG or PNG. It reads only the data the cluster view already
+  loads, never Secret values.
 
-### Themes
+### Faster on large clusters
 
-- New themes: ProLens Dark, ProLens Light, Aurora, Graphite, High Contrast,
-  Midnight and Nord, next to the classic light and dark themes.
-- An accent color, a compact density and the font size can be set in
-  Preferences, and custom themes can be added.
+- Workload statuses and the workloads overview no longer scan every pod for
+  every workload. On a generated cluster of about 40,000 pods, an update of
+  the overview went from minutes to about a tenth of a second.
+- Interrupted watches are retried with backoff, and the list says when its
+  data may be out of date.
+- Single-pod log tabs keep the newest 250,000 lines instead of growing
+  without limit.
+- A damaged settings file no longer stops ProLens from starting: it is moved
+  aside and its defaults are used.
 
-### ProLens identity
+### Security
 
-- New name, icons and application id `app.prolens.ProLens`.
-- `prolens://` links; `freelens://` links keep opening Freelens.
-- The update check and "What's new" use the releases of
-  [chago1991/prolens](https://github.com/chago1991/prolens/releases).
-- Extensions written for Freelens work in ProLens.
+- Secret reads by an AI assistant through the legacy watch paths
+  (`/api/v1/watch/...`) now wait for approval, like every other Secret read.
 
 ## Downloads
 
 | Platform             | Files                                                            |
 | -------------------- | ---------------------------------------------------------------- |
-| macOS, Apple silicon | `ProLens-1.0.0-macos-arm64.dmg`, `ProLens-1.0.0-macos-arm64.zip` |
-| macOS, Intel         | `ProLens-1.0.0-macos-x64.dmg`, `ProLens-1.0.0-macos-x64.zip`     |
-| Windows, x64         | `ProLens-1.0.0-windows-x64.exe` (installer)                      |
-| Windows, ARM64       | `ProLens-1.0.0-windows-arm64.exe` (installer)                    |
-| Linux, x86_64        | `ProLens-1.0.0-linux-x64.AppImage`, `.deb`, `.rpm`               |
-| Linux, ARM64         | `ProLens-1.0.0-linux-arm64.AppImage`, `.deb`, `.rpm`             |
+| macOS, Apple silicon | `ProLens-1.1.0-macos-arm64.dmg`, `ProLens-1.1.0-macos-arm64.zip` |
+| macOS, Intel         | `ProLens-1.1.0-macos-x64.dmg`, `ProLens-1.1.0-macos-x64.zip`     |
+| Windows, x64         | `ProLens-1.1.0-windows-x64.exe` (installer)                      |
+| Windows, ARM64       | `ProLens-1.1.0-windows-arm64.exe` (installer)                    |
+| Linux, x86_64        | `ProLens-1.1.0-linux-x64.AppImage`, `.deb`, `.rpm`               |
+| Linux, ARM64         | `ProLens-1.1.0-linux-arm64.AppImage`, `.deb`, `.rpm`             |
 
-`ProLens-1.0.0-SHA256SUMS.txt` lists the SHA-256 of every file.
+`ProLens-1.1.0-SHA256SUMS.txt` lists the SHA-256 of every file.
 
 ## Installing
 
@@ -61,7 +67,7 @@ warns before the first start:
 - **Windows:** in the SmartScreen dialog, choose **More info**, then
   **Run anyway**.
 - **Linux:** packages are not signed; compare their checksums with
-  `ProLens-1.0.0-SHA256SUMS.txt`.
+  `ProLens-1.1.0-SHA256SUMS.txt`.
 
 ## Requirements
 

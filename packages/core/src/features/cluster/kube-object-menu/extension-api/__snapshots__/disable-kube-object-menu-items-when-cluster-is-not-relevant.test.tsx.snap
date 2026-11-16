@@ -93,6 +93,40 @@ exports[`disable kube object menu items when cluster is not relevant > given ext
               role="button"
               style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
               tabindex="0"
+            >
+              <div
+                class="SidebarItem"
+                data-is-active-test="false"
+                data-testid="sidebar-item-architecture"
+              >
+                <a
+                  class="navItem"
+                  data-testid="link-for-sidebar-item-architecture"
+                  href="/test-route"
+                >
+                  <i
+                    class="Icon material focusable"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="hub"
+                    >
+                      hub
+                    </span>
+                  </i>
+                  <span>
+                    Architecture
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div
+              aria-describedby="DndDescribedBy-4"
+              aria-disabled="false"
+              aria-roledescription="sortable"
+              role="button"
+              style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
+              tabindex="0"
             />
             <div
               aria-describedby="DndDescribedBy-4"
@@ -453,6 +487,31 @@ exports[`disable kube object menu items when cluster is not relevant > given ext
               Ask AI
             </span>
           </li>
+          <li
+            class="MenuItem"
+            data-testid="menu-action-explore-dependencies-for-"
+            tabindex="0"
+          >
+            <i
+              class="Icon material interactive focusable"
+              tabindex="0"
+            >
+              <span
+                class="icon"
+                data-icon-name="hub"
+              >
+                hub
+              </span>
+            </i>
+            <div>
+              Explore dependencies
+            </div>
+            <span
+              class="title"
+            >
+              Explore dependencies
+            </span>
+          </li>
         </ul>
       </div>
       <div
@@ -674,6 +733,40 @@ exports[`disable kube object menu items when cluster is not relevant > given ext
               style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
               tabindex="0"
             />
+            <div
+              aria-describedby="DndDescribedBy-2"
+              aria-disabled="false"
+              aria-roledescription="sortable"
+              role="button"
+              style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
+              tabindex="0"
+            >
+              <div
+                class="SidebarItem"
+                data-is-active-test="false"
+                data-testid="sidebar-item-architecture"
+              >
+                <a
+                  class="navItem"
+                  data-testid="link-for-sidebar-item-architecture"
+                  href="/test-route"
+                >
+                  <i
+                    class="Icon material focusable"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="hub"
+                    >
+                      hub
+                    </span>
+                  </i>
+                  <span>
+                    Architecture
+                  </span>
+                </a>
+              </div>
+            </div>
             <div
               aria-describedby="DndDescribedBy-2"
               aria-disabled="false"
@@ -1036,6 +1129,31 @@ exports[`disable kube object menu items when cluster is not relevant > given ext
               Ask AI
             </span>
           </li>
+          <li
+            class="MenuItem"
+            data-testid="menu-action-explore-dependencies-for-"
+            tabindex="0"
+          >
+            <i
+              class="Icon material interactive focusable"
+              tabindex="0"
+            >
+              <span
+                class="icon"
+                data-icon-name="hub"
+              >
+                hub
+              </span>
+            </i>
+            <div>
+              Explore dependencies
+            </div>
+            <span
+              class="title"
+            >
+              Explore dependencies
+            </span>
+          </li>
         </ul>
       </div>
       <div
@@ -1257,6 +1375,40 @@ exports[`disable kube object menu items when cluster is not relevant > given not
               style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
               tabindex="0"
             />
+            <div
+              aria-describedby="DndDescribedBy-0"
+              aria-disabled="false"
+              aria-roledescription="sortable"
+              role="button"
+              style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
+              tabindex="0"
+            >
+              <div
+                class="SidebarItem"
+                data-is-active-test="false"
+                data-testid="sidebar-item-architecture"
+              >
+                <a
+                  class="navItem"
+                  data-testid="link-for-sidebar-item-architecture"
+                  href="/test-route"
+                >
+                  <i
+                    class="Icon material focusable"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="hub"
+                    >
+                      hub
+                    </span>
+                  </i>
+                  <span>
+                    Architecture
+                  </span>
+                </a>
+              </div>
+            </div>
             <div
               aria-describedby="DndDescribedBy-0"
               aria-disabled="false"
@@ -1617,6 +1769,31 @@ exports[`disable kube object menu items when cluster is not relevant > given not
               class="title"
             >
               Ask AI
+            </span>
+          </li>
+          <li
+            class="MenuItem"
+            data-testid="menu-action-explore-dependencies-for-"
+            tabindex="0"
+          >
+            <i
+              class="Icon material interactive focusable"
+              tabindex="0"
+            >
+              <span
+                class="icon"
+                data-icon-name="hub"
+              >
+                hub
+              </span>
+            </i>
+            <div>
+              Explore dependencies
+            </div>
+            <span
+              class="title"
+            >
+              Explore dependencies
             </span>
           </li>
         </ul>

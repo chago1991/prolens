@@ -4,6 +4,7 @@
  * Licensed under MIT License. See LICENSE in root directory for more information.
  */
 
+import path from "node:path";
 import { nextTick } from "node:process";
 import { loggerInjectionToken } from "@freelensapp/logger";
 import { enlistMessageChannelListenerInjectionToken, sendMessageToChannelInjectionToken } from "@freelensapp/messaging";
@@ -16,6 +17,7 @@ import getConfigurationFileModelInjectable from "../../../common/get-configurati
 import getBasenameOfPathInjectable from "../../../common/path/get-basename.injectable";
 import { persistentStorageIpcChannelPrefixesInjectionToken } from "./channel-prefix";
 import { shouldPersistentStorageDisableSyncInIpcListenerInjectionToken } from "./disable-sync";
+import { recoverInvalidConfigFileInjectionToken } from "./recover-invalid-config-file";
 import { persistStateToConfigInjectionToken } from "./save-to-file";
 
 import type { MessageChannel } from "@freelensapp/messaging";
@@ -113,15 +115,40 @@ const createPersistentStorageInjectable = getInjectable({
 
         logger.info(`[${displayName}]: LOADING ...`);
 
-        const config = getConfigurationFileModel<T & Record<string, unknown>>({
-          projectName: "lens",
-          cwd,
-          migrations: migrations as Options<T & Record<string, unknown>>["migrations"],
-          defaults: defaults as Options<T & Record<string, unknown>>["defaults"],
-          ...params,
-        }) as Config<T>;
+        const open = () => {
+          const config = getConfigurationFileModel<T & Record<string, unknown>>({
+            projectName: "lens",
+            cwd,
+            migrations: migrations as Options<T & Record<string, unknown>>["migrations"],
+            defaults: defaults as Options<T & Record<string, unknown>>["defaults"],
+            ...params,
+          }) as Config<T>;
 
-        const res = fromStore(config.store);
+          return { config, store: config.store };
+        };
+
+        let opened: ReturnType<typeof open>;
+
+        try {
+          opened = open();
+        } catch (error) {
+          // A file that is not valid JSON would otherwise stop the application
+          // from starting. It is moved aside, not cleared, and the store starts
+          // from its defaults.
+          const filePath = path.join(cwd, `${params.configName}.json`);
+
+          if (
+            (error as Error | undefined)?.name !== "SyntaxError" ||
+            !di.inject(recoverInvalidConfigFileInjectionToken)(filePath)
+          ) {
+            throw error;
+          }
+
+          opened = open();
+        }
+
+        const { config } = opened;
+        const res = fromStore(opened.store);
 
         if (isPromiseLike(res)) {
           logger.error(

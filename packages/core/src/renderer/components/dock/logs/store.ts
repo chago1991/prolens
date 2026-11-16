@@ -12,6 +12,7 @@ import {
   keepNewestLogLines,
   maxCombinedLogLines,
   maxConcurrentLogRequests,
+  maxSinglePodLogLines,
   mergeIntoLogs,
   mergePodLogs,
   podLogColors,
@@ -115,7 +116,7 @@ export class LogStore {
     const tailLines = podLines + logLinesToLoad;
 
     if (podCount <= 1) {
-      return tailLines;
+      return Math.min(tailLines, maxSinglePodLogLines);
     }
 
     const share = Math.max(logLinesToLoad, Math.floor(maxCombinedLogLines / podCount));
@@ -124,11 +125,11 @@ export class LogStore {
   }
 
   /**
-   * A combined tab keeps its newest `maxCombinedLogLines` lines. The tab of a
-   * single pod is left as it is.
+   * A combined tab keeps its newest `maxCombinedLogLines` lines, the tab of a
+   * single pod its newest `maxSinglePodLogLines`.
    */
   private limitLines(logs: string[], tagged: boolean): string[] {
-    return tagged ? keepNewestLogLines(logs, maxCombinedLogLines) : logs;
+    return keepNewestLogLines(logs, tagged ? maxCombinedLogLines : maxSinglePodLogLines);
   }
 
   private getRefresher(

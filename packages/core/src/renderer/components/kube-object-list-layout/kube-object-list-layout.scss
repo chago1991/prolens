@@ -5,7 +5,8 @@
  */
 
 .KubeObjectListLayout {
-  .Icon.load-error {
+  .Icon.load-error,
+  .Icon.watch-interrupted {
     color: var(--colorWarning);
     float: right;
   }

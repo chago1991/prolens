@@ -92,6 +92,40 @@ exports[`cluster - custom resources in sidebar > renders 1`] = `
             role="button"
             style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
             tabindex="0"
+          >
+            <div
+              class="SidebarItem"
+              data-is-active-test="false"
+              data-testid="sidebar-item-architecture"
+            >
+              <a
+                class="navItem"
+                data-testid="link-for-sidebar-item-architecture"
+                href="/workloads"
+              >
+                <i
+                  class="Icon material focusable"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="hub"
+                  >
+                    hub
+                  </span>
+                </i>
+                <span>
+                  Architecture
+                </span>
+              </a>
+            </div>
+          </div>
+          <div
+            aria-describedby="DndDescribedBy-0"
+            aria-disabled="false"
+            aria-roledescription="sortable"
+            role="button"
+            style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
+            tabindex="0"
           />
           <div
             aria-describedby="DndDescribedBy-0"
@@ -763,6 +797,40 @@ exports[`cluster - custom resources in sidebar > when custom resource definition
             style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
             tabindex="0"
           />
+          <div
+            aria-describedby="DndDescribedBy-30"
+            aria-disabled="false"
+            aria-roledescription="sortable"
+            role="button"
+            style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
+            tabindex="0"
+          >
+            <div
+              class="SidebarItem"
+              data-is-active-test="false"
+              data-testid="sidebar-item-architecture"
+            >
+              <a
+                class="navItem"
+                data-testid="link-for-sidebar-item-architecture"
+                href="/workloads"
+              >
+                <i
+                  class="Icon material focusable"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="hub"
+                  >
+                    hub
+                  </span>
+                </i>
+                <span>
+                  Architecture
+                </span>
+              </a>
+            </div>
+          </div>
           <div
             aria-describedby="DndDescribedBy-30"
             aria-disabled="false"
@@ -1485,6 +1553,40 @@ exports[`cluster - custom resources in sidebar > when custom resource exists > r
             role="button"
             style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
             tabindex="0"
+          >
+            <div
+              class="SidebarItem"
+              data-is-active-test="false"
+              data-testid="sidebar-item-architecture"
+            >
+              <a
+                class="navItem"
+                data-testid="link-for-sidebar-item-architecture"
+                href="/workloads"
+              >
+                <i
+                  class="Icon material focusable"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="hub"
+                  >
+                    hub
+                  </span>
+                </i>
+                <span>
+                  Architecture
+                </span>
+              </a>
+            </div>
+          </div>
+          <div
+            aria-describedby="DndDescribedBy-3"
+            aria-disabled="false"
+            aria-roledescription="sortable"
+            role="button"
+            style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
+            tabindex="0"
           />
           <div
             aria-describedby="DndDescribedBy-3"
@@ -2156,6 +2258,40 @@ exports[`cluster - custom resources in sidebar > when custom resource exists > w
             style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
             tabindex="0"
           />
+          <div
+            aria-describedby="DndDescribedBy-20"
+            aria-disabled="false"
+            aria-roledescription="sortable"
+            role="button"
+            style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
+            tabindex="0"
+          >
+            <div
+              class="SidebarItem"
+              data-is-active-test="false"
+              data-testid="sidebar-item-architecture"
+            >
+              <a
+                class="navItem"
+                data-testid="link-for-sidebar-item-architecture"
+                href="/workloads"
+              >
+                <i
+                  class="Icon material focusable"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="hub"
+                  >
+                    hub
+                  </span>
+                </i>
+                <span>
+                  Architecture
+                </span>
+              </a>
+            </div>
+          </div>
           <div
             aria-describedby="DndDescribedBy-20"
             aria-disabled="false"
@@ -2871,6 +3007,40 @@ exports[`cluster - custom resources in sidebar > when custom resource exists > w
             style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
             tabindex="0"
           />
+          <div
+            aria-describedby="DndDescribedBy-25"
+            aria-disabled="false"
+            aria-roledescription="sortable"
+            role="button"
+            style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
+            tabindex="0"
+          >
+            <div
+              class="SidebarItem"
+              data-is-active-test="false"
+              data-testid="sidebar-item-architecture"
+            >
+              <a
+                class="navItem"
+                data-testid="link-for-sidebar-item-architecture"
+                href="/workloads"
+              >
+                <i
+                  class="Icon material focusable"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="hub"
+                  >
+                    hub
+                  </span>
+                </i>
+                <span>
+                  Architecture
+                </span>
+              </a>
+            </div>
+          </div>
           <div
             aria-describedby="DndDescribedBy-25"
             aria-disabled="false"
@@ -3639,6 +3809,40 @@ exports[`cluster - custom resources in sidebar > when custom resource exists > w
             role="button"
             style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
             tabindex="0"
+          >
+            <div
+              class="SidebarItem"
+              data-is-active-test="false"
+              data-testid="sidebar-item-architecture"
+            >
+              <a
+                class="navItem"
+                data-testid="link-for-sidebar-item-architecture"
+                href="/workloads"
+              >
+                <i
+                  class="Icon material focusable"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="hub"
+                  >
+                    hub
+                  </span>
+                </i>
+                <span>
+                  Architecture
+                </span>
+              </a>
+            </div>
+          </div>
+          <div
+            aria-describedby="DndDescribedBy-5"
+            aria-disabled="false"
+            aria-roledescription="sortable"
+            role="button"
+            style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
+            tabindex="0"
           />
           <div
             aria-describedby="DndDescribedBy-5"
@@ -4347,6 +4551,40 @@ exports[`cluster - custom resources in sidebar > when custom resource exists > w
             style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
             tabindex="0"
           />
+          <div
+            aria-describedby="DndDescribedBy-10"
+            aria-disabled="false"
+            aria-roledescription="sortable"
+            role="button"
+            style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
+            tabindex="0"
+          >
+            <div
+              class="SidebarItem"
+              data-is-active-test="false"
+              data-testid="sidebar-item-architecture"
+            >
+              <a
+                class="navItem"
+                data-testid="link-for-sidebar-item-architecture"
+                href="/workloads"
+              >
+                <i
+                  class="Icon material focusable"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="hub"
+                  >
+                    hub
+                  </span>
+                </i>
+                <span>
+                  Architecture
+                </span>
+              </a>
+            </div>
+          </div>
           <div
             aria-describedby="DndDescribedBy-10"
             aria-disabled="false"
@@ -5093,6 +5331,40 @@ exports[`cluster - custom resources in sidebar > when custom resource exists > w
             style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
             tabindex="0"
           />
+          <div
+            aria-describedby="DndDescribedBy-15"
+            aria-disabled="false"
+            aria-roledescription="sortable"
+            role="button"
+            style="pointer-events: auto; opacity: 1; transition: transform 0ms linear;"
+            tabindex="0"
+          >
+            <div
+              class="SidebarItem"
+              data-is-active-test="false"
+              data-testid="sidebar-item-architecture"
+            >
+              <a
+                class="navItem"
+                data-testid="link-for-sidebar-item-architecture"
+                href="/workloads"
+              >
+                <i
+                  class="Icon material focusable"
+                >
+                  <span
+                    class="icon"
+                    data-icon-name="hub"
+                  >
+                    hub
+                  </span>
+                </i>
+                <span>
+                  Architecture
+                </span>
+              </a>
+            </div>
+          </div>
           <div
             aria-describedby="DndDescribedBy-15"
             aria-disabled="false"

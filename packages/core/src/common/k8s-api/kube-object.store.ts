@@ -7,9 +7,9 @@
 import assert from "node:assert";
 import { parseKubeApi } from "@freelensapp/kube-api";
 import { KubeStatus } from "@freelensapp/kube-object";
-import { includes, isAbortError, noop, object, rejectPromiseBy, waitUntilDefined } from "@freelensapp/utilities";
+import { isAbortError, noop, object, rejectPromiseBy, waitUntilDefined } from "@freelensapp/utilities";
 import autoBind from "auto-bind";
-import { action, computed, observable, reaction } from "mobx";
+import { action, computed, observable, reaction, runInAction } from "mobx";
 import { ItemStore } from "../item.store";
 
 import type { FetchRequestInit as RequestInit } from "@freelensapp/json-api";
@@ -95,6 +95,15 @@ export interface KubeObjectStoreDependencies {
   readonly logger: Logger;
 }
 
+/**
+ * How long to wait before restarting a watch that failed for the
+ * `failures`-th time in a row: 5 seconds, doubling up to a minute. The jitter
+ * only ever shortens the wait, so that the watches of many stores and clusters
+ * that lost their connection together do not all retry at the same moment.
+ */
+export const watchRetryDelay = (failures: number, random: () => number = Math.random): number =>
+  Math.round(Math.min(60_000, 5_000 * 2 ** Math.max(0, failures - 1)) * (0.75 + 0.25 * random()));
+
 export class KubeObjectStore<
   K extends KubeObject = KubeObject,
   A extends KubeApi<K, D> = KubeApi<K, KubeJsonApiDataFor<K>>,
@@ -105,6 +114,20 @@ export class KubeObjectStore<
 
   private readonly loadedNamespaces = observable.box<string[]>();
   private readonly watchingController = new AbortController();
+
+  /**
+   * The namespaces ("" for a cluster-wide watch) whose watch failed and waits
+   * to be restarted. Their items are shown as they were last seen.
+   */
+  private readonly interruptedWatches = observable.set<string>();
+
+  /**
+   * True while a watch of the store has lost its connection and waits to
+   * reconnect, so that a view can say its list may be out of date.
+   */
+  @computed get isWatchInterrupted(): boolean {
+    return this.interruptedWatches.size > 0;
+  }
 
   constructor(
     protected readonly dependencies: KubeObjectStoreDependencies,
@@ -121,12 +144,12 @@ export class KubeObjectStore<
 
   // TODO: Circular dependency: KubeObjectStore -> ClusterFrameContext -> NamespaceStore -> KubeObjectStore
   @computed get contextItems(): K[] {
-    const namespaces = this.dependencies.context.contextNamespaces;
+    const namespaces = new Set(this.dependencies.context.contextNamespaces);
 
     return this.items.filter((item) => {
       const itemNamespace = item.getNs();
 
-      return !itemNamespace /* cluster-wide */ || namespaces.includes(itemNamespace);
+      return !itemNamespace /* cluster-wide */ || namespaces.has(itemNamespace);
     });
   }
 
@@ -148,7 +171,13 @@ export class KubeObjectStore<
     const namespaces = [namespace].flat();
 
     if (namespaces.length) {
-      return this.items.filter((item) => includes(namespaces, item.getNs()));
+      const selected = new Set(namespaces);
+
+      return this.items.filter((item) => {
+        const itemNamespace = item.getNs();
+
+        return itemNamespace !== undefined && itemNamespace !== null && selected.has(itemNamespace);
+      });
     }
 
     if (!strict) {
@@ -544,7 +573,19 @@ export class KubeObjectStore<
     }
 
     let timedRetry: NodeJS.Timeout;
+    let failures = 0;
     const signal = abortController.signal;
+    const retryLater = () => {
+      clearTimeout(timedRetry);
+      failures += 1;
+      timedRetry = setTimeout(startNewWatch, watchRetryDelay(failures));
+      runInAction(() => this.interruptedWatches.add(namespace));
+    };
+    const connected = () => {
+      if (this.interruptedWatches.has(namespace)) {
+        runInAction(() => this.interruptedWatches.delete(namespace));
+      }
+    };
 
     const startNewWatch = () => {
       // A retry or a reload scheduled before the abort must not start a
@@ -571,8 +612,7 @@ export class KubeObjectStore<
         }
 
         // not sure what to do, best to retry
-        clearTimeout(timedRetry);
-        timedRetry = setTimeout(startNewWatch, 5000);
+        retryLater();
       } else if (error instanceof KubeStatus && error.code === 410) {
         clearTimeout(timedRetry);
         // resourceVersion has gone, let's try to reload
@@ -585,16 +625,21 @@ export class KubeObjectStore<
         }, 1000);
       } else if (error) {
         // not sure what to do, best to retry
-        clearTimeout(timedRetry);
-        timedRetry = setTimeout(startNewWatch, 5000);
+        retryLater();
       }
 
       if (data) {
+        // The connection works again: the next failure waits the shortest time.
+        failures = 0;
+        connected();
         this.eventsBuffer.push(data);
       }
     };
 
-    signal.addEventListener("abort", () => clearTimeout(timedRetry));
+    signal.addEventListener("abort", () => {
+      clearTimeout(timedRetry);
+      connected();
+    });
     startNewWatch();
   }
 
