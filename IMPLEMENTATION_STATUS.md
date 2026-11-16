@@ -47,7 +47,7 @@ What this means:
   The unit suite is large and passes.
 - **The ProLens additions work on macOS, with one security defect.** The AI
   approval gate holds writes, exec and Secret reads, including through the legacy watch paths (SEC-1, fixed).
-  Sessions still outlive the assistant (SEC-2, P0).
+  Sessions end with their terminal tab (SEC-2, fixed).
 - **One accessibility defect in the theme engine.** White text on the accent
   colour fails contrast on several themes (A11Y-1, P0).
 - **Installers are built for all six platforms but signed nowhere**, and only
@@ -57,18 +57,18 @@ What this means:
 
 ### Security
 
-| Finding                                                                  | Severity           | Evidence                                               | Backlog      |
-| ------------------------------------------------------------------------ | ------------------ | ------------------------------------------------------ | ------------ |
-| Fixed: Secret reads through `/api/v1/watch/...` passed the AI gate       | High               | Watch paths now parsed; unit and proxy tests           | SEC-1        |
-| AI sessions stay valid 12 hours; `revoke()` is never called              | Medium             | No caller outside tests                                | SEC-2        |
-| Renderer has Node integration, no context isolation, no preload          | High (inherited)   | `create-electron-window.injectable.ts`                 | ARCH-3       |
-| CSP without `default-src`/`object-src`/`base-uri`, with `'unsafe-eval'`  | Medium (inherited) | `freelens/package.json` `config.contentSecurityPolicy` | SEC-5        |
-| No Electron fuses                                                        | Medium             | No fuse configuration in `electron-builder.yml`        | SEC-4        |
-| AI launch directory in the shared temp folder not checked for ownership  | Medium             | `prepare-ai-launch.injectable.ts`                      | SEC-3        |
-| Extensions without a published checksum install after a warning          | Medium (inherited) | `installer/common/checksums.ts`                        | SEC-9        |
-| AppImage runs without the Chromium sandbox                               | Medium (inherited) | `electron-builder.yml` `appImage.executableArgs`       | SEC-6        |
-| Actions pinned by tag; no SBOM or vulnerability scan of ProLens releases | Medium             | Workflows; scan jobs limited to `freelensapp`          | SEC-7, SEC-8 |
-| Deep links lowercased on the command-line path                           | Low (inherited)    | `setup-deep-linking.injectable.ts`                     | BUG-2        |
+| Finding                                                                   | Severity           | Evidence                                               | Backlog      |
+| ------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------ | ------------ |
+| Fixed: Secret reads through `/api/v1/watch/...` passed the AI gate        | High               | Watch paths now parsed; unit and proxy tests           | SEC-1        |
+| Fixed: AI sessions outlived the assistant (now revoked on tab close, 2 h) | Medium             | No caller outside tests                                | SEC-2        |
+| Renderer has Node integration, no context isolation, no preload           | High (inherited)   | `create-electron-window.injectable.ts`                 | ARCH-3       |
+| CSP without `default-src`/`object-src`/`base-uri`, with `'unsafe-eval'`   | Medium (inherited) | `freelens/package.json` `config.contentSecurityPolicy` | SEC-5        |
+| No Electron fuses                                                         | Medium             | No fuse configuration in `electron-builder.yml`        | SEC-4        |
+| AI launch directory in the shared temp folder not checked for ownership   | Medium             | `prepare-ai-launch.injectable.ts`                      | SEC-3        |
+| Extensions without a published checksum install after a warning           | Medium (inherited) | `installer/common/checksums.ts`                        | SEC-9        |
+| AppImage runs without the Chromium sandbox                                | Medium (inherited) | `electron-builder.yml` `appImage.executableArgs`       | SEC-6        |
+| Actions pinned by tag; no SBOM or vulnerability scan of ProLens releases  | Medium             | Workflows; scan jobs limited to `freelensapp`          | SEC-7, SEC-8 |
+| Deep links lowercased on the command-line path                            | Low (inherited)    | `setup-deep-linking.injectable.ts`                     | BUG-2        |
 
 What holds up: the local proxy accepts only its own host names and origins,
 requires a per-run token compared in constant time, and strips it before
@@ -113,6 +113,14 @@ side-effect-free marking of `@kubernetes/client-node`, 22,464 kB with it
   minute, cluster refresh 30 s in main. Timers are cleared through disposers;
   more event listeners are added than removed in the code, which was not
   examined case by case.
+
+#### Lens Plus parity: progress
+
+| Area                                                                     | State                                                                                                                                                                                                                                         |
+| ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| AI assistant                                                             | CLI assistants with per-request approval; sessions end with their terminal (SEC-2 fixed). Ollama/OpenAI API backends and MCP: missing.                                                                                                        |
+| GitOps                                                                   | Argo CD Applications and Flux Kustomizations/HelmReleases: list, status, managed resources, drift, history, sync/refresh/reconcile, suspend/resume, Argo CD rollback, git compare links (UT). Manifest diff: missing (needs the Argo CD API). |
+| Cloud, security scanning, cost, workspaces, YAML schema, support bundles | Missing.                                                                                                                                                                                                                                      |
 
 #### Architecture Explorer benchmark
 

@@ -8,6 +8,22 @@ The version of the extension API is separate from the application version: it
 follows Freelens, so that extensions written for Freelens keep working (see
 `docs/prolens/releasing.md`).
 
+## [1.2.0] - 2026-11-16
+
+### Added
+
+- GitOps view for Argo CD and Flux, in the cluster sidebar when either is
+  installed: apps with sync and health, managed resources, drift, history
+  and Flux sources; sync, refresh, reconcile, suspend and resume, and Argo CD
+  rollback, each after confirmation; links comparing revisions on GitHub,
+  GitLab and Bitbucket.
+
+### Security
+
+- An AI assistant's session ends when its terminal tab is closed, and after
+  two hours at the latest (was twelve). The token file is deleted as soon as
+  it is read.
+
 ## [1.1.0] - 2026-11-16
 
 ### Added
@@ -80,5 +96,6 @@ First release of ProLens, forked from Freelens at commit `2547f555`.
 - The Freelens APT repository configuration and its publishing workflow.
 - The Freelens release workflow, replaced by the ProLens one.
 
+[1.2.0]: https://github.com/chago1991/prolens/releases/tag/v1.2.0
 [1.1.0]: https://github.com/chago1991/prolens/releases/tag/v1.1.0
 [1.0.0]: https://github.com/chago1991/prolens/releases/tag/v1.0.0
