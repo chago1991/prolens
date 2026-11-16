@@ -9,6 +9,7 @@
 import shouldBaseStoreDisableSyncInIpcListenerInjectable from "./disable-sync-in-ipc-listener.injectable";
 import baseStoreIpcChannelPrefixInjectable from "./ipc-channel-prefix.injectable";
 import persistStateToConfigInjectable from "./persist-state-to-config.injectable";
+import recoverInvalidConfigFileInjectable from "./recover-invalid-config-file.injectable";
 import storageMigrationVersionInjectable from "./storage-migration-version.injectable";
 
 import type { DiContainerForInjection } from "@ogre-tools/injectable";
@@ -21,6 +22,11 @@ export function registerInjectables(di: DiContainerForInjection): void {
   }
   try {
     di.register(persistStateToConfigInjectable);
+  } catch (e) {
+    /* Ignore duplicate registration */
+  }
+  try {
+    di.register(recoverInvalidConfigFileInjectable);
   } catch (e) {
     /* Ignore duplicate registration */
   }

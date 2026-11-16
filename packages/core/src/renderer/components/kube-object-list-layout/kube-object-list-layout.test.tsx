@@ -4,12 +4,14 @@
  * Licensed under MIT License. See LICENSE in root directory for more information.
  */
 
+import { runInAction } from "mobx";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { DiContainer } from "@ogre-tools/injectable";
 import "@testing-library/jest-dom/vitest";
 
 import { podListLayoutColumnInjectionToken } from "@freelensapp/list-layout";
+import { act } from "@testing-library/react";
 import appPathsStateInjectable from "../../../common/app-paths/app-paths-state.injectable";
 import directoryForKubeConfigsInjectable from "../../../common/app-paths/directory-for-kube-configs/directory-for-kube-configs.injectable";
 import directoryForUserDataInjectable from "../../../common/app-paths/directory-for-user-data/directory-for-user-data.injectable";
@@ -86,6 +88,36 @@ describe("kube-object-list-layout", () => {
       );
 
       expect(result.baseElement).toMatchSnapshot();
+    });
+
+    describe("when a watch of the store is interrupted", () => {
+      const interruptedWatches = () => (podStore as unknown as { interruptedWatches: Set<string> }).interruptedWatches;
+      const renderList = () =>
+        render(
+          <KubeObjectListLayout
+            className="Pods"
+            store={podStore}
+            tableId="workloads_pods"
+            renderHeaderTitle="Pods"
+            renderTableContents={(pod) => [<div key={pod.getName()}>{pod.getName()}</div>]}
+          />,
+        );
+
+      it("says nothing while the watches are connected", () => {
+        result = renderList();
+
+        expect(result.queryByTestId("kube-object-list-layout-watch-interrupted")).not.toBeInTheDocument();
+      });
+
+      it("shows that the list may be out of date until the watch reconnects", () => {
+        result = renderList();
+
+        act(() => runInAction(() => interruptedWatches().add("default")));
+        expect(result.getByTestId("kube-object-list-layout-watch-interrupted")).toBeInTheDocument();
+
+        act(() => runInAction(() => interruptedWatches().delete("default")));
+        expect(result.queryByTestId("kube-object-list-layout-watch-interrupted")).not.toBeInTheDocument();
+      });
     });
 
     describe("given resourcename", () => {

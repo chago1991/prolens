@@ -280,6 +280,12 @@ describe("Freelens proxy with an AI session token", () => {
     ],
     ["deletes a namespace", "DELETE", "/cluster-a/api/v1/namespaces/shop", "delete namespaces shop"],
     ["reads a secret", "GET", "/cluster-a/api/v1/namespaces/shop/secrets/db", "read secrets db in namespace shop"],
+    [
+      "watches secrets through the legacy watch path",
+      "GET",
+      "/cluster-a/api/v1/watch/namespaces/shop/secrets",
+      "read secrets in namespace shop",
+    ],
   ])("refuses when the user denies: %s", async (_name, method, path, action) => {
     const token = issue();
     const response = request(method, path, token, method === "GET" ? undefined : "{}");

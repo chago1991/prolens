@@ -57,6 +57,12 @@ export const parseKubeApiPath = (pathname: string): KubeRequestTarget => {
     return {};
   }
 
+  // The legacy watch form, /api/v1/watch/... and /apis/<group>/<version>/watch/...,
+  // addresses the same resources as the path without it.
+  if (rest[0] === "watch") {
+    rest = rest.slice(1);
+  }
+
   let namespace: string | undefined;
 
   if (rest[0] === "namespaces" && rest.length >= 3) {

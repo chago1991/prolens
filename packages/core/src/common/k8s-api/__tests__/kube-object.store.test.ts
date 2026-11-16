@@ -8,7 +8,7 @@ import { KubeObject } from "@freelensapp/kube-object";
 import { noop, WrappedAbortController } from "@freelensapp/utilities";
 import { observe } from "mobx";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { KubeObjectStore } from "../kube-object.store";
+import { KubeObjectStore, watchRetryDelay } from "../kube-object.store";
 
 import type { FetchRequestInit as RequestInit } from "@freelensapp/json-api";
 import type { KubeApi, KubeApiWatchOptions } from "@freelensapp/kube-api";
@@ -769,6 +769,7 @@ describe("KubeObjectStore", () => {
 
     afterEach(() => {
       vi.useRealTimers();
+      vi.restoreAllMocks();
     });
 
     it("aborts the watch request when the subscription is disposed", async () => {
@@ -826,6 +827,98 @@ describe("KubeObjectStore", () => {
       unsubscribe();
 
       expect(watchSignals.every((signal) => signal.aborted)).toBe(true);
+    });
+
+    it("waits longer after every failure in a row, up to a minute", async () => {
+      const { store, watch, watchCallbacks } = createWatchedStore();
+
+      await store.loadAll({});
+      vi.useFakeTimers();
+      vi.spyOn(Math, "random").mockReturnValue(1);
+      store.subscribe();
+
+      const waits: number[] = [];
+
+      for (let failure = 0; failure < 6; failure += 1) {
+        const calls = watch.mock.calls.length;
+        let waited = 0;
+
+        watchCallbacks[calls - 1](null, new Error("stream broke"));
+
+        while (watch.mock.calls.length === calls) {
+          vi.advanceTimersByTime(1_000);
+          waited += 1_000;
+        }
+
+        waits.push(waited);
+      }
+
+      expect(waits).toEqual([5_000, 10_000, 20_000, 40_000, 60_000, 60_000]);
+    });
+
+    it("waits the shortest time again once the watch delivers events", async () => {
+      const { store, watch, watchCallbacks } = createWatchedStore();
+
+      await store.loadAll({});
+      vi.useFakeTimers();
+      vi.spyOn(Math, "random").mockReturnValue(1);
+      store.subscribe();
+
+      watchCallbacks[0](null, new Error("stream broke"));
+      vi.advanceTimersByTime(5_000);
+      watchCallbacks[1](null, new Error("stream broke"));
+      vi.advanceTimersByTime(10_000);
+      expect(watch).toHaveBeenCalledTimes(3);
+
+      (watchCallbacks[2] as (data: unknown, error: unknown) => void)(
+        { type: "ADDED", object: { metadata: { uid: "a", name: "a", resourceVersion: "1" } } },
+        null,
+      );
+      watchCallbacks[2](null, new Error("stream broke"));
+      vi.advanceTimersByTime(5_000);
+
+      expect(watch).toHaveBeenCalledTimes(4);
+    });
+
+    it("reports an interrupted watch until it delivers events again", async () => {
+      const { store, watchCallbacks } = createWatchedStore();
+
+      await store.loadAll({});
+      vi.useFakeTimers();
+      store.subscribe();
+
+      expect(store.isWatchInterrupted).toBe(false);
+
+      watchCallbacks[0](null, new Error("stream broke"));
+      expect(store.isWatchInterrupted).toBe(true);
+
+      vi.advanceTimersByTime(5_000);
+      (watchCallbacks[1] as (data: unknown, error: unknown) => void)(
+        { type: "ADDED", object: { metadata: { uid: "a", name: "a", resourceVersion: "1" } } },
+        null,
+      );
+      expect(store.isWatchInterrupted).toBe(false);
+    });
+
+    it("stops reporting an interrupted watch once its subscription ends", async () => {
+      const { store, watchCallbacks } = createWatchedStore();
+
+      await store.loadAll({});
+      vi.useFakeTimers();
+
+      const unsubscribe = store.subscribe();
+
+      watchCallbacks[0](null, new Error("stream broke"));
+      unsubscribe();
+
+      expect(store.isWatchInterrupted).toBe(false);
+    });
+
+    it("spreads the retries of watches that failed together", () => {
+      expect(watchRetryDelay(1, () => 0)).toBe(3_750);
+      expect(watchRetryDelay(1, () => 1)).toBe(5_000);
+      expect(watchRetryDelay(10, () => 0)).toBe(45_000);
+      expect(watchRetryDelay(10, () => 1)).toBe(60_000);
     });
 
     it("does not restart a watch request that failed because it was aborted", async () => {

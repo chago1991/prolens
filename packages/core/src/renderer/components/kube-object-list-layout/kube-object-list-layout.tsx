@@ -165,6 +165,26 @@ class NonInjectedKubeObjectListLayout<
     );
   }
 
+  // Takes the state as an argument: it is rendered from within ItemListLayout's
+  // derivation, where mobx-react 9 forbids reading this.props.
+  renderWatchInterrupted(isWatchInterrupted: boolean) {
+    if (!isWatchInterrupted) {
+      return null;
+    }
+
+    return (
+      <Icon
+        material="sync_problem"
+        className="watch-interrupted"
+        data-testid="kube-object-list-layout-watch-interrupted"
+        tooltip={{
+          children: "Live updates were interrupted. The list may be out of date while ProLens reconnects.",
+          preferredPositions: TooltipPosition.BOTTOM,
+        }}
+      />
+    );
+  }
+
   private registerControls = (id: string) => (controls: MenuControls) => {
     this.menuControls.set(id, controls);
   };
@@ -187,6 +207,7 @@ class NonInjectedKubeObjectListLayout<
       ...layoutProps
     } = this.props;
     const resourceName = this.props.resourceName || ResourceNames[ResourceKindMap[store.api.kind]] || store.api.kind;
+    const isWatchInterrupted = Boolean((store as { readonly isWatchInterrupted?: boolean }).isWatchInterrupted);
     const targetColumns = [...(columns ?? []), ...generalColumns.filter(matchesApiFor(store.api))];
 
     void dependentStores;
@@ -264,6 +285,7 @@ class NonInjectedKubeObjectListLayout<
               <>
                 {info}
                 {this.renderLoadErrors()}
+                {this.renderWatchInterrupted(isWatchInterrupted)}
               </>
             ),
             ...headerPlaceHolders,
