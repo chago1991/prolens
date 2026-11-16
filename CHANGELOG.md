@@ -8,6 +8,39 @@ The version of the extension API is separate from the application version: it
 follows Freelens, so that extensions written for Freelens keep working (see
 `docs/prolens/releasing.md`).
 
+## [1.1.0] - 2026-11-16
+
+### Added
+
+- Architecture Explorer: an interactive graph of a cluster's resources, under
+  **Architecture** in the cluster sidebar and **Explore dependencies** in the
+  menu of every resource. It shows what a resource depends on and what
+  depends on it, names the likely root cause of a problem with its evidence,
+  and marks each relationship as observed, referenced or inferred. Views for
+  dependencies, the cluster, a namespace, the network, routing, storage and
+  scheduling; search, filters, grouping, draggable nodes, and SVG and PNG
+  export. Gateway API resources and Cilium policies are included when their
+  CRDs are installed.
+- A notice in a resource list while its watch is interrupted.
+- `pnpm bench`: benchmarks of the renderer on generated large clusters.
+
+### Changed
+
+- Workload statuses and the workloads overview use indexed pod lookups; on a
+  generated cluster of about 40,000 pods, updating the overview went from
+  minutes to about a tenth of a second.
+- A failed watch is retried with backoff (5 seconds, doubling up to a
+  minute) instead of every 5 seconds.
+- A single-pod log tab keeps the newest 250,000 lines.
+- A store file that is not valid JSON is renamed to
+  `<file>.invalid-<timestamp>`, and that store starts from its defaults,
+  instead of ProLens failing to start. Stores are written in one atomic write.
+
+### Fixed
+
+- The AI approval gate let Secret reads through the legacy watch paths
+  (`/api/v1/watch/...`) pass without approval.
+
 ## [1.0.0] - 2026-11-14
 
 First release of ProLens, forked from Freelens at commit `2547f555`.
@@ -47,4 +80,5 @@ First release of ProLens, forked from Freelens at commit `2547f555`.
 - The Freelens APT repository configuration and its publishing workflow.
 - The Freelens release workflow, replaced by the ProLens one.
 
+[1.1.0]: https://github.com/chago1991/prolens/releases/tag/v1.1.0
 [1.0.0]: https://github.com/chago1991/prolens/releases/tag/v1.0.0
