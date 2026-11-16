@@ -151,12 +151,18 @@ export const createAiToolCommand = ({
       ...args.map((arg) => (arg.type === "prompt" ? promptArgument : quotePosixArgument(arg.value))),
     ].join(" ");
 
-    return tokenFilePath ? `exec env ${tokenEnvVar}="$(cat ${quotePosixArgument(tokenFilePath)})" ${command}` : command;
+    // The token file is removed as soon as it is read.
+    return tokenFilePath
+      ? `exec env ${tokenEnvVar}="$(cat ${quotePosixArgument(tokenFilePath)}; rm -f ${quotePosixArgument(tokenFilePath)})" ${command}`
+      : command;
   }
 
   const script = [
     ...(tokenFilePath
-      ? [`$env:${tokenEnvVar} = (Get-Content -Raw -LiteralPath ${quotePowerShellArgument(tokenFilePath)}).Trim()`]
+      ? [
+          `$env:${tokenEnvVar} = (Get-Content -Raw -LiteralPath ${quotePowerShellArgument(tokenFilePath)}).Trim()`,
+          `Remove-Item -Force -LiteralPath ${quotePowerShellArgument(tokenFilePath)}`,
+        ]
       : []),
     `$prompt = Get-Content -Raw -Encoding UTF8 -LiteralPath ${quotePowerShellArgument(promptFilePath)}`,
     `$executable = ${quotePowerShellArgument(executable)}`,

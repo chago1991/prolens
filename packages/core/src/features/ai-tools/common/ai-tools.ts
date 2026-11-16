@@ -206,6 +206,14 @@ export const aiApprovalDecisionChannel: RequestChannel<AiApprovalDecision, void>
   id: "ai-approval-decision",
 };
 
+/**
+ * From a cluster frame to main: the terminal an assistant ran in was closed,
+ * so its session ends.
+ */
+export const revokeAiSessionChannel: RequestChannel<string, void> = {
+  id: "revoke-ai-session",
+};
+
 export interface AskAiInClusterRequest {
   clusterId: string;
   request: AskAiRequest;

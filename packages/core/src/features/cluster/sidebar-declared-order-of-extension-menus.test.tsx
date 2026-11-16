@@ -99,9 +99,10 @@ describe("cluster - the declared order of the sidebar menus of an extension", ()
         const ids = idsOf(getSidebarItems());
         const overview = ids.indexOf("sidebar-item-cluster-overview");
 
-        expect(ids.slice(overview, overview + 6)).toEqual([
+        expect(ids.slice(overview, overview + 7)).toEqual([
           "sidebar-item-cluster-overview",
           "sidebar-item-architecture",
+          "sidebar-item-gitops",
           "sidebar-item-some-extension-name-first",
           "sidebar-item-some-extension-name-second",
           "sidebar-item-some-extension-name-undeclared",
@@ -128,9 +129,10 @@ describe("cluster - the declared order of the sidebar menus of an extension", ()
       const ids = idsOf(getSidebarItems());
       const overview = ids.indexOf("sidebar-item-cluster-overview");
 
-      expect(ids.slice(overview, overview + 6)).toEqual([
+      expect(ids.slice(overview, overview + 7)).toEqual([
         "sidebar-item-cluster-overview",
         "sidebar-item-architecture",
+        "sidebar-item-gitops",
         "sidebar-item-some-extension-name-first",
         "sidebar-item-some-extension-name-second",
         "sidebar-item-some-extension-name-undeclared",

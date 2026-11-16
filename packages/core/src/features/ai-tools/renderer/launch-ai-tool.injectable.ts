@@ -5,11 +5,14 @@
 
 import { requestFromChannelInjectionToken } from "@freelensapp/messaging";
 import { getInjectable } from "@ogre-tools/injectable";
+import { when } from "mobx";
 import isWindowsInjectable from "../../../common/vars/is-windows.injectable";
 import hostedClusterIdInjectable from "../../../renderer/cluster-frame-context/hosted-cluster-id.injectable";
+import dockStoreInjectable from "../../../renderer/components/dock/dock/store.injectable";
+import createTerminalTabInjectable from "../../../renderer/components/dock/terminal/create-terminal-tab.injectable";
 import sendCommandInjectable from "../../../renderer/components/dock/terminal/send-command.injectable";
 import userPreferencesStateInjectable from "../../user-preferences/common/state.injectable";
-import { getArgumentsFor, prepareAiLaunchChannel, proxyTokenEnvVar } from "../common/ai-tools";
+import { getArgumentsFor, prepareAiLaunchChannel, proxyTokenEnvVar, revokeAiSessionChannel } from "../common/ai-tools";
 import { createAiToolCommand } from "../common/command";
 import aiToolDetectionsInjectable from "./ai-tool-detections.injectable";
 
@@ -30,6 +33,8 @@ const launchAiToolInjectable = getInjectable({
     const state = di.inject(userPreferencesStateInjectable);
     const detections = di.inject(aiToolDetectionsInjectable);
     const isWindows = di.inject(isWindowsInjectable);
+    const dockStore = di.inject(dockStoreInjectable);
+    const createTerminalTab = di.inject(createTerminalTabInjectable);
 
     return async (provider, prompt) => {
       const [detection] = await detections.refresh([provider.id]);
@@ -70,7 +75,14 @@ const launchAiToolInjectable = getInjectable({
         isWindows,
       });
 
-      await sendCommand(command, { enter: true, redactCommandFromLogs: true });
+      const tabId = createTerminalTab().id;
+
+      // The session ends with the terminal it runs in.
+      void when(() => !dockStore.tabs.some((tab) => tab.id === tabId)).then(() =>
+        requestFromChannel(revokeAiSessionChannel, prepared.response.sessionId),
+      );
+
+      await sendCommand(command, { enter: true, redactCommandFromLogs: true, tabId });
     };
   },
 });

@@ -24,7 +24,7 @@ dependencies.
 | ID      | Item                                                       | Priority | Effort | Risk   | Depends on   |
 | ------- | ---------------------------------------------------------- | -------- | ------ | ------ | ------------ |
 | SEC-1   | Fixed: AI gate let Secret reads through watch paths pass   | P0       | S      | low    |              |
-| SEC-2   | AI sessions outlive the assistant                          | P0       | S      | low    |              |
+| SEC-2   | Fixed: AI sessions outlived the assistant                  | P0       | S      | low    |              |
 | A11Y-1  | Text on the accent colour ignores `onAccent`               | P0       | S      | low    |              |
 | SEC-3   | AI launch directory is not checked for ownership           | P1       | S      | low    |              |
 | PERF-1  | Fixed: single-pod log tabs grew without limit              | P1       | S      | low    |              |
@@ -98,6 +98,8 @@ classifier:
   - Released as 1.0.1, with the fix named in its notes.
 
 ### SEC-2: AI sessions outlive the assistant
+
+**Fixed:** revoked when the terminal tab closes, 2-hour lifetime, token file removed once read.
 
 An AI session token stays valid for 12 hours; nothing calls `revoke()` outside
 tests. A token left in the terminal's environment or the temporary file keeps

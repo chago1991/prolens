@@ -29,6 +29,7 @@ import { registerInjectables as registerFeaturesFeaturesExtensionsStoppingMainIn
 import { registerInjectables as registerFeaturesFeaturesFavoritesMainInjectables } from "./features/favorites/main/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesFavoritesInjectables } from "./features/favorites/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesFileSystemProvisionerMainInjectables } from "./features/file-system-provisioner/main/register-injectables";
+import { registerInjectables as registerFeaturesFeaturesGitopsCommonInjectables } from "./features/gitops/common/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesHelmReleasesMainInjectables } from "./features/helm-releases/main/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesHotbarInjectables } from "./features/hotbar/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesHotbarStorageMainInjectables } from "./features/hotbar/storage/main/register-injectables";
@@ -79,6 +80,7 @@ export function registerInjectables(di: DiContainerForInjection): void {
   registerFeaturesFeaturesFavoritesMainInjectables(di);
   registerFeaturesFeaturesFavoritesInjectables(di);
   registerFeaturesFeaturesFileSystemProvisionerMainInjectables(di);
+  registerFeaturesFeaturesGitopsCommonInjectables(di);
   registerFeaturesFeaturesHelmReleasesMainInjectables(di);
   registerFeaturesFeaturesHotbarInjectables(di);
   registerFeaturesFeaturesHotbarStorageMainInjectables(di);

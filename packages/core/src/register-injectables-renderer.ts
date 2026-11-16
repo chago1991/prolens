@@ -27,6 +27,8 @@ import { registerInjectables as registerFeaturesFeaturesExtensionsInjectables } 
 import { registerInjectables as registerFeaturesFeaturesFavoritesInjectables } from "./features/favorites/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesFavoritesRendererInjectables } from "./features/favorites/renderer/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesFileSystemProvisionerRendererInjectables } from "./features/file-system-provisioner/renderer/register-injectables";
+import { registerInjectables as registerFeaturesFeaturesGitopsInjectables } from "./features/gitops/register-injectables";
+import { registerInjectables as registerFeaturesFeaturesGitopsRendererInjectables } from "./features/gitops/renderer/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesHelmChartsChildFeaturesPreferencesRendererInjectables } from "./features/helm-charts/child-features/preferences/renderer/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesHelmReleasesRendererInjectables } from "./features/helm-releases/renderer/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesHotbarInjectables } from "./features/hotbar/register-injectables";
@@ -80,6 +82,8 @@ export function registerInjectables(di: DiContainerForInjection): void {
   registerFeaturesFeaturesFavoritesRendererInjectables(di);
   registerFeaturesFeaturesFavoritesInjectables(di);
   registerFeaturesFeaturesFileSystemProvisionerRendererInjectables(di);
+  registerFeaturesFeaturesGitopsRendererInjectables(di);
+  registerFeaturesFeaturesGitopsInjectables(di);
   registerFeaturesFeaturesHelmChartsChildFeaturesPreferencesRendererInjectables(di);
   registerFeaturesFeaturesHelmReleasesRendererInjectables(di);
   registerFeaturesFeaturesHotbarInjectables(di);

@@ -143,17 +143,17 @@ cluster does not serve its API or RBAC denies listing it.
 
 ## AI assistants (ProLens)
 
-| Feature                                                            | Status     | Evidence | Notes                                                                                    |
-| ------------------------------------------------------------------ | ---------- | -------- | ---------------------------------------------------------------------------------------- |
-| Tool detection and settings (6 providers)                          | Working    | APP, UT  |                                                                                          |
-| Ask AI from top bar, overview, resource menu, events, logs, editor | Working    | APP, UT  | Prompt carries cluster context; Secret values redacted.                                  |
-| Claude Code in the cluster terminal                                | Working    | APP      | macOS; its delete was held for approval and denied.                                      |
-| OpenAI Codex CLI                                                   | Partial    | APP      | Launches with the prompt; kubectl not exercised (account rejected the configured model). |
-| Gemini CLI, Copilot CLI, OpenCode, custom command                  | Unverified | UT       |                                                                                          |
-| Approval of writes, exec/attach/port-forward, Secret reads         | Working    | APP, UT  | Normal paths checked in the app; legacy watch paths (SEC-1, fixed) by unit tests only.   |
-| Session ends when the tool exits                                   | Missing    | —        | Sessions stay valid for 12 hours (SEC-2).                                                |
-| AI on Windows and Linux                                            | Unverified | UT       |                                                                                          |
-| API backends (Ollama, OpenAI-compatible) and MCP servers           | Missing    | —        | Interfaces declared in `features/ai-tools/common/ai-tools.ts` only.                      |
+| Feature                                                            | Status     | Evidence | Notes                                                                                      |
+| ------------------------------------------------------------------ | ---------- | -------- | ------------------------------------------------------------------------------------------ |
+| Tool detection and settings (6 providers)                          | Working    | APP, UT  |                                                                                            |
+| Ask AI from top bar, overview, resource menu, events, logs, editor | Working    | APP, UT  | Prompt carries cluster context; Secret values redacted.                                    |
+| Claude Code in the cluster terminal                                | Working    | APP      | macOS; its delete was held for approval and denied.                                        |
+| OpenAI Codex CLI                                                   | Partial    | APP      | Launches with the prompt; kubectl not exercised (account rejected the configured model).   |
+| Gemini CLI, Copilot CLI, OpenCode, custom command                  | Unverified | UT       |                                                                                            |
+| Approval of writes, exec/attach/port-forward, Secret reads         | Working    | APP, UT  | Normal paths checked in the app; legacy watch paths (SEC-1, fixed) by unit tests only.     |
+| Session ends when the tool exits                                   | Working    | UT       | Revoked when its terminal tab closes; at most 2 hours; token file deleted on read (SEC-2). |
+| AI on Windows and Linux                                            | Unverified | UT       |                                                                                            |
+| API backends (Ollama, OpenAI-compatible) and MCP servers           | Missing    | —        | Interfaces declared in `features/ai-tools/common/ai-tools.ts` only.                        |
 
 ## Packaging and distribution
 

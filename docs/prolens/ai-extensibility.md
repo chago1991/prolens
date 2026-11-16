@@ -37,7 +37,7 @@ under the system temporary directory, removed after an hour), and types a
 short command into a new terminal tab of the cluster:
 
 ```sh
-exec env FREELENS_PROXY_TOKEN="$(cat '/tmp/prolens-ai-user/….token')" '/path/to/claude' '--permission-mode' 'plan' "$(cat '/tmp/prolens-ai-user/….md')"
+exec env FREELENS_PROXY_TOKEN="$(cat '/tmp/prolens-ai-user/….token'; rm -f '/tmp/prolens-ai-user/….token')" '/path/to/claude' '--permission-mode' 'plan' "$(cat '/tmp/prolens-ai-user/….md')"
 ```
 
 Every part is quoted; the prompt is substituted inside double quotes, which a
@@ -83,6 +83,8 @@ on top of the enforcement, which is in ProLens' proxy:
    (`exec env FREELENS_PROXY_TOKEN="$(cat …)" …`), so every `kubectl` and
    `helm` the assistant runs, directly or through a tool, presents it to the
    ProLens proxy.
+   The command deletes the token file as it reads it. The session ends when
+   its terminal tab is closed, and after two hours at the latest.
 2. **The gate.** The proxy hands a request with a session token to
    `ai-session-gate`. A session reaches only the Kubernetes API of its own
    cluster: not other clusters, not ProLens' local API, not shells.
