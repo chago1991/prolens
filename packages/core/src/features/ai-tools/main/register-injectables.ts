@@ -13,6 +13,7 @@ import aiSessionsInjectable from "./ai-sessions.injectable";
 import askAiInClusterListenerInjectable from "./ask-ai-in-cluster.injectable";
 import detectAiToolsListenerInjectable from "./detect-ai-tools.injectable";
 import prepareAiLaunchListenerInjectable from "./prepare-ai-launch.injectable";
+import revokeAiSessionListenerInjectable from "./revoke-ai-session-listener.injectable";
 
 import type { DiContainerForInjection } from "@ogre-tools/injectable";
 
@@ -49,6 +50,11 @@ export function registerInjectables(di: DiContainerForInjection): void {
   }
   try {
     di.register(prepareAiLaunchListenerInjectable);
+  } catch (e) {
+    /* Ignore duplicate registration */
+  }
+  try {
+    di.register(revokeAiSessionListenerInjectable);
   } catch (e) {
     /* Ignore duplicate registration */
   }

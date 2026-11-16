@@ -80,7 +80,9 @@ describe("createAiToolCommand", () => {
         tokenFilePath: "/tmp/s.token",
         isWindows: false,
       }),
-    ).toBe(`exec env FREELENS_PROXY_TOKEN="$(cat '/tmp/s.token')" '/bin/claude' "$(cat '/tmp/p.md')"`);
+    ).toBe(
+      `exec env FREELENS_PROXY_TOKEN="$(cat '/tmp/s.token'; rm -f '/tmp/s.token')" '/bin/claude' "$(cat '/tmp/p.md')"`,
+    );
   });
 
   it.runIf(process.platform !== "win32")("gives the tool the session token even when the shell has its own", () => {

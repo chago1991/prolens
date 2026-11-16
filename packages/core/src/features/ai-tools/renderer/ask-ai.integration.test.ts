@@ -12,12 +12,18 @@ import isWindowsInjectable from "../../../common/vars/is-windows.injectable";
 import activeKubernetesClusterInjectable from "../../../renderer/cluster-frame-context/active-kubernetes-cluster.injectable";
 import hostedClusterInjectable from "../../../renderer/cluster-frame-context/hosted-cluster.injectable";
 import hostedClusterIdInjectable from "../../../renderer/cluster-frame-context/hosted-cluster-id.injectable";
+import dockStoreInjectable from "../../../renderer/components/dock/dock/store.injectable";
 import callForLogsInjectable from "../../../renderer/components/dock/logs/call-for-logs.injectable";
 import sendCommandInjectable from "../../../renderer/components/dock/terminal/send-command.injectable";
 import { getDiForUnitTesting } from "../../../renderer/getDiForUnitTesting";
 import currentlyInClusterFrameInjectable from "../../../renderer/routes/currently-in-cluster-frame.injectable";
 import userPreferencesStateInjectable from "../../user-preferences/common/state.injectable";
-import { askAiInClusterChannel, detectAiToolsChannel, prepareAiLaunchChannel } from "../common/ai-tools";
+import {
+  askAiInClusterChannel,
+  detectAiToolsChannel,
+  prepareAiLaunchChannel,
+  revokeAiSessionChannel,
+} from "../common/ai-tools";
 import aiToolProvidersInjectable from "./ai-tool-providers.injectable";
 import askAiDialogStateInjectable from "./ask-ai-dialog-state.injectable";
 import buildAskAiPromptInjectable from "./build-ask-ai-prompt.injectable";
@@ -75,6 +81,8 @@ describe("Ask AI", () => {
           };
         case askAiInClusterChannel.id:
           return { callWasSuccessful: true };
+        case revokeAiSessionChannel.id:
+          return undefined;
         default:
           throw new Error(`unexpected channel ${channel.id} ${JSON.stringify(request)}`);
       }
@@ -185,9 +193,22 @@ describe("Ask AI", () => {
         clusterId: "cluster-1",
       });
       expect(sendCommand).toHaveBeenCalledWith(
-        `exec env FREELENS_PROXY_TOKEN="$(cat '/tmp/prolens-ai-me/s1.token')" '/usr/local/bin/claude' '--permission-mode' 'plan' "$(cat '/tmp/prolens-ai-me/s1.md')"`,
-        { enter: true, redactCommandFromLogs: true },
+        `exec env FREELENS_PROXY_TOKEN="$(cat '/tmp/prolens-ai-me/s1.token'; rm -f '/tmp/prolens-ai-me/s1.token')" '/usr/local/bin/claude' '--permission-mode' 'plan' "$(cat '/tmp/prolens-ai-me/s1.md')"`,
+        { enter: true, redactCommandFromLogs: true, tabId: expect.any(String) },
       );
+    });
+
+    it("ends the session when its terminal tab is closed", async () => {
+      await di.inject(launchAiToolInjectable)(claude(), "the prompt");
+
+      const { tabId } = sendCommand.mock.calls[0][1] as { tabId: string };
+
+      expect(requestFromChannel).not.toHaveBeenCalledWith(revokeAiSessionChannel, "s1");
+
+      di.inject(dockStoreInjectable).closeTab(tabId);
+      await new Promise((resolve) => setTimeout(resolve, 0));
+
+      expect(requestFromChannel).toHaveBeenCalledWith(revokeAiSessionChannel, "s1");
     });
 
     it("refuses to launch outside a cluster frame", async () => {
@@ -207,7 +228,7 @@ describe("Ask AI", () => {
       await di.inject(launchAiToolInjectable)(claude(), "p");
 
       expect(sendCommand.mock.calls[0][0]).toBe(
-        `exec env FREELENS_PROXY_TOKEN="$(cat '/tmp/prolens-ai-me/s1.token')" '/usr/local/bin/claude' '--model' 'opus' "$(cat '/tmp/prolens-ai-me/s1.md')"`,
+        `exec env FREELENS_PROXY_TOKEN="$(cat '/tmp/prolens-ai-me/s1.token'; rm -f '/tmp/prolens-ai-me/s1.token')" '/usr/local/bin/claude' '--model' 'opus' "$(cat '/tmp/prolens-ai-me/s1.md')"`,
       );
     });
 

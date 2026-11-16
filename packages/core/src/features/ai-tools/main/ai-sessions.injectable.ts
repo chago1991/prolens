@@ -26,7 +26,8 @@ export interface AiSessions {
 }
 
 /** A session outlives any single conversation, but not the working day. */
-export const aiSessionLifetime = 12 * 60 * 60 * 1000;
+/** How long a session lasts when its terminal is never closed. */
+export const aiSessionLifetime = 2 * 60 * 60 * 1000;
 
 /**
  * The AI sessions of this run, in memory only: a restart revokes them all.
