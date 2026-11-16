@@ -1,0 +1,918 @@
+/**
+ * Copyright (c) Freelens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+// Glass surfaces are derived from the theme's tokens, so that every theme,
+// custom ones included, gets matching translucency.
+@mixin glass($tint: 70%) {
+  background:
+    linear-gradient(160deg, color-mix(in srgb, white 7%, transparent), transparent 42%),
+    color-mix(in srgb, var(--contentColor) $tint, transparent);
+  border: 1px solid color-mix(in srgb, var(--borderColor) 55%, transparent);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 10%, transparent),
+    0 10px 30px -12px color-mix(in srgb, black 55%, transparent);
+  backdrop-filter: blur(18px) saturate(160%);
+
+  @media (prefers-reduced-transparency: reduce) {
+    background: var(--contentColor);
+    backdrop-filter: none;
+  }
+}
+
+.explorer {
+  --explorer-healthy: var(--colorSuccess);
+  --explorer-warning: var(--colorWarning);
+  --explorer-critical: var(--colorError);
+  --explorer-unknown: var(--textColorTertiary);
+  --explorer-accent: var(--primary);
+  --explorer-impact: var(--magenta, #bb9af7);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 420px;
+  overflow: hidden;
+  color: var(--textColorPrimary);
+  background:
+    radial-gradient(1200px 600px at 12% -10%, color-mix(in srgb, var(--primary) 16%, transparent), transparent 60%),
+    radial-gradient(900px 500px at 105% 110%, color-mix(in srgb, var(--explorer-impact) 12%, transparent), transparent 60%),
+    var(--mainBackground);
+
+  :global(.react-flow) {
+    --xy-background-color: transparent;
+    --xy-edge-stroke-default: color-mix(in srgb, var(--textColorTertiary) 70%, transparent);
+    --xy-edge-stroke-selected-default: var(--primary);
+    --xy-minimap-background-color-default: color-mix(in srgb, var(--contentColor) 70%, transparent);
+    --xy-minimap-mask-background-color-default: color-mix(in srgb, var(--mainBackground) 55%, transparent);
+    --xy-controls-button-background-color-default: transparent;
+    --xy-controls-button-color-default: var(--textColorPrimary);
+    --xy-controls-button-border-color-default: color-mix(in srgb, var(--borderColor) 60%, transparent);
+    --xy-attribution-background-color-default: transparent;
+  }
+
+  :global(.react-flow__controls),
+  :global(.react-flow__minimap) {
+    @include glass(64%);
+
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  :global(.react-flow__edge-textbg) {
+    fill: var(--contentColor);
+  }
+
+  :global(.react-flow__edge-text) {
+    fill: var(--textColorSecondary);
+    font-size: 10px;
+  }
+}
+
+.canvas {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+// Toolbar
+
+.toolbar {
+  @include glass(72%);
+
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 12px 0;
+  padding: 8px 10px;
+  border-radius: 16px;
+}
+
+.segmented {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--mainBackground) 60%, transparent);
+  border: 1px solid color-mix(in srgb, var(--borderColor) 40%, transparent);
+
+  button {
+    padding: 5px 11px;
+    border: 0;
+    border-radius: 9px;
+    color: var(--textColorSecondary);
+    background: transparent;
+    font: inherit;
+    font-size: var(--font-size-small);
+    cursor: pointer;
+    transition:
+      background 120ms ease,
+      color 120ms ease;
+
+    &:hover {
+      color: var(--textColorAccent);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 1px;
+    }
+
+    &[aria-pressed="true"] {
+      color: var(--textColorAccent);
+      background: color-mix(in srgb, var(--primary) 26%, var(--contentColor));
+      box-shadow: inset 0 1px 0 color-mix(in srgb, white 14%, transparent);
+    }
+  }
+}
+
+.spacer {
+  flex: 1;
+}
+
+.toolButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--borderColor) 50%, transparent);
+  color: var(--textColorPrimary);
+  background: color-mix(in srgb, var(--mainBackground) 40%, transparent);
+  font: inherit;
+  font-size: var(--font-size-small);
+  cursor: pointer;
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--primary) 60%, transparent);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+  }
+
+  &[aria-expanded="true"],
+  &[aria-pressed="true"] {
+    border-color: var(--primary);
+    color: var(--textColorAccent);
+  }
+}
+
+.search {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  min-width: 220px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--borderColor) 50%, transparent);
+  background: color-mix(in srgb, var(--mainBackground) 55%, transparent);
+
+  &:focus-within {
+    border-color: var(--primary);
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    color: var(--textColorAccent);
+    background: transparent;
+    font: inherit;
+    font-size: var(--font-size-small);
+  }
+}
+
+.select {
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--borderColor) 50%, transparent);
+  color: var(--textColorPrimary);
+  background: color-mix(in srgb, var(--mainBackground) 55%, transparent);
+  font: inherit;
+  font-size: var(--font-size-small);
+}
+
+.focusChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 340px;
+  height: 30px;
+  padding: 0 4px 0 10px;
+  border-radius: 999px;
+  color: var(--textColorAccent);
+  background: color-mix(in srgb, var(--primary) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 55%, transparent);
+  font-size: var(--font-size-small);
+
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.popover {
+  @include glass(86%);
+
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 10px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 260px;
+  max-height: 70vh;
+  padding: 14px;
+  border-radius: 14px;
+  overflow: auto;
+
+  h4 {
+    margin: 0;
+    color: var(--textColorTertiary);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--font-size-small);
+    cursor: pointer;
+  }
+}
+
+.kindGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 14px;
+}
+
+// Nodes
+
+.node {
+  @include glass(78%);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 232px;
+  height: 68px;
+  padding: 0 12px 0 16px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition:
+    box-shadow 160ms ease,
+    opacity 160ms ease,
+    transform 160ms ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 4px;
+    border-radius: 0 4px 4px 0;
+    background: var(--node-health);
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow:
+      inset 0 1px 0 color-mix(in srgb, white 14%, transparent),
+      0 14px 34px -14px color-mix(in srgb, var(--node-health) 60%, black);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+.healthy {
+  --node-health: var(--explorer-healthy);
+}
+
+.warning {
+  --node-health: var(--explorer-warning);
+}
+
+.critical {
+  --node-health: var(--explorer-critical);
+}
+
+.missing {
+  --node-health: var(--explorer-critical);
+
+  border-style: dashed;
+  border-color: color-mix(in srgb, var(--explorer-critical) 70%, transparent);
+}
+
+.unknown {
+  --node-health: var(--explorer-unknown);
+}
+
+.placeholder {
+  border-style: dashed;
+  opacity: 0.85;
+}
+
+.selected {
+  border-color: var(--primary);
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--primary) 55%, transparent),
+    0 14px 34px -14px color-mix(in srgb, var(--primary) 60%, black);
+}
+
+.focus {
+  border-color: var(--primary);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--primary) 45%, transparent),
+    0 0 36px -6px color-mix(in srgb, var(--primary) 70%, transparent);
+}
+
+.roleImpact {
+  border-color: color-mix(in srgb, var(--explorer-impact) 65%, transparent);
+}
+
+.matched {
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--colorWarning) 70%, transparent),
+    0 0 26px -4px color-mix(in srgb, var(--colorWarning) 55%, transparent);
+}
+
+.dimmed {
+  opacity: 0.28;
+}
+
+.kindIcon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  color: var(--textColorAccent);
+  background: color-mix(in srgb, var(--node-health) 22%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, white 12%, transparent);
+}
+
+.nodeText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  gap: 2px;
+}
+
+.nodeName {
+  overflow: hidden;
+  color: var(--textColorAccent);
+  font-size: 13px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nodeMeta {
+  overflow: hidden;
+  color: var(--textColorTertiary);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.badges {
+  position: absolute;
+  top: -8px;
+  right: 8px;
+  display: flex;
+  gap: 4px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 999px;
+  color: var(--textColorAccent);
+  background: color-mix(in srgb, var(--contentColor) 90%, transparent);
+  border: 1px solid color-mix(in srgb, var(--borderColor) 70%, transparent);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.badgeWarning {
+  border-color: color-mix(in srgb, var(--colorWarning) 70%, transparent);
+  color: var(--colorWarning);
+}
+
+.badgeCritical {
+  border-color: color-mix(in srgb, var(--colorError) 70%, transparent);
+  color: var(--colorError);
+}
+
+.healthBar {
+  display: flex;
+  overflow: hidden;
+  height: 4px;
+  margin-top: 3px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--borderColor) 40%, transparent);
+
+  span {
+    height: 100%;
+  }
+}
+
+.handle {
+  width: 6px;
+  height: 6px;
+  border: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.band {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--borderColor) 35%, transparent);
+  background: color-mix(in srgb, var(--contentColor) 22%, transparent);
+  pointer-events: none;
+}
+
+.bandLabel {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px 3px 6px;
+  border-radius: 999px;
+  border: 0;
+  color: var(--textColorSecondary);
+  background: color-mix(in srgb, var(--contentColor) 70%, transparent);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  pointer-events: all;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--textColorAccent);
+  }
+}
+
+// Edges
+
+.edge {
+  :global(.react-flow__edge-path) {
+    stroke-width: 1.4;
+  }
+}
+
+.observed :global(.react-flow__edge-path) {
+  stroke-dasharray: none;
+}
+
+.referenced :global(.react-flow__edge-path) {
+  stroke-dasharray: 6 4;
+}
+
+.inferred :global(.react-flow__edge-path) {
+  stroke-dasharray: 2 4;
+}
+
+.broken :global(.react-flow__edge-path) {
+  stroke: var(--explorer-critical);
+  stroke-width: 2;
+}
+
+.edgeDependency :global(.react-flow__edge-path) {
+  stroke: var(--explorer-accent);
+  stroke-width: 2;
+}
+
+.edgeImpact :global(.react-flow__edge-path) {
+  stroke: var(--explorer-impact);
+  stroke-width: 2;
+}
+
+.edgeDimmed {
+  opacity: 0.18;
+}
+
+// Inspector
+
+.inspector {
+  @include glass(82%);
+
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  width: min(400px, 42%);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.inspectorHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 14px 10px;
+  border-bottom: 1px solid color-mix(in srgb, var(--borderColor) 40%, transparent);
+
+  h3 {
+    margin: 0;
+    overflow: hidden;
+    color: var(--textColorAccent);
+    font-size: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  p {
+    margin: 2px 0 0;
+    color: var(--textColorTertiary);
+    font-size: 11px;
+  }
+}
+
+.inspectorBody {
+  flex: 1;
+  overflow: auto;
+  padding: 12px 14px 16px;
+
+  section + section {
+    margin-top: 16px;
+  }
+
+  h4 {
+    margin: 0 0 8px;
+    color: var(--textColorTertiary);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reason {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border-left: 3px solid var(--node-health, var(--explorer-unknown));
+  background: color-mix(in srgb, var(--mainBackground) 45%, transparent);
+  font-size: 12px;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.finding {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--borderColor) 45%, transparent);
+  color: inherit;
+  background: color-mix(in srgb, var(--mainBackground) 40%, transparent);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--primary);
+    outline: 0;
+  }
+
+  strong {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--textColorAccent);
+    font-size: 13px;
+  }
+
+  ul {
+    margin: 6px 0 0;
+    padding-left: 18px;
+    color: var(--textColorSecondary);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+}
+
+.rootCause {
+  border-color: color-mix(in srgb, var(--colorError) 65%, transparent);
+  background: color-mix(in srgb, var(--colorError) 9%, transparent);
+}
+
+.path {
+  margin-top: 6px;
+  color: var(--textColorTertiary);
+  font-size: 11px;
+}
+
+.relation {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 8px;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    outline: 0;
+    background: color-mix(in srgb, var(--primary) 12%, transparent);
+  }
+
+  small {
+    display: block;
+    color: var(--textColorTertiary);
+    font-size: 11px;
+  }
+}
+
+.provenance {
+  flex: none;
+  padding: 1px 6px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.provenanceObserved {
+  color: var(--explorer-healthy);
+  background: color-mix(in srgb, var(--explorer-healthy) 15%, transparent);
+}
+
+.provenanceReferenced {
+  color: var(--colorInfo, var(--primary));
+  background: color-mix(in srgb, var(--colorInfo, var(--primary)) 15%, transparent);
+}
+
+.provenanceInferred {
+  color: var(--colorWarning);
+  background: color-mix(in srgb, var(--colorWarning) 15%, transparent);
+}
+
+.keyValue {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 12px;
+  margin: 0;
+  font-size: 12px;
+
+  dt {
+    color: var(--textColorTertiary);
+  }
+
+  dd {
+    margin: 0;
+    word-break: break-all;
+  }
+}
+
+// Overlays
+
+.statusBar {
+  @include glass(70%);
+
+  position: absolute;
+  bottom: 12px;
+  left: 64px;
+  z-index: 4;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  max-width: calc(100% - 520px);
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  &::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--explorer-healthy);
+    box-shadow: 0 0 10px var(--explorer-healthy);
+  }
+}
+
+.reconnecting::before {
+  background: var(--explorer-warning);
+  box-shadow: 0 0 10px var(--explorer-warning);
+}
+
+.notice {
+  color: var(--colorWarning);
+}
+
+.legend {
+  @include glass(80%);
+
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 6px 18px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 12px;
+  transform: translateX(-50%) translateY(-48px);
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  svg {
+    flex: none;
+  }
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--node-health);
+}
+
+.contextMenu {
+  @include glass(90%);
+
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  padding: 6px;
+  border-radius: 12px;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 10px;
+    border: 0;
+    border-radius: 8px;
+    color: var(--textColorPrimary);
+    background: transparent;
+    font: inherit;
+    font-size: var(--font-size-small);
+    text-align: left;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      outline: 0;
+      color: var(--textColorAccent);
+      background: color-mix(in srgb, var(--primary) 20%, transparent);
+    }
+  }
+
+  hr {
+    width: 100%;
+    margin: 4px 0;
+    border: 0;
+    border-top: 1px solid color-mix(in srgb, var(--borderColor) 40%, transparent);
+  }
+}
+
+.empty {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.emptyCard {
+  @include glass(82%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(560px, 90%);
+  max-height: 80%;
+  padding: 20px;
+  border-radius: 18px;
+  pointer-events: all;
+  overflow: hidden;
+
+  h3 {
+    margin: 0;
+    color: var(--textColorAccent);
+    font-size: 17px;
+  }
+
+  p {
+    margin: 0;
+    color: var(--textColorSecondary);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
+.pickList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: auto;
+  max-height: 46vh;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: inherit;
+    background: color-mix(in srgb, var(--mainBackground) 40%, transparent);
+    font: inherit;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      outline: 0;
+      border-color: var(--primary);
+    }
+
+    small {
+      margin-left: auto;
+      color: var(--textColorTertiary);
+      font-size: 11px;
+    }
+  }
+}

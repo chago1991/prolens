@@ -64,6 +64,31 @@ exports[`kube-object-menu > given kube object > renders 1`] = `
             Ask AI
           </span>
         </li>
+        <li
+          class="MenuItem"
+          data-testid="menu-action-explore-dependencies-for-/foo"
+          tabindex="0"
+        >
+          <i
+            class="Icon material interactive focusable"
+            tabindex="0"
+          >
+            <span
+              class="icon"
+              data-icon-name="hub"
+            >
+              hub
+            </span>
+          </i>
+          <div>
+            Explore dependencies
+          </div>
+          <span
+            class="title"
+          >
+            Explore dependencies
+          </span>
+        </li>
       </ul>
     </div>
   </div>
@@ -132,6 +157,31 @@ exports[`kube-object-menu > given kube object > when removing kube object > rend
             class="title"
           >
             Ask AI
+          </span>
+        </li>
+        <li
+          class="MenuItem"
+          data-testid="menu-action-explore-dependencies-for-/foo"
+          tabindex="0"
+        >
+          <i
+            class="Icon material interactive focusable"
+            tabindex="0"
+          >
+            <span
+              class="icon"
+              data-icon-name="hub"
+            >
+              hub
+            </span>
+          </i>
+          <div>
+            Explore dependencies
+          </div>
+          <span
+            class="title"
+          >
+            Explore dependencies
           </span>
         </li>
       </ul>
@@ -254,6 +304,31 @@ exports[`kube-object-menu > given kube object > when rerendered with different k
             Ask AI
           </span>
         </li>
+        <li
+          class="MenuItem"
+          data-testid="menu-action-explore-dependencies-for-/some-other-api-version/some-other-kind/some-other-namespace/some-other-name"
+          tabindex="0"
+        >
+          <i
+            class="Icon material interactive focusable"
+            tabindex="0"
+          >
+            <span
+              class="icon"
+              data-icon-name="hub"
+            >
+              hub
+            </span>
+          </i>
+          <div>
+            Explore dependencies
+          </div>
+          <span
+            class="title"
+          >
+            Explore dependencies
+          </span>
+        </li>
       </ul>
     </div>
   </div>
@@ -319,6 +394,31 @@ exports[`kube-object-menu > given kube object > when rerendered with different k
             class="title"
           >
             Ask AI
+          </span>
+        </li>
+        <li
+          class="MenuItem"
+          data-testid="menu-action-explore-dependencies-for-/some-other-api-version/some-other-kind/some-other-namespace/some-other-name"
+          tabindex="0"
+        >
+          <i
+            class="Icon material interactive focusable"
+            tabindex="0"
+          >
+            <span
+              class="icon"
+              data-icon-name="hub"
+            >
+              hub
+            </span>
+          </i>
+          <div>
+            Explore dependencies
+          </div>
+          <span
+            class="title"
+          >
+            Explore dependencies
           </span>
         </li>
       </ul>
@@ -444,6 +544,31 @@ exports[`kube-object-menu > given kube object with namespace > when removing kub
             Ask AI
           </span>
         </li>
+        <li
+          class="MenuItem"
+          data-testid="menu-action-explore-dependencies-for-/foo"
+          tabindex="0"
+        >
+          <i
+            class="Icon material interactive focusable"
+            tabindex="0"
+          >
+            <span
+              class="icon"
+              data-icon-name="hub"
+            >
+              hub
+            </span>
+          </i>
+          <div>
+            Explore dependencies
+          </div>
+          <span
+            class="title"
+          >
+            Explore dependencies
+          </span>
+        </li>
       </ul>
     </div>
   </div>
@@ -565,6 +690,31 @@ exports[`kube-object-menu > given kube object without namespace > when removing 
             class="title"
           >
             Ask AI
+          </span>
+        </li>
+        <li
+          class="MenuItem"
+          data-testid="menu-action-explore-dependencies-for-/foo"
+          tabindex="0"
+        >
+          <i
+            class="Icon material interactive focusable"
+            tabindex="0"
+          >
+            <span
+              class="icon"
+              data-icon-name="hub"
+            >
+              hub
+            </span>
+          </i>
+          <div>
+            Explore dependencies
+          </div>
+          <span
+            class="title"
+          >
+            Explore dependencies
           </span>
         </li>
       </ul>

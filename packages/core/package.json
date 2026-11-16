@@ -97,6 +97,7 @@
     "@xterm/addon-fit": "catalog:",
     "@xterm/addon-web-links": "catalog:",
     "@xterm/xterm": "catalog:",
+    "@xyflow/react": "catalog:",
     "ansi_up": "catalog:",
     "auto-bind": "catalog:",
     "chalk": "catalog:",

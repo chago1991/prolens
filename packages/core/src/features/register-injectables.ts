@@ -7,6 +7,7 @@
  */
 
 import { registerInjectables as registerAiToolsInjectables } from "./ai-tools/register-injectables";
+import { registerInjectables as registerArchitectureExplorerInjectables } from "./architecture-explorer/register-injectables";
 import { registerInjectables as registerClusterInjectables } from "./cluster/register-injectables";
 import { registerInjectables as registerExtensionCredentialsInjectables } from "./extension-credentials/register-injectables";
 import { registerInjectables as registerExtensionsInjectables } from "./extensions/register-injectables";
@@ -24,6 +25,11 @@ import type { DiContainerForInjection } from "@ogre-tools/injectable";
 export function registerInjectables(di: DiContainerForInjection): void {
   try {
     registerAiToolsInjectables(di);
+  } catch (e) {
+    /* Ignore duplicate registration */
+  }
+  try {
+    registerArchitectureExplorerInjectables(di);
   } catch (e) {
     /* Ignore duplicate registration */
   }

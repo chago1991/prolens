@@ -10,6 +10,7 @@ import { registerInjectables as registerExtensionsInjectables } from "./extensio
 import { registerInjectables as registerFeaturesFeaturesAiToolsMainInjectables } from "./features/ai-tools/main/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesAiToolsInjectables } from "./features/ai-tools/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesApplicationMenuMainInjectables } from "./features/application-menu/main/register-injectables";
+import { registerInjectables as registerFeaturesFeaturesArchitectureExplorerCommonInjectables } from "./features/architecture-explorer/common/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesClusterActivationMainInjectables } from "./features/cluster/activation/main/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesClusterConnectionsMainInjectables } from "./features/cluster/connections/main/register-injectables";
 import { registerInjectables as registerFeaturesFeaturesClusterDeleteDialogMainInjectables } from "./features/cluster/delete-dialog/main/register-injectables";
@@ -59,6 +60,7 @@ export function registerInjectables(di: DiContainerForInjection): void {
   registerFeaturesFeaturesAiToolsMainInjectables(di);
   registerFeaturesFeaturesAiToolsInjectables(di);
   registerFeaturesFeaturesApplicationMenuMainInjectables(di);
+  registerFeaturesFeaturesArchitectureExplorerCommonInjectables(di);
   registerFeaturesFeaturesClusterInjectables(di);
   registerFeaturesFeaturesClusterActivationMainInjectables(di);
   registerFeaturesFeaturesClusterConnectionsMainInjectables(di);

@@ -59,6 +59,7 @@
     "start:os:linux": "xdg-open freelens:",
     "start:os:win32": "powershell -NoProfile -Command \"Start-Process freelens:\"",
     "test:integration": "cd freelens && pnpm test:integration",
+    "bench": "PROLENS_BENCH=1 TZ=UTC vitest run -c vitest.config.ts --project @freelensapp/core src/renderer/components/__tests__/large-cluster.benchmark.test.ts src/features/architecture-explorer/renderer/graph/__tests__/explorer.benchmark.test.ts --testTimeout=3600000",
     "test:unit": "pnpm build:fixture-extension && TZ=UTC vitest run -c vitest.config.ts",
     "test:unit:core": "pnpm build:fixture-extension && TZ=UTC vitest run -c vitest.config.ts --project @freelensapp/core",
     "test:unit:core:updatesnapshot": "pnpm build:fixture-extension && TZ=UTC vitest run -c vitest.config.ts --project @freelensapp/core -u",
