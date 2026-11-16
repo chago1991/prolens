@@ -1,0 +1,417 @@
+/**
+ * Copyright (c) Freelens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+@mixin glass($tint: 72%) {
+  background:
+    linear-gradient(160deg, color-mix(in srgb, white 6%, transparent), transparent 45%),
+    color-mix(in srgb, var(--contentColor) $tint, transparent);
+  border: 1px solid color-mix(in srgb, var(--borderColor) 55%, transparent);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 9%, transparent),
+    0 10px 30px -14px color-mix(in srgb, black 60%, transparent);
+  backdrop-filter: blur(16px) saturate(150%);
+
+  @media (prefers-reduced-transparency: reduce) {
+    background: var(--contentColor);
+    backdrop-filter: none;
+  }
+}
+
+.view {
+  --gitops-drift: var(--magenta, #a78bfa);
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  color: var(--textColorPrimary);
+  background:
+    radial-gradient(900px 500px at 0% -10%, color-mix(in srgb, var(--primary) 18%, transparent), transparent 60%),
+    radial-gradient(800px 500px at 110% 110%, color-mix(in srgb, var(--gitops-drift) 14%, transparent), transparent 60%),
+    var(--mainBackground);
+}
+
+.toolbar {
+  @include glass;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 12px 0;
+  padding: 8px 12px;
+  border-radius: 16px;
+
+  h2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    color: var(--textColorAccent);
+    font-size: 16px;
+  }
+}
+
+.tool {
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: var(--textColorAccent);
+  background: color-mix(in srgb, var(--primary) 24%, transparent);
+  font-size: 11px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.segmented {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--mainBackground) 60%, transparent);
+
+  button {
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 9px;
+    color: var(--textColorSecondary);
+    background: transparent;
+    font: inherit;
+    font-size: var(--font-size-small);
+    cursor: pointer;
+
+    &[aria-pressed="true"] {
+      color: var(--textColorAccent);
+      background: color-mix(in srgb, var(--primary) 26%, var(--contentColor));
+    }
+  }
+}
+
+.search {
+  height: 30px;
+  min-width: 200px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--borderColor) 50%, transparent);
+  color: var(--textColorAccent);
+  background: color-mix(in srgb, var(--mainBackground) 55%, transparent);
+  font: inherit;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  gap: 12px;
+  min-height: 0;
+  padding: 12px;
+}
+
+.grid {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-content: start;
+  gap: 12px;
+  overflow: auto;
+}
+
+.card {
+  @include glass(70%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 16px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 140ms ease,
+    border-color 140ms ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--primary) 60%, transparent);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+.selected {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 45%, transparent);
+}
+
+.attention {
+  border-left: 3px solid var(--colorError);
+}
+
+.cardHead {
+  display: flex;
+  flex-direction: column;
+
+  strong {
+    color: var(--textColorAccent);
+    font-size: 14px;
+  }
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill {
+  padding: 1px 8px;
+  border-radius: 999px;
+  color: var(--textColorSecondary);
+  background: color-mix(in srgb, var(--borderColor) 30%, transparent);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.good {
+  color: var(--colorSuccess);
+  background: color-mix(in srgb, var(--colorSuccess) 15%, transparent);
+}
+
+.drift {
+  color: var(--gitops-drift);
+  background: color-mix(in srgb, var(--gitops-drift) 16%, transparent);
+}
+
+.bad {
+  color: var(--colorError);
+  background: color-mix(in srgb, var(--colorError) 15%, transparent);
+}
+
+.busy {
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 16%, transparent);
+}
+
+.muted {
+  color: var(--textColorTertiary);
+  font-size: 12px;
+}
+
+.errorLine,
+.error {
+  color: var(--colorError);
+  font-size: 12px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.details {
+  @include glass(82%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(460px, 45%);
+  padding: 16px;
+  border-radius: 18px;
+  overflow: auto;
+
+  header {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    div {
+      flex: 1;
+      min-width: 0;
+    }
+
+    h3 {
+      margin: 0;
+      color: var(--textColorAccent);
+      overflow-wrap: anywhere;
+    }
+
+    p {
+      margin: 2px 0 0;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: 1px solid color-mix(in srgb, var(--borderColor) 55%, transparent);
+    color: var(--textColorPrimary);
+    background: color-mix(in srgb, var(--mainBackground) 45%, transparent);
+    font: inherit;
+    font-size: var(--font-size-small);
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      border-color: var(--primary);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 12px;
+  margin: 0;
+  font-size: 12px;
+
+  dt {
+    color: var(--textColorTertiary);
+  }
+
+  dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid color-mix(in srgb, var(--borderColor) 40%, transparent);
+
+  button {
+    padding: 6px 10px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    color: var(--textColorSecondary);
+    background: transparent;
+    font: inherit;
+    font-size: var(--font-size-small);
+    cursor: pointer;
+
+    &[aria-selected="true"] {
+      color: var(--textColorAccent);
+      border-bottom-color: var(--primary);
+    }
+  }
+}
+
+.tabBody {
+  min-height: 0;
+}
+
+.tree,
+.tree ul,
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tree > li > strong {
+  display: block;
+  margin: 6px 0 2px;
+  font-size: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 8px;
+  color: inherit;
+  background: color-mix(in srgb, var(--mainBackground) 40%, transparent);
+  font: inherit;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+
+  span:first-child {
+    flex: 1;
+    overflow-wrap: anywhere;
+  }
+
+  &:hover:not(:disabled) {
+    background: color-mix(in srgb, var(--primary) 14%, transparent);
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.history li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--mainBackground) 40%, transparent);
+  font-size: 12px;
+
+  span {
+    flex: 1;
+  }
+
+  button {
+    padding: 3px 8px;
+    border-radius: 8px;
+    border: 1px solid color-mix(in srgb, var(--borderColor) 55%, transparent);
+    color: var(--textColorPrimary);
+    background: transparent;
+    font: inherit;
+    font-size: 11px;
+    cursor: pointer;
+  }
+}
+
+.empty {
+  @include glass;
+
+  align-self: flex-start;
+  max-width: 560px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 18px;
+
+  h3 {
+    margin: 0 0 8px;
+    color: var(--textColorAccent);
+  }
+
+  p {
+    margin: 0;
+    color: var(--textColorSecondary);
+    line-height: 1.5;
+  }
+}
