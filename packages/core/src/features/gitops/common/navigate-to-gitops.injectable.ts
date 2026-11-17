@@ -7,14 +7,18 @@ import { getInjectable } from "@ogre-tools/injectable";
 import { navigateToRouteInjectionToken } from "../../../common/front-end-routing/navigate-to-route-injection-token";
 import gitOpsRouteInjectable from "./gitops-route.injectable";
 
+import type { GitOpsSection } from "./gitops-route.injectable";
+
+export type NavigateToGitOps = (section?: GitOpsSection) => void;
+
 const navigateToGitOpsInjectable = getInjectable({
   id: "navigate-to-gitops",
 
-  instantiate: (di) => {
+  instantiate: (di): NavigateToGitOps => {
     const navigateToRoute = di.inject(navigateToRouteInjectionToken);
     const route = di.inject(gitOpsRouteInjectable);
 
-    return () => navigateToRoute(route);
+    return (section) => navigateToRoute(route, { parameters: { section } });
   },
 });
 

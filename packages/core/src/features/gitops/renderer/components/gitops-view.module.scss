@@ -415,3 +415,152 @@
     line-height: 1.5;
   }
 }
+
+.crumb {
+  color: var(--textColorSecondary);
+  font-weight: normal;
+}
+
+.namespace {
+  height: 30px;
+  min-width: 170px;
+  padding: 0 8px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--borderColor) 50%, transparent);
+  color: var(--textColorAccent);
+  background: color-mix(in srgb, var(--mainBackground) 55%, transparent);
+  font: inherit;
+  font-size: var(--font-size-small);
+}
+
+.page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+  padding: 12px;
+  overflow: auto;
+
+  > .grid {
+    flex: none;
+    overflow: visible;
+  }
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.stat {
+  @include glass(70%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  color: var(--textColorPrimary);
+  font: inherit;
+  text-align: left;
+
+  strong {
+    color: var(--textColorAccent);
+    font-size: 24px;
+  }
+
+  span {
+    color: var(--textColorSecondary);
+    font-size: 12px;
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--primary);
+    }
+  }
+
+  &.good strong {
+    color: var(--colorSuccess);
+  }
+
+  &.drift strong {
+    color: var(--gitops-drift);
+  }
+
+  &.bad strong {
+    color: var(--colorError);
+  }
+
+  &.busy strong {
+    color: var(--primary);
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h3 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    color: var(--textColorAccent);
+    font-size: 14px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.staticCard {
+  cursor: default;
+
+  &:hover {
+    transform: none;
+  }
+}
+
+.factRow {
+  display: contents;
+}
+
+.links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+
+  button {
+    padding: 0;
+    border: 0;
+    color: var(--primary);
+    background: none;
+    font: inherit;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.notice {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--textColorSecondary);
+  font-size: 12px;
+}

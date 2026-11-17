@@ -403,11 +403,6 @@ exports[`entity running technical tests > when navigated to catalog > renders 1`
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    1 item
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -452,6 +447,11 @@ exports[`entity running technical tests > when navigated to catalog > renders 1`
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    1 item
                   </div>
                 </div>
                 <div
@@ -1289,11 +1289,6 @@ exports[`entity running technical tests > when navigated to catalog > when detai
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    1 item
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -1338,6 +1333,11 @@ exports[`entity running technical tests > when navigated to catalog > when detai
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    1 item
                   </div>
                 </div>
                 <div

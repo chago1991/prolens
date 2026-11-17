@@ -372,11 +372,6 @@ exports[`Deleting a cluster > when an internal kubeconfig cluster is used > when
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    0 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -421,6 +416,11 @@ exports[`Deleting a cluster > when an internal kubeconfig cluster is used > when
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    0 items
                   </div>
                 </div>
                 <div
@@ -1182,11 +1182,6 @@ exports[`Deleting a cluster > when the kubeconfig has multiple clusters > when t
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    0 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -1231,6 +1226,11 @@ exports[`Deleting a cluster > when the kubeconfig has multiple clusters > when t
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    0 items
                   </div>
                 </div>
                 <div
@@ -2025,11 +2025,6 @@ exports[`Deleting a cluster > when the kubeconfig has multiple clusters > when t
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    0 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -2074,6 +2069,11 @@ exports[`Deleting a cluster > when the kubeconfig has multiple clusters > when t
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    0 items
                   </div>
                 </div>
                 <div
@@ -2949,11 +2949,6 @@ exports[`Deleting a cluster > when the kubeconfig has multiple clusters > when t
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    0 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -2998,6 +2993,11 @@ exports[`Deleting a cluster > when the kubeconfig has multiple clusters > when t
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    0 items
                   </div>
                 </div>
                 <div
@@ -3873,11 +3873,6 @@ exports[`Deleting a cluster > when the kubeconfig has only one cluster > when th
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    0 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -3922,6 +3917,11 @@ exports[`Deleting a cluster > when the kubeconfig has only one cluster > when th
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    0 items
                   </div>
                 </div>
                 <div

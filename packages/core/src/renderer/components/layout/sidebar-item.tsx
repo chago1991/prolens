@@ -7,9 +7,10 @@
 import { isShownInSidebarTree } from "@freelensapp/cluster-sidebar";
 import { Icon } from "@freelensapp/icon";
 import { NavLink } from "@freelensapp/routing";
+import { cssNames } from "@freelensapp/utilities";
 import { withInjectables } from "@ogre-tools/injectable-react";
 import { observer } from "mobx-react";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { sideBarItemCustomResourcePrefix } from "../custom-resource-definitions/groups-sidebar-items-computed.injectable";
 import favoritesOverviewSidebarItemInjectable from "../favorites/overview/sidebar-item.injectable";
 import favoritesStoreInjectable, { FavoritesStore } from "../favorites/store.injectable";
@@ -30,6 +31,10 @@ export interface SidebarItemProps {
   item: SidebarItemDeclaration;
 }
 
+/** Whether the page open now is one of the item's descendants. */
+const containsActiveItem = (item: SidebarItemDeclaration): boolean =>
+  item.children.some((child) => isShownInSidebarTree(child) && (child.isActive.get() || containsActiveItem(child)));
+
 const NonInjectedSidebarItem = observer((props: SidebarItemProps & Dependencies) => {
   const { item, sidebarStorage, favoritesStore } = props;
   const id = item.id;
@@ -37,6 +42,24 @@ const NonInjectedSidebarItem = observer((props: SidebarItemProps & Dependencies)
   const isExpandable = item.children.length > 0 && item.children.some(isShownInSidebarTree);
   const isActive = item.isActive.get();
   const isFavorite = favoritesStore.has(id);
+  const containsActive = isExpandable && containsActiveItem(item);
+  const ref = useRef<HTMLDivElement>(null);
+
+  // Opening a page expands the groups above it, so the item of the page is
+  // always in sight; a group can still be collapsed while the page stays open.
+  useEffect(() => {
+    if (containsActive && !sidebarStorage.get().expanded[id]) {
+      sidebarStorage.merge((draft) => {
+        draft.expanded[id] = true;
+      });
+    }
+  }, [containsActive, id, sidebarStorage]);
+
+  useEffect(() => {
+    if (isActive && !isExpandable) {
+      ref.current?.scrollIntoView?.({ block: "nearest" });
+    }
+  }, [isActive, isExpandable]);
 
   const toggleExpand = () => {
     sidebarStorage.merge((draft) => {
@@ -72,7 +95,8 @@ const NonInjectedSidebarItem = observer((props: SidebarItemProps & Dependencies)
 
   return (
     <div
-      className={styles.SidebarItem}
+      ref={ref}
+      className={cssNames(styles.SidebarItem, { [styles.containsActive]: containsActive })}
       data-testid={id}
       data-is-active-test={isActive}
       data-parent-id-test={item.parentId}
