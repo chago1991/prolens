@@ -848,11 +848,6 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    3 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -897,6 +892,11 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    3 items
                   </div>
                 </div>
                 <div
@@ -1878,11 +1878,6 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    3 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -1927,6 +1922,11 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    3 items
                   </div>
                 </div>
                 <div
@@ -2940,11 +2940,6 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    3 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -2989,6 +2984,11 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    3 items
                   </div>
                 </div>
                 <div
@@ -4254,11 +4254,6 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    3 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -4303,6 +4298,11 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    3 items
                   </div>
                 </div>
                 <div
@@ -5536,11 +5536,6 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    3 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -5585,6 +5580,11 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    3 items
                   </div>
                 </div>
                 <div
@@ -6586,11 +6586,6 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    3 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -6635,6 +6630,11 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    3 items
                   </div>
                 </div>
                 <div
@@ -7807,11 +7807,6 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    3 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -7856,6 +7851,11 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    3 items
                   </div>
                 </div>
                 <div

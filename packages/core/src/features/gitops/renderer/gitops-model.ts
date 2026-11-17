@@ -10,7 +10,7 @@ export const fluxSourceGroup = "source.toolkit.fluxcd.io";
 
 /** The custom resources the GitOps view reads, by group. */
 export const gitOpsKinds: Record<string, readonly string[]> = {
-  [argoGroup]: ["Application"],
+  [argoGroup]: ["Application", "ApplicationSet", "AppProject"],
   [fluxKustomizeGroup]: ["Kustomization"],
   [fluxHelmGroup]: ["HelmRelease"],
   [fluxSourceGroup]: ["GitRepository", "OCIRepository", "HelmRepository", "Bucket"],
@@ -28,6 +28,9 @@ export interface GitOpsObject {
     readonly namespace?: string;
     readonly selfLink?: string;
     readonly annotations?: Partial<Record<string, string>>;
+    readonly labels?: Partial<Record<string, string>>;
+    readonly ownerReferences?: readonly { readonly kind: string; readonly name: string }[];
+    readonly creationTimestamp?: string;
   };
   readonly spec?: unknown;
   readonly status?: unknown;
@@ -70,6 +73,10 @@ export interface GitOpsApp {
   readonly lastSync?: string;
   readonly suspended: boolean;
   readonly automated: boolean;
+  /** Argo CD only: the AppProject the app belongs to. */
+  readonly project?: string;
+  /** Argo CD only: the ApplicationSet that generated the app. */
+  readonly appSet?: string;
   readonly resources: readonly ManagedResource[];
   readonly history: readonly Revision[];
   readonly object: GitOpsObject;
@@ -138,6 +145,8 @@ const parseArgo = (object: GitOpsObject): GitOpsApp => {
     lastSync: str(operation.finishedAt) ?? str(status.reconciledAt),
     suspended: false,
     automated: Boolean(record(spec.syncPolicy).automated),
+    project: str(spec.project) ?? "default",
+    appSet: object.metadata.ownerReferences?.find((owner) => owner.kind === "ApplicationSet")?.name,
     resources: array<Record<string, unknown>>(status.resources).map((resource) => ({
       group: str(resource.group) ?? "",
       kind: str(resource.kind) ?? "?",
@@ -308,3 +317,296 @@ export const compareUrl = (repoUrl: string | undefined, from: string, to: string
       ? `https://${host}/${path}/branches/compare/${to}..${from}`
       : `https://${host}/${path}/compare/${from}...${to}`;
 };
+
+// Argo CD settings: application sets, projects, repositories and clusters.
+
+const isArgo = (object: GitOpsObject, kind: string) => groupOf(object.apiVersion) === argoGroup && object.kind === kind;
+
+export interface GitOpsAppSet {
+  readonly id: string;
+  readonly name: string;
+  readonly namespace?: string;
+  readonly selfLink?: string;
+  /** The generator kinds, such as `list`, `git` or `clusters`. */
+  readonly generators: readonly string[];
+  readonly project?: string;
+  readonly apps: readonly GitOpsApp[];
+  readonly healthy: boolean;
+  readonly message?: string;
+  readonly createdAt?: string;
+}
+
+/** An ApplicationSet with the apps it generated. */
+export const toGitOpsAppSet = (object: GitOpsObject, apps: readonly GitOpsApp[]): GitOpsAppSet | undefined => {
+  if (!isArgo(object, "ApplicationSet")) return undefined;
+
+  const spec = record(object.spec);
+  const conditions = array<Condition>(record(object.status).conditions);
+  const error = conditions.find((condition) => condition.type === "ErrorOccurred" && condition.status === "True");
+  const generators = array<Record<string, unknown>>(spec.generators).flatMap((generator) => Object.keys(generator));
+
+  return {
+    id: `argo-appset/${object.metadata.namespace ?? ""}/${object.metadata.name}`,
+    name: object.metadata.name,
+    namespace: object.metadata.namespace,
+    selfLink: object.metadata.selfLink,
+    generators: [...new Set(generators)],
+    project: str(record(record(spec.template).spec).project),
+    apps: apps.filter((app) => app.appSet === object.metadata.name && app.namespace === object.metadata.namespace),
+    healthy: !error,
+    message: error?.message,
+    createdAt: object.metadata.creationTimestamp,
+  };
+};
+
+export interface GitOpsProject {
+  readonly id: string;
+  readonly name: string;
+  readonly namespace?: string;
+  readonly selfLink?: string;
+  readonly description?: string;
+  readonly sourceRepos: readonly string[];
+  readonly destinations: readonly string[];
+  readonly apps: readonly GitOpsApp[];
+}
+
+/** An AppProject with the apps that belong to it. */
+export const toGitOpsProject = (object: GitOpsObject, apps: readonly GitOpsApp[]): GitOpsProject | undefined => {
+  if (!isArgo(object, "AppProject")) return undefined;
+
+  const spec = record(object.spec);
+
+  return {
+    id: `argo-project/${object.metadata.namespace ?? ""}/${object.metadata.name}`,
+    name: object.metadata.name,
+    namespace: object.metadata.namespace,
+    selfLink: object.metadata.selfLink,
+    description: str(spec.description),
+    sourceRepos: array<unknown>(spec.sourceRepos).map(String),
+    destinations: array<Record<string, unknown>>(spec.destinations).map((destination) =>
+      [str(destination.server) ?? str(destination.name) ?? "*", str(destination.namespace) ?? "*"].join(" / "),
+    ),
+    apps: apps.filter((app) => app.tool === "Argo CD" && app.project === object.metadata.name),
+  };
+};
+
+/**
+ * The fields of an Argo CD repository or cluster secret that ProLens shows.
+ * Credentials (`password`, `sshPrivateKey`, `config`, …) are never decoded.
+ */
+export interface ArgoSecretFields {
+  readonly name: string;
+  readonly namespace?: string;
+  readonly selfLink?: string;
+  readonly kind: "repository" | "repo-creds" | "cluster";
+  readonly url?: string;
+  readonly type?: string;
+  readonly project?: string;
+  readonly title?: string;
+  readonly server?: string;
+  readonly namespaces?: string;
+}
+
+const shownSecretKeys = ["url", "type", "project", "name", "server", "namespaces"] as const;
+
+const decode = (value: string | undefined): string | undefined => {
+  if (!value) return undefined;
+
+  try {
+    return new TextDecoder().decode(Uint8Array.from(globalThis.atob(value), (char) => char.charCodeAt(0)));
+  } catch {
+    return undefined;
+  }
+};
+
+/** Reads the non-secret fields of a secret labelled `argocd.argoproj.io/secret-type`. */
+export const toArgoSecretFields = (secret: {
+  readonly metadata: GitOpsObject["metadata"];
+  readonly data?: Partial<Record<string, string>>;
+}): ArgoSecretFields | undefined => {
+  const kind = secret.metadata.labels?.["argocd.argoproj.io/secret-type"];
+
+  if (kind !== "repository" && kind !== "repo-creds" && kind !== "cluster") return undefined;
+
+  const fields: Partial<Record<(typeof shownSecretKeys)[number], string>> = {};
+
+  for (const key of shownSecretKeys) fields[key] = decode(secret.data?.[key]);
+
+  return {
+    name: secret.metadata.name,
+    namespace: secret.metadata.namespace,
+    selfLink: secret.metadata.selfLink,
+    kind,
+    url: fields.url,
+    type: fields.type,
+    project: fields.project,
+    title: fields.name,
+    server: fields.server,
+    namespaces: fields.namespaces,
+  };
+};
+
+const normalizeRepo = (url: string) => url.replace(/\.git\/?$/, "").replace(/\/$/, "");
+
+export interface GitOpsRepository {
+  readonly url: string;
+  /** git, helm or oci for Argo CD; the source kind for Flux. */
+  readonly type: string;
+  readonly tool: GitOpsTool;
+  /** Where ProLens learnt about it: a repository secret, a Flux source, or only an app's spec. */
+  readonly origin: "secret" | "credentials template" | "flux source" | "referenced";
+  readonly project?: string;
+  readonly name?: string;
+  readonly namespace?: string;
+  readonly selfLink?: string;
+  readonly ready?: boolean;
+  readonly message?: string;
+  readonly apps: readonly GitOpsApp[];
+}
+
+export interface FluxSourceLike {
+  readonly kind: string;
+  readonly namespace?: string;
+  readonly name: string;
+  readonly ready: boolean;
+  readonly message?: string;
+  readonly url?: string;
+  readonly selfLink?: string;
+}
+
+/** The repositories of the cluster: secrets, Flux sources, and those only referenced by Argo CD apps. */
+export const repositoriesOf = ({
+  secrets,
+  fluxSources,
+  apps,
+}: {
+  secrets: readonly ArgoSecretFields[];
+  fluxSources: readonly FluxSourceLike[];
+  apps: readonly GitOpsApp[];
+}): GitOpsRepository[] => {
+  const argoApps = apps.filter((app) => app.tool === "Argo CD");
+  const appsOf = (url: string) =>
+    argoApps.filter((app) => app.source.split(", ").some((source) => normalizeRepo(source) === normalizeRepo(url)));
+  const repositories: GitOpsRepository[] = [];
+  const known = new Set<string>();
+
+  for (const secret of secrets) {
+    if (secret.kind === "cluster" || !secret.url) continue;
+
+    known.add(normalizeRepo(secret.url));
+    repositories.push({
+      url: secret.url,
+      type: secret.type ?? "git",
+      tool: "Argo CD",
+      origin: secret.kind === "repo-creds" ? "credentials template" : "secret",
+      project: secret.project,
+      name: secret.title ?? secret.name,
+      namespace: secret.namespace,
+      selfLink: secret.selfLink,
+      apps:
+        secret.kind === "repo-creds"
+          ? argoApps.filter((app) => app.source.startsWith(secret.url as string))
+          : appsOf(secret.url),
+    });
+  }
+
+  for (const source of fluxSources) {
+    if (!source.url) continue;
+
+    repositories.push({
+      url: source.url,
+      type: source.kind,
+      tool: "Flux",
+      origin: "flux source",
+      name: source.name,
+      namespace: source.namespace,
+      selfLink: source.selfLink,
+      ready: source.ready,
+      message: source.message,
+      apps: apps.filter(
+        (app) => app.tool === "Flux" && app.source.endsWith(`${source.namespace ?? ""}/${source.name}`),
+      ),
+    });
+  }
+
+  for (const app of argoApps) {
+    for (const url of app.source.split(", ")) {
+      if (url === "—" || known.has(normalizeRepo(url))) continue;
+
+      known.add(normalizeRepo(url));
+      repositories.push({ url, type: "git", tool: "Argo CD", origin: "referenced", apps: appsOf(url) });
+    }
+  }
+
+  return repositories.sort((a, b) => a.url.localeCompare(b.url));
+};
+
+export const inClusterServer = "https://kubernetes.default.svc";
+
+export interface GitOpsCluster {
+  readonly name: string;
+  readonly server: string;
+  readonly origin: "secret" | "in-cluster" | "referenced";
+  readonly namespaces?: string;
+  readonly project?: string;
+  readonly secretName?: string;
+  readonly secretNamespace?: string;
+  readonly selfLink?: string;
+  readonly apps: readonly GitOpsApp[];
+}
+
+/** The destination clusters of Argo CD: the in-cluster one, cluster secrets, and destinations apps name. */
+export const clustersOf = ({
+  secrets,
+  apps,
+}: {
+  secrets: readonly ArgoSecretFields[];
+  apps: readonly GitOpsApp[];
+}): GitOpsCluster[] => {
+  const argoApps = apps.filter((app) => app.tool === "Argo CD");
+  const serverOf = (app: GitOpsApp) => app.destination?.split(" / ")[0];
+  const clusters: GitOpsCluster[] = [];
+  const seen = new Set<string>();
+
+  const add = (cluster: Omit<GitOpsCluster, "apps">) => {
+    if (seen.has(cluster.server) || seen.has(cluster.name)) return;
+
+    seen.add(cluster.server);
+    seen.add(cluster.name);
+    clusters.push({
+      ...cluster,
+      apps: argoApps.filter((app) => serverOf(app) === cluster.server || serverOf(app) === cluster.name),
+    });
+  };
+
+  for (const secret of secrets) {
+    if (secret.kind !== "cluster" || !secret.server) continue;
+
+    add({
+      name: secret.title ?? secret.name,
+      server: secret.server,
+      origin: "secret",
+      namespaces: secret.namespaces,
+      project: secret.project,
+      secretName: secret.name,
+      secretNamespace: secret.namespace,
+      selfLink: secret.selfLink,
+    });
+  }
+
+  if (argoApps.length > 0 || clusters.length > 0) {
+    add({ name: "in-cluster", server: inClusterServer, origin: "in-cluster" });
+  }
+
+  for (const app of argoApps) {
+    const server = serverOf(app);
+
+    if (server) add({ name: server, server, origin: "referenced" });
+  }
+
+  return clusters;
+};
+
+/** The namespaces an app lives in or deploys to, for the namespace filter. */
+export const namespacesOfApp = (app: GitOpsApp): string[] =>
+  [app.namespace, app.destination?.split(" / ")[1]].filter((namespace): namespace is string => Boolean(namespace));

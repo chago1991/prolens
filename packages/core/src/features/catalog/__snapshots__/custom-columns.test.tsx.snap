@@ -372,11 +372,6 @@ exports[`custom category columns for catalog > renders 1`] = `
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    0 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -421,6 +416,11 @@ exports[`custom category columns for catalog > renders 1`] = `
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    0 items
                   </div>
                 </div>
                 <div
@@ -1157,11 +1157,6 @@ exports[`custom category columns for catalog > when category is added using defa
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    0 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -1206,6 +1201,11 @@ exports[`custom category columns for catalog > when category is added using defa
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    0 items
                   </div>
                 </div>
                 <div
@@ -1942,11 +1942,6 @@ exports[`custom category columns for catalog > when category is added using defa
                     Test
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    0 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -1991,6 +1986,11 @@ exports[`custom category columns for catalog > when category is added using defa
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    0 items
                   </div>
                 </div>
                 <div
@@ -2717,11 +2717,6 @@ exports[`custom category columns for catalog > when category is added using defa
                     Test
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    0 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -2766,6 +2761,11 @@ exports[`custom category columns for catalog > when category is added using defa
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    0 items
                   </div>
                 </div>
                 <div
@@ -3478,11 +3478,6 @@ exports[`custom category columns for catalog > when category is added with custo
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    0 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -3527,6 +3522,11 @@ exports[`custom category columns for catalog > when category is added with custo
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    0 items
                   </div>
                 </div>
                 <div
@@ -4263,11 +4263,6 @@ exports[`custom category columns for catalog > when category is added with custo
                     Test
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    0 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -4312,6 +4307,11 @@ exports[`custom category columns for catalog > when category is added with custo
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    0 items
                   </div>
                 </div>
                 <div
@@ -4976,11 +4976,6 @@ exports[`custom category columns for catalog > when category is added without de
                     Browse All
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    0 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -5025,6 +5020,11 @@ exports[`custom category columns for catalog > when category is added without de
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    0 items
                   </div>
                 </div>
                 <div
@@ -5761,11 +5761,6 @@ exports[`custom category columns for catalog > when category is added without de
                     Test
                   </h5>
                   <div
-                    class="info-panel grow shrink-0 basis-0"
-                  >
-                    0 items
-                  </div>
-                  <div
                     style="display: flex; align-items: center; gap: 8px;"
                   >
                     <div
@@ -5810,6 +5805,11 @@ exports[`custom category columns for catalog > when category is added without de
                     <div>
                       Link search (shared)
                     </div>
+                  </div>
+                  <div
+                    class="info-panel grow shrink-0 basis-0"
+                  >
+                    0 items
                   </div>
                 </div>
                 <div

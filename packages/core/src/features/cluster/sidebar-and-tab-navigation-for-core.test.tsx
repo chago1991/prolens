@@ -79,10 +79,10 @@ describe("cluster - sidebar and tab navigation for core", () => {
         expect(parent?.dataset.isActiveTest).toBe("true");
       });
 
-      it("parent sidebar item is not expanded", () => {
+      it("parent sidebar item is expanded, so the selected child is in sight", () => {
         const child = rendered.queryByTestId("sidebar-item-some-child");
 
-        expect(child).toBeNull();
+        expect(child).not.toBeNull();
       });
 
       it("child page is shown", () => {
@@ -283,7 +283,8 @@ describe("cluster - sidebar and tab navigation for core", () => {
 
             expect(actual).toEqual({
               sidebar: {
-                expanded: { "sidebar-item-some-parent": true },
+                // The default page, Workloads > Overview, expanded Workloads.
+                expanded: { "sidebar-item-some-parent": true, "sidebar-item-workloads": true },
                 width: 200,
               },
             });

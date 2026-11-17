@@ -7,25 +7,27 @@ import { getInjectable } from "@ogre-tools/injectable";
 import { computed } from "mobx";
 import apiManagerInjectable from "../../../common/k8s-api/api-manager/manager.injectable";
 import customResourceDefinitionStoreInjectable from "../../../renderer/components/custom-resource-definitions/store.injectable";
-import { gitOpsKinds, toGitOpsApp } from "./gitops-model";
+import { gitOpsKinds, toGitOpsApp, toGitOpsAppSet, toGitOpsProject } from "./gitops-model";
 
 import type { KubeObject } from "@freelensapp/kube-object";
 
 import type { IComputedValue } from "mobx";
 
 import type { KubeObjectStore } from "../../../common/k8s-api/kube-object.store";
-import type { GitOpsApp, GitOpsObject, GitOpsTool, ManagedResource } from "./gitops-model";
+import type {
+  FluxSourceLike,
+  GitOpsApp,
+  GitOpsAppSet,
+  GitOpsObject,
+  GitOpsProject,
+  GitOpsTool,
+  ManagedResource,
+} from "./gitops-model";
 
 type AnyStore = KubeObjectStore<KubeObject, any, any>;
 
-export interface FluxSource {
-  readonly kind: string;
-  readonly namespace?: string;
-  readonly name: string;
-  readonly ready: boolean;
+export interface FluxSource extends FluxSourceLike {
   readonly revision?: string;
-  readonly message?: string;
-  readonly url?: string;
 }
 
 export interface GitOpsSource {
@@ -34,6 +36,10 @@ export interface GitOpsSource {
   readonly stores: IComputedValue<AnyStore[]>;
   readonly apps: IComputedValue<GitOpsApp[]>;
   readonly fluxSources: IComputedValue<FluxSource[]>;
+  /** Argo CD ApplicationSets, with the apps they generated. */
+  readonly appSets: IComputedValue<GitOpsAppSet[]>;
+  /** Argo CD AppProjects, with their apps. */
+  readonly projects: IComputedValue<GitOpsProject[]>;
   readonly loading: IComputedValue<boolean>;
   /** The store an app's resource is kept in, to patch it. */
   storeOf(app: GitOpsApp): AnyStore | undefined;
@@ -61,6 +67,14 @@ const gitOpsSourceInjectable = getInjectable({
     );
     const objects = computed(() => stores.get().flatMap((store) => store.items as unknown as GitOpsObject[]));
 
+    const apps = computed(() =>
+      objects
+        .get()
+        .map(toGitOpsApp)
+        .filter((app): app is GitOpsApp => Boolean(app))
+        .sort((a, b) => a.name.localeCompare(b.name)),
+    );
+
     return {
       tools: computed(() => {
         const groups = new Set(definitions.get().map((crd) => crd.getGroup()));
@@ -72,11 +86,19 @@ const gitOpsSourceInjectable = getInjectable({
         return tools;
       }),
       stores,
-      apps: computed(() =>
+      apps,
+      appSets: computed(() =>
         objects
           .get()
-          .map(toGitOpsApp)
-          .filter((app): app is GitOpsApp => Boolean(app))
+          .map((object) => toGitOpsAppSet(object, apps.get()))
+          .filter((appSet): appSet is GitOpsAppSet => Boolean(appSet))
+          .sort((a, b) => a.name.localeCompare(b.name)),
+      ),
+      projects: computed(() =>
+        objects
+          .get()
+          .map((object) => toGitOpsProject(object, apps.get()))
+          .filter((project): project is GitOpsProject => Boolean(project))
           .sort((a, b) => a.name.localeCompare(b.name)),
       ),
       fluxSources: computed(() =>
@@ -94,6 +116,7 @@ const gitOpsSourceInjectable = getInjectable({
               kind: object.kind,
               namespace: object.metadata.namespace,
               name: object.metadata.name,
+              selfLink: object.metadata.selfLink,
               ready: ready?.status === "True",
               revision: status.artifact?.revision,
               message: ready?.status === "True" ? undefined : ready?.message,

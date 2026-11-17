@@ -17,8 +17,10 @@
       color: var(--textColorTertiary);
     }
 
+    // The namespace selector and the search sit next to the title; the
+    // item count fills the rest of the row, aligned to its end.
     .info-panel {
-      text-align: center;
+      text-align: right;
       white-space: nowrap;
     }
 

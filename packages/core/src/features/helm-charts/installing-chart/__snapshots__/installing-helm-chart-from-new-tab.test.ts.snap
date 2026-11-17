@@ -145,7 +145,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-workloads"
               >
@@ -228,12 +228,59 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/workloads"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -868,12 +915,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts/some-repository/some-name"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -962,7 +1055,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -1051,12 +1144,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts/some-repository/some-name"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts/some-repository/some-name"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -1988,12 +2170,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -2082,7 +2310,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -2171,12 +2399,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -2987,12 +3304,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -3081,7 +3444,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -3170,12 +3533,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -4245,12 +4697,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -4339,7 +4837,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -4428,12 +4926,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -5472,12 +6059,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -5566,7 +6199,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -5655,12 +6288,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -6694,12 +7416,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -6788,7 +7556,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -6877,12 +7645,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -7916,12 +8773,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -8010,7 +8913,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -8099,12 +9002,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -9160,12 +10152,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -9254,7 +10292,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -9343,12 +10381,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -10418,12 +11545,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -10512,7 +11685,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -10601,12 +11774,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -11640,12 +12902,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -11734,7 +13042,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -11823,12 +13131,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -12917,12 +14314,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -13011,7 +14454,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -13100,12 +14543,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -13996,12 +15528,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/releases/default/some-release"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -14090,7 +15668,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -14179,12 +15757,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/releases/default/some-release"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/releases/default/some-release"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -14277,11 +15944,6 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                 >
                   Releases
                 </h5>
-                <div
-                  class="info-panel grow shrink-0 basis-0"
-                >
-                  0 items
-                </div>
                 <div
                   class="NamespaceSelectFilterParent"
                   data-testid="namespace-select-filter"
@@ -14408,6 +16070,11 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   <div>
                     Link search (shared)
                   </div>
+                </div>
+                <div
+                  class="info-panel grow shrink-0 basis-0"
+                >
+                  0 items
                 </div>
               </div>
               <div
@@ -15023,12 +16690,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -15117,7 +16830,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -15206,12 +16919,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -16115,12 +17917,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts/some-repository/some-other-name"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -16209,7 +18057,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -16298,12 +18146,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts/some-repository/some-other-name"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts/some-repository/some-other-name"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -17549,12 +19486,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -17643,7 +19626,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -17732,12 +19715,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -18600,12 +20672,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -18694,7 +20812,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -18783,12 +20901,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -19876,12 +22083,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -19970,7 +22223,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -20059,12 +22312,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -21150,12 +23492,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -21244,7 +23632,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -21333,12 +23721,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -22372,12 +24849,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -22466,7 +24989,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -22555,12 +25078,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -23594,12 +26206,58 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-workloads"
+                    data-testid="sidebar-item-workloads-overview"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-workloads-overview"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Overview
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-workloads-overview"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -23688,7 +26346,7 @@ exports[`installing helm chart from new tab > given tab for installing chart was
               tabindex="0"
             >
               <div
-                class="SidebarItem"
+                class="SidebarItem containsActive"
                 data-is-active-test="true"
                 data-testid="sidebar-item-helm"
               >
@@ -23777,12 +26435,101 @@ exports[`installing helm chart from new tab > given tab for installing chart was
                   >
                     <span
                       class="icon"
-                      data-icon-name="keyboard_arrow_down"
+                      data-icon-name="keyboard_arrow_up"
                     >
-                      keyboard_arrow_down
+                      keyboard_arrow_up
                     </span>
                   </i>
                 </a>
+                <div
+                  class="subMenu"
+                >
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="true"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-charts"
+                  >
+                    <a
+                      aria-current="page"
+                      class="navItem active"
+                      data-testid="link-for-sidebar-item-helm-charts"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Charts
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-charts"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                  <div
+                    class="SidebarItem"
+                    data-is-active-test="false"
+                    data-parent-id-test="sidebar-item-helm"
+                    data-testid="sidebar-item-helm-releases"
+                  >
+                    <a
+                      class="navItem"
+                      data-testid="link-for-sidebar-item-helm-releases"
+                      href="/helm/charts"
+                    >
+                      <span>
+                        Releases
+                      </span>
+                      <i
+                        class="Icon pinIcon svg interactive focusable"
+                        data-testid="pin-icon-for-sidebar-item-helm-releases"
+                        style="--size: 16px;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="icon"
+                        >
+                          <svg
+                            enable-background="new 0 0 193.826 193.826"
+                            viewBox="0 0 193.826 193.826"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            
+  
+                            <path
+                              d="m191.495 55.511-54.046-54.046c-1.951-1.953-5.119-1.953-7.07 0l-.229.229c-3.314 3.313-5.14 7.72-5.14 12.406 0 3.019.767 5.916 2.192 8.485l-56.55 48.533c-4.328-3.868-9.852-5.985-15.703-5.985-6.305 0-12.232 2.455-16.689 6.913l-.339.339c-1.953 1.952-1.953 5.118 0 7.07l32.378 32.378-31.534 31.533c-.631.649-15.557 16.03-25.37 28.27-9.345 11.653-11.193 13.788-11.289 13.898-1.735 1.976-1.639 4.956.218 6.822.973.977 2.256 1.471 3.543 1.471 1.173 0 2.349-.41 3.295-1.237.083-.072 2.169-1.885 13.898-11.289 12.238-9.813 27.619-24.74 28.318-25.421l31.483-31.483 30.644 30.644c.976.977 2.256 1.465 3.535 1.465s2.56-.488 3.535-1.465l.339-.339c4.458-4.457 6.913-10.385 6.913-16.689 0-5.851-2.118-11.375-5.985-15.703l48.533-56.55c2.569 1.425 5.466 2.192 8.485 2.192 4.687 0 9.093-1.825 12.406-5.14l.229-.229c1.953-1.954 1.953-5.12 0-7.072z"
+                            />
+                            
+
+                          </svg>
+                          
+
+                        </span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div

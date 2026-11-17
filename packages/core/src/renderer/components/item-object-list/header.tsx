@@ -84,9 +84,9 @@ export class ItemListLayoutHeader<I extends ItemObject, PreLoadStores extends bo
     return (
       <div className={cssNames("header flex gap-4 items-center", headerClassName)}>
         {title}
-        {info && <div className="info-panel grow shrink-0 basis-0">{info}</div>}
         {filters}
         {searchFilters.length > 0 && searchProps && <SearchInputUrl {...searchProps} />}
+        {info && <div className="info-panel grow shrink-0 basis-0">{info}</div>}
       </div>
     );
   }

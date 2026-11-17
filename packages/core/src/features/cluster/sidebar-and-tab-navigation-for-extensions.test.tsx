@@ -154,10 +154,10 @@ describe("cluster - sidebar and tab navigation for extensions", () => {
         expect(parent?.dataset.isActiveTest).toBe("true");
       });
 
-      it("parent sidebar item is not expanded", () => {
+      it("parent sidebar item is expanded, so the selected child is in sight", () => {
         const child = rendered.queryByTestId("sidebar-item-some-extension-name-some-child-id");
 
-        expect(child).toBeNull();
+        expect(child).not.toBeNull();
       });
 
       it("child page is shown", () => {
@@ -379,7 +379,11 @@ describe("cluster - sidebar and tab navigation for extensions", () => {
 
             expect(actual).toEqual({
               sidebar: {
-                expanded: { "sidebar-item-some-extension-name-some-parent-id": true },
+                // The default page, Workloads > Overview, expanded Workloads.
+                expanded: {
+                  "sidebar-item-some-extension-name-some-parent-id": true,
+                  "sidebar-item-workloads": true,
+                },
                 width: 200,
               },
             });
@@ -530,10 +534,10 @@ describe("cluster - sidebar and tab navigation for extensions", () => {
         expect(parent?.dataset.isActiveTest).toBe("true");
       });
 
-      it("parent sidebar item is not expanded", () => {
+      it("parent sidebar item is expanded, so the selected child is in sight", () => {
         const child = rendered.queryByTestId("sidebar-item-some-extension-name-some-child-id");
 
-        expect(child).toBeNull();
+        expect(child).not.toBeNull();
       });
 
       it("child page is shown", () => {
