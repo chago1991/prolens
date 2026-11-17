@@ -1,40 +1,45 @@
-# ProLens v1.2.0
+# ProLens v1.3.0
 
-ProLens 1.2 adds a GitOps view for Argo CD and Flux, and shortens the life of
-AI assistant sessions.
+ProLens 1.3 turns GitOps into a full section of the sidebar, in the layout of
+Argo CD, and makes the current page and the list filters easier to find.
 
 ## Highlights
 
 ### GitOps
 
-- **GitOps** appears in the cluster sidebar when Argo CD or Flux is
-  installed. It lists Argo CD Applications and Flux Kustomizations and
-  HelmReleases with their sync state and health, and filters those that need
-  attention.
-- An app shows its managed resources (linked to their details), the ones
-  that drifted from git or are unhealthy, its history and its source.
-- Sync, refresh, reconcile, suspend and resume, and Argo CD rollback to an
-  earlier revision, each after confirmation. ProLens changes only the app's
-  own resource, as `argocd` and `flux` do; the controllers do the rest.
-- Revisions on GitHub, GitLab and Bitbucket link to a comparison in git.
+- **GitOps** in the cluster sidebar now expands into **Dashboard**,
+  **Applications**, **Application Sets**, **Projects** and **Settings**, with
+  **Repositories** and **Clusters** under it. Pages that apply to Argo CD
+  only are shown when Argo CD is installed.
+- The dashboard counts apps by sync and health state, and lists the apps that
+  need attention and the latest syncs.
+- Application sets and projects list the apps they hold; repositories and
+  clusters list the apps that use them. Repositories include Flux sources and
+  repositories apps name without a secret.
+- Argo CD repository and cluster secrets are read for their URL, type,
+  project and server only; credentials are never decoded. Without permission
+  to list secrets, the pages show what the apps reference.
+- Every page filters by namespace and searches from the left of its toolbar.
 
-### AI assistants
+### Navigation
 
-- The session of an assistant ends when its terminal tab is closed, and after
-  two hours at the latest. The token file is deleted as soon as it is read.
+- Resource lists such as Pods show the namespace selector and the search next
+  to their title.
+- Opening a page expands its group in the sidebar, scrolls to it, and
+  outlines it, so the current page is always visible.
 
 ## Downloads
 
 | Platform             | Files                                                            |
 | -------------------- | ---------------------------------------------------------------- |
-| macOS, Apple silicon | `ProLens-1.2.0-macos-arm64.dmg`, `ProLens-1.2.0-macos-arm64.zip` |
-| macOS, Intel         | `ProLens-1.2.0-macos-x64.dmg`, `ProLens-1.2.0-macos-x64.zip`     |
-| Windows, x64         | `ProLens-1.2.0-windows-x64.exe` (installer)                      |
-| Windows, ARM64       | `ProLens-1.2.0-windows-arm64.exe` (installer)                    |
-| Linux, x86_64        | `ProLens-1.2.0-linux-x64.AppImage`, `.deb`, `.rpm`               |
-| Linux, ARM64         | `ProLens-1.2.0-linux-arm64.AppImage`, `.deb`, `.rpm`             |
+| macOS, Apple silicon | `ProLens-1.3.0-macos-arm64.dmg`, `ProLens-1.3.0-macos-arm64.zip` |
+| macOS, Intel         | `ProLens-1.3.0-macos-x64.dmg`, `ProLens-1.3.0-macos-x64.zip`     |
+| Windows, x64         | `ProLens-1.3.0-windows-x64.exe` (installer)                      |
+| Windows, ARM64       | `ProLens-1.3.0-windows-arm64.exe` (installer)                    |
+| Linux, x86_64        | `ProLens-1.3.0-linux-x64.AppImage`, `.deb`, `.rpm`               |
+| Linux, ARM64         | `ProLens-1.3.0-linux-arm64.AppImage`, `.deb`, `.rpm`             |
 
-`ProLens-1.2.0-SHA256SUMS.txt` lists the SHA-256 of every file.
+`ProLens-1.3.0-SHA256SUMS.txt` lists the SHA-256 of every file.
 
 ## Installing
 
@@ -49,7 +54,7 @@ warns before the first start:
 - **Windows:** in the SmartScreen dialog, choose **More info**, then
   **Run anyway**.
 - **Linux:** packages are not signed; compare their checksums with
-  `ProLens-1.2.0-SHA256SUMS.txt`.
+  `ProLens-1.3.0-SHA256SUMS.txt`.
 
 ## Requirements
 

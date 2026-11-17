@@ -8,6 +8,24 @@ The version of the extension API is separate from the application version: it
 follows Freelens, so that extensions written for Freelens keep working (see
 `docs/prolens/releasing.md`).
 
+## [1.3.0] - 2026-11-17
+
+### Added
+
+- GitOps is a group in the cluster sidebar with a page each for the
+  dashboard, applications, application sets, projects, and, under Settings,
+  repositories and clusters. The dashboard counts apps by state and lists
+  those that need attention and the latest syncs. Argo CD repository and
+  cluster secrets are read for their URL, type, project and server only.
+- GitOps pages filter by namespace and search from the left of their toolbar.
+
+### Changed
+
+- Resource lists show the namespace selector and the search next to their
+  title, and the item count at the end of the row.
+- The sidebar expands the group of the page that is open, scrolls to its
+  item, and outlines it, so the current page is always in sight.
+
 ## [1.2.0] - 2026-11-16
 
 ### Added
@@ -96,6 +114,7 @@ First release of ProLens, forked from Freelens at commit `2547f555`.
 - The Freelens APT repository configuration and its publishing workflow.
 - The Freelens release workflow, replaced by the ProLens one.
 
+[1.3.0]: https://github.com/chago1991/prolens/releases/tag/v1.3.0
 [1.2.0]: https://github.com/chago1991/prolens/releases/tag/v1.2.0
 [1.1.0]: https://github.com/chago1991/prolens/releases/tag/v1.1.0
 [1.0.0]: https://github.com/chago1991/prolens/releases/tag/v1.0.0
