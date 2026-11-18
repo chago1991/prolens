@@ -8,6 +8,36 @@ The version of the extension API is separate from the application version: it
 follows Freelens, so that extensions written for Freelens keep working (see
 `docs/prolens/releasing.md`).
 
+## [1.4.0] - 2026-11-18
+
+### Added
+
+- Gateway API is a group under Network in the cluster sidebar, with an
+  overview and pages for gateway classes, gateways, HTTP, gRPC, TCP, TLS and
+  UDP routes, reference grants, backend TLS policies and listener sets. A page
+  is shown only when API discovery serves the resource, its definition is
+  established, and RBAC allows listing it. Versions come from discovery, the
+  experimental `XListenerSet` included.
+- The overview shows the state, version and channel of every Gateway API
+  resource and the controllers of the cluster, with installation guidance
+  when the CRDs are missing.
+- Detail views for every Gateway API kind: listeners and their status,
+  attached routes, parent gateways and the listeners a route attaches to,
+  matches, filters, weighted backends, timeouts, reference grants and backend
+  TLS policies, with missing backends and cross-namespace references without
+  a ReferenceGrant flagged.
+- Visual editors for the listeners of gateways and listener sets and for the
+  hostnames and rules of HTTP routes. Changes are validated, checked against
+  RBAC, confirmed, and applied as a merge patch carrying the resource version;
+  targets that look like production require the object name to be typed.
+- Creating a Gateway API resource opens a template in the version the
+  cluster serves.
+- A Gateway API topology: GatewayClass, Gateway, listener, route, Service,
+  EndpointSlice and Pod, with backend weights, rejected routes and
+  unresolved references highlighted, and live refresh.
+- When Cilium is the Gateway API controller, gateways show its load balancer
+  Service, CiliumEnvoyConfig, Hubble Relay and Hubble UI.
+
 ## [1.3.0] - 2026-11-17
 
 ### Added
