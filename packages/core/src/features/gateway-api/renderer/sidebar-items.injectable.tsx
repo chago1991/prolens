@@ -10,6 +10,7 @@ import { computed } from "mobx";
 import networkSidebarItemInjectable from "../../../renderer/components/network/network-sidebar-item.injectable";
 import routeIsActiveInjectable from "../../../renderer/routes/route-is-active.injectable";
 import routePathParametersInjectable from "../../../renderer/routes/route-path-parameters.injectable";
+import storesAndApisCanBeCreatedInjectable from "../../../renderer/stores-apis-can-be-created.injectable";
 import { gatewayApiKinds } from "../common/kinds";
 import {
   navigateToGatewayApiOverviewInjectable,
@@ -30,6 +31,23 @@ import type { DiContainerForInjection } from "@ogre-tools/injectable";
 import type { GatewayApiResourceId } from "../common/kinds";
 
 export const gatewayApiSidebarItemId = "sidebar-item-gateway-api";
+
+/**
+ * Whether any of the resources is supported. Sidebar items are also read
+ * outside cluster frames, by the command palette, where stores cannot be
+ * created, so the Gateway API source is injected only inside a cluster frame.
+ */
+const anySupported = (di: DiContainerForInjection, ids: readonly GatewayApiResourceId[]) => {
+  const inClusterFrame = di.inject(storesAndApisCanBeCreatedInjectable);
+
+  return computed(() => {
+    if (!inClusterFrame) return false;
+
+    const gatewayApi = di.inject(gatewayApiInjectable);
+
+    return ids.some((id) => gatewayApi.isSupported(id));
+  });
+};
 
 /** The collapsible "Gateway API" section under Network. */
 export const gatewayApiSidebarItemInjectable = getInjectable({
@@ -58,14 +76,12 @@ export const gatewayApiOverviewSidebarItemInjectable = getInjectable({
 export const gatewayApiTopologySidebarItemInjectable = getInjectable({
   id: "sidebar-item-gateway-api-topology",
   instantiate: (di): SidebarItemRegistration => {
-    const gatewayApi = di.inject(gatewayApiInjectable);
-
     return {
       parentId: gatewayApiSidebarItemId,
       title: "Topology",
       onClick: () => di.inject(navigateToGatewayApiTopologyInjectable)(),
       isActive: di.inject(routeIsActiveInjectable, di.inject(gatewayApiTopologyRouteInjectable)),
-      isVisible: computed(() => gatewayApi.isSupported("gateways") || gatewayApi.isSupported("gatewayclasses")),
+      isVisible: anySupported(di, ["gateways", "gatewayclasses"]),
       orderNumber: 2,
     };
   },
@@ -79,7 +95,6 @@ const resourceSidebarItem = (id: GatewayApiResourceId) => {
   return getInjectable({
     id: `sidebar-item-gateway-api-${id}`,
     instantiate: (di: DiContainerForInjection): SidebarItemRegistration => {
-      const gatewayApi = di.inject(gatewayApiInjectable);
       const route = di.inject(gatewayApiResourcesRouteInjectable);
       const pathParameters = di.inject(routePathParametersInjectable, route);
       const navigate = di.inject(navigateToGatewayApiResourcesInjectable);
@@ -92,7 +107,7 @@ const resourceSidebarItem = (id: GatewayApiResourceId) => {
           di.inject(routeIsActiveInjectable, route),
           computed(() => pathParameters.get().resource === id),
         ),
-        isVisible: computed(() => gatewayApi.isSupported(id)),
+        isVisible: anySupported(di, [id]),
         orderNumber: 10 + index,
       };
     },
