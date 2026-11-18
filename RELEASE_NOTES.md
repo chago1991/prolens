@@ -1,45 +1,51 @@
-# ProLens v1.3.0
+# ProLens v1.4.0
 
-ProLens 1.3 turns GitOps into a full section of the sidebar, in the layout of
-Argo CD, and makes the current page and the list filters easier to find.
+ProLens 1.4 adds Kubernetes Gateway API support: every Gateway API resource
+the cluster serves, visual editors for listeners and HTTP routing, and a
+topology of the traffic path from the gateway class to the pods.
 
 ## Highlights
 
-### GitOps
+### Gateway API
 
-- **GitOps** in the cluster sidebar now expands into **Dashboard**,
-  **Applications**, **Application Sets**, **Projects** and **Settings**, with
-  **Repositories** and **Clusters** under it. Pages that apply to Argo CD
-  only are shown when Argo CD is installed.
-- The dashboard counts apps by sync and health state, and lists the apps that
-  need attention and the latest syncs.
-- Application sets and projects list the apps they hold; repositories and
-  clusters list the apps that use them. Repositories include Flux sources and
-  repositories apps name without a secret.
-- Argo CD repository and cluster secrets are read for their URL, type,
-  project and server only; credentials are never decoded. Without permission
-  to list secrets, the pages show what the apps reference.
-- Every page filters by namespace and searches from the left of its toolbar.
+- **Network → Gateway API** in the cluster sidebar holds an **Overview**, a
+  **Topology** and a page for each resource: **Gateway Classes**,
+  **Gateways**, **HTTP Routes**, **GRPC Routes**, **TCP Routes**,
+  **TLS Routes**, **UDP Routes**, **Reference Grants**,
+  **Backend TLS Policies** and **Listener Sets**.
+- A page is shown only when the cluster serves the resource and you may list
+  it. Versions come from API discovery, standard and experimental channels
+  alike. Without the CRDs, the overview explains how to install them.
+- Details show listeners and their status, attached routes, parents and the
+  listeners a route attaches to, matches, filters, weighted backends and
+  timeouts, and flag missing backends, rejected routes and cross-namespace
+  references without a ReferenceGrant.
+- Listeners of gateways and listener sets, and the hostnames and rules of HTTP
+  routes, can be edited visually. Changes are validated and checked against
+  RBAC before they are applied, and resources that look like production ask
+  for their name to be typed.
+- The **Topology** draws GatewayClass → Gateway → Listener → Route → Service
+  → EndpointSlice → Pod, with backend weights and problems highlighted, and
+  follows changes in the cluster.
 
-### Navigation
+### Cilium
 
-- Resource lists such as Pods show the namespace selector and the search next
-  to their title.
-- Opening a page expands its group in the sidebar, scrolls to it, and
-  outlines it, so the current page is always visible.
+- When Cilium is the Gateway API controller, a gateway shows its load
+  balancer Service, CiliumEnvoyConfig, and the Hubble Relay and Hubble UI of
+  the cluster.
 
 ## Downloads
 
 | Platform             | Files                                                            |
 | -------------------- | ---------------------------------------------------------------- |
-| macOS, Apple silicon | `ProLens-1.3.0-macos-arm64.dmg`, `ProLens-1.3.0-macos-arm64.zip` |
-| macOS, Intel         | `ProLens-1.3.0-macos-x64.dmg`, `ProLens-1.3.0-macos-x64.zip`     |
-| Windows, x64         | `ProLens-1.3.0-windows-x64.exe` (installer)                      |
-| Windows, ARM64       | `ProLens-1.3.0-windows-arm64.exe` (installer)                    |
-| Linux, x86_64        | `ProLens-1.3.0-linux-x64.AppImage`, `.deb`, `.rpm`               |
-| Linux, ARM64         | `ProLens-1.3.0-linux-arm64.AppImage`, `.deb`, `.rpm`             |
+| macOS, Apple silicon | `ProLens-1.4.0-macos-arm64.dmg`, `ProLens-1.4.0-macos-arm64.zip` |
+| macOS, Intel         | `ProLens-1.4.0-macos-x64.dmg`, `ProLens-1.4.0-macos-x64.zip`     |
+| Windows, x64         | `ProLens-1.4.0-windows-x64.exe` (installer)                      |
+| Windows, ARM64       | `ProLens-1.4.0-windows-arm64.exe` (installer)                    |
+| Linux, x86_64        | `ProLens-1.4.0-linux-x64.AppImage`, `.deb`, `.rpm`               |
+| Linux, ARM64         | `ProLens-1.4.0-linux-arm64.AppImage`, `.deb`, `.rpm`             |
 
-`ProLens-1.3.0-SHA256SUMS.txt` lists the SHA-256 of every file.
+`ProLens-1.4.0-SHA256SUMS.txt` lists the SHA-256 of every file.
 
 ## Installing
 
@@ -54,7 +60,7 @@ warns before the first start:
 - **Windows:** in the SmartScreen dialog, choose **More info**, then
   **Run anyway**.
 - **Linux:** packages are not signed; compare their checksums with
-  `ProLens-1.3.0-SHA256SUMS.txt`.
+  `ProLens-1.4.0-SHA256SUMS.txt`.
 
 ## Requirements
 

@@ -64,6 +64,11 @@
   <icon type="stock">prolens</icon>
   <content_rating type="oars-1.1"></content_rating>
   <releases>
+    <release version="1.4.0" date="2026-11-18">
+      <description translatable="no">
+        <p>Kubernetes Gateway API support: Gateway API section under Network with gateway classes, gateways, HTTP, gRPC, TCP, TLS and UDP routes, reference grants, backend TLS policies and listener sets; visual listener and HTTP routing editors; Gateway API topology; Cilium integration.</p>
+      </description>
+    </release>
     <release version="1.3.0" date="2026-11-17">
       <description translatable="no">
         <p>GitOps section with dashboard, applications, application sets, projects, repositories and clusters; namespace and search beside list titles; the current page highlighted in the sidebar.</p>
