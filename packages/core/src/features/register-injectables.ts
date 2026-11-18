@@ -12,6 +12,7 @@ import { registerInjectables as registerClusterInjectables } from "./cluster/reg
 import { registerInjectables as registerExtensionCredentialsInjectables } from "./extension-credentials/register-injectables";
 import { registerInjectables as registerExtensionsInjectables } from "./extensions/register-injectables";
 import { registerInjectables as registerFavoritesInjectables } from "./favorites/register-injectables";
+import { registerInjectables as registerGatewayApiInjectables } from "./gateway-api/register-injectables";
 import { registerInjectables as registerGitopsInjectables } from "./gitops/register-injectables";
 import { registerInjectables as registerHotbarInjectables } from "./hotbar/register-injectables";
 import { registerInjectables as registerLicensesInjectables } from "./licenses/register-injectables";
@@ -51,6 +52,11 @@ export function registerInjectables(di: DiContainerForInjection): void {
   }
   try {
     registerFavoritesInjectables(di);
+  } catch (e) {
+    /* Ignore duplicate registration */
+  }
+  try {
+    registerGatewayApiInjectables(di);
   } catch (e) {
     /* Ignore duplicate registration */
   }
