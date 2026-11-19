@@ -6,8 +6,10 @@
  * This replaces the webpack-based auto-registration system.
  */
 
+import nodeBpfTraceMenuInjectable from "./node-bpf-trace-menu.injectable";
 import NodeMenuInjectable from "./node-menu.injectable";
 import podAttachMenuInjectable from "./pod-attach-menu.injectable";
+import podBpfTraceMenuInjectable from "./pod-bpf-trace-menu.injectable";
 import PodLogsMenuInjectable from "./pod-logs-menu.injectable";
 import PodShellMenuInjectable from "./pod-shell-menu.injectable";
 
@@ -30,7 +32,17 @@ export function registerInjectables(di: DiContainerForInjection): void {
     /* Ignore duplicate registration */
   }
   try {
+    di.register(nodeBpfTraceMenuInjectable);
+  } catch (e) {
+    /* Ignore duplicate registration */
+  }
+  try {
     di.register(podAttachMenuInjectable);
+  } catch (e) {
+    /* Ignore duplicate registration */
+  }
+  try {
+    di.register(podBpfTraceMenuInjectable);
   } catch (e) {
     /* Ignore duplicate registration */
   }

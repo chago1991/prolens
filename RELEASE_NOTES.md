@@ -1,40 +1,39 @@
-# ProLens v1.5.0
+# ProLens v1.6.0
 
-ProLens 1.5 keeps several clusters at hand in tabs, lets you arrange the
-columns of every resource list, and adds a create button to all of them.
+ProLens 1.6 brings eBPF tracing to nodes and pods: pick a trace from the
+context menu and watch its output stream into a terminal tab.
 
 ## Highlights
 
-### Cluster tabs
+### BPF Trace
 
-- Every cluster you open gets a tab at the top of the window, labelled with
-  the page open in it, such as **Pods - my-cluster**, with a dot that shows
-  whether it is connected. The **Welcome** tab leads back to the catalog.
-- Click a tab to switch clusters. Closing a tab, with **×** or a middle click,
-  hides the cluster without disconnecting it.
-
-### Resource lists
-
-- Drag a column header onto another to move the column. The order is kept for
-  each table; **Reset column order** in the column menu restores the default.
-- The round **+** button in the corner of every resource list opens the
-  **Create resource** editor with a manifest for that kind, in the selected
-  namespace.
-- Rows have a faint separator, links are underlined, and the container status
-  of a restarted container is no longer outlined in orange.
+- The context menu of a Linux node, and of a pod with a running container, has
+  a **BPF Trace** sub-menu. Each entry runs
+  [bpftrace](https://github.com/bpftrace/bpftrace) on the node through the
+  [kubectl-trace](https://github.com/iovisor/kubectl-trace) plugin and streams
+  the output into a new terminal tab; Ctrl-C stops it and prints the summary.
+- Node traces: new processes, opened files, outbound TCP connections, system
+  calls per process and a histogram of disk I/O sizes.
+- Pod traces follow the main process of the default container: the processes
+  it starts, the files it opens, its TCP connections and its system calls.
+- **Custom program…** puts the command on the prompt for you to write your own
+  program; **List trace runs** shows the trace jobs in the cluster.
+- Needs the plugin (`kubectl krew install trace`) and a namespace in the
+  kubeconfig context that admits privileged pods. See
+  `docs/prolens/bpf-trace.md`.
 
 ## Downloads
 
 | Platform             | Files                                                            |
 | -------------------- | ---------------------------------------------------------------- |
-| macOS, Apple silicon | `ProLens-1.5.0-macos-arm64.dmg`, `ProLens-1.5.0-macos-arm64.zip` |
-| macOS, Intel         | `ProLens-1.5.0-macos-x64.dmg`, `ProLens-1.5.0-macos-x64.zip`     |
-| Windows, x64         | `ProLens-1.5.0-windows-x64.exe` (installer)                      |
-| Windows, ARM64       | `ProLens-1.5.0-windows-arm64.exe` (installer)                    |
-| Linux, x86_64        | `ProLens-1.5.0-linux-x64.AppImage`, `.deb`, `.rpm`               |
-| Linux, ARM64         | `ProLens-1.5.0-linux-arm64.AppImage`, `.deb`, `.rpm`             |
+| macOS, Apple silicon | `ProLens-1.6.0-macos-arm64.dmg`, `ProLens-1.6.0-macos-arm64.zip` |
+| macOS, Intel         | `ProLens-1.6.0-macos-x64.dmg`, `ProLens-1.6.0-macos-x64.zip`     |
+| Windows, x64         | `ProLens-1.6.0-windows-x64.exe` (installer)                      |
+| Windows, ARM64       | `ProLens-1.6.0-windows-arm64.exe` (installer)                    |
+| Linux, x86_64        | `ProLens-1.6.0-linux-x64.AppImage`, `.deb`, `.rpm`               |
+| Linux, ARM64         | `ProLens-1.6.0-linux-arm64.AppImage`, `.deb`, `.rpm`             |
 
-`ProLens-1.5.0-SHA256SUMS.txt` lists the SHA-256 of every file.
+`ProLens-1.6.0-SHA256SUMS.txt` lists the SHA-256 of every file.
 
 ## Installing
 
@@ -49,7 +48,7 @@ warns before the first start:
 - **Windows:** in the SmartScreen dialog, choose **More info**, then
   **Run anyway**.
 - **Linux:** packages are not signed; compare their checksums with
-  `ProLens-1.5.0-SHA256SUMS.txt`.
+  `ProLens-1.6.0-SHA256SUMS.txt`.
 
 ## Requirements
 
