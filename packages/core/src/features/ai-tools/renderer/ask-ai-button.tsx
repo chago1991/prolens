@@ -15,6 +15,8 @@ export interface AskAiButtonProps {
   getRequest: () => AskAiRequest;
   label?: string;
   className?: string;
+  /** Called after the Ask AI dialog was asked to open. */
+  onAsked?: () => void;
   "data-testid"?: string;
 }
 
@@ -26,13 +28,17 @@ const NonInjectedAskAiButton = ({
   getRequest,
   label = "Ask AI",
   className,
+  onAsked,
   openAskAi,
   ...rest
 }: AskAiButtonProps & Dependencies) => (
   <button
     type="button"
     className={className ? `${styles.button} ${className}` : styles.button}
-    onClick={() => void openAskAi(getRequest())}
+    onClick={() => {
+      void openAskAi(getRequest());
+      onAsked?.();
+    }}
     data-testid={rest["data-testid"] ?? "ask-ai-button"}
   >
     <span className={styles.sparkle} aria-hidden="true">

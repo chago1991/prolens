@@ -8,6 +8,7 @@ import {
   aiSafetyInstructions,
   buildAiPrompt,
   defaultPresetFor,
+  formatDiagnostics,
   presetsFor,
   redactSensitiveText,
   truncate,
@@ -115,5 +116,70 @@ describe("truncate", () => {
   it("marks what it cut", () => {
     expect(truncate("abcdef", 3)).toBe("abc\n… [truncated by ProLens: 3 more characters]");
     expect(truncate("abc", 3)).toBe("abc");
+  });
+});
+
+describe("warnings", () => {
+  const warned: AskAiTarget = {
+    type: "resource",
+    resource: { kind: "Pod", apiVersion: "v1", name: "web-1", namespace: "shop" },
+    diagnostics: {
+      warnings: [
+        { source: "event", reason: "BackOff", message: "Back-off restarting failed container", count: 4 },
+        { source: "status", reason: "CrashLoopBackOff", message: "Container web: back-off 5m0s" },
+      ],
+      pods: [],
+    },
+  };
+
+  it("offers and preselects the warning question only when there are warnings", () => {
+    expect(defaultPresetFor(warned, "explain-warning")?.id).toBe("explain-warning");
+    expect(presetsFor(pod).map((preset) => preset.id)).not.toContain("explain-warning");
+  });
+
+  it("names the reasons and asks for a root cause, fixes and commands, without changing the cluster", () => {
+    const question = defaultPresetFor(warned, "explain-warning")!.question(warned);
+
+    expect(question).toContain("Pod shop/web-1 (BackOff, CrashLoopBackOff)");
+    expect(question).toContain("root cause");
+    expect(question).toContain("kubectl");
+    expect(question).toContain("without my explicit approval");
+  });
+
+  it("formats warnings with their count and age, and each container's state", () => {
+    const text = formatDiagnostics(
+      {
+        warnings: [
+          {
+            source: "event",
+            reason: "FailedMount",
+            message: "MountVolume.SetUp failed\n  for volume",
+            count: 3,
+            timestamp: "2026-01-01T09:55:00Z",
+          },
+        ],
+        pods: [
+          {
+            name: "web-1",
+            namespace: "shop",
+            phase: "Pending",
+            containers: [
+              { name: "init", type: "init", state: "terminated", ready: false, restartCount: 0, exitCode: 1 },
+            ],
+          },
+        ],
+      },
+      Date.parse("2026-01-01T10:00:00Z"),
+    );
+
+    expect(text).toBe(
+      [
+        "Warnings:",
+        "- FailedMount (event, x3, 5m ago): MountVolume.SetUp failed for volume",
+        "",
+        "Pod shop/web-1 (phase Pending):",
+        "- init: init, terminated, exit code 1, not ready, restarts 0",
+      ].join("\n"),
+    );
   });
 });

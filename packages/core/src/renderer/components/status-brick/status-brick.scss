@@ -45,7 +45,12 @@
   }
 
   &.waiting {
-    background-color: #ff980090;
+    background-color: color-mix(in srgb, var(--colorWarning) 56%, transparent);
     border: 1px solid var(--colorWarning);
+  }
+
+  &.crash-loop-back-off,
+  &.error {
+    background-color: var(--colorError);
   }
 }

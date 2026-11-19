@@ -11,6 +11,7 @@ import { observer } from "mobx-react";
 import eventStoreInjectable from "../events/store.injectable";
 import { KubeObjectAge } from "../kube-object/age";
 import { KubeObjectListLayout } from "../kube-object-list-layout";
+import { KubeObjectWarningIndicator } from "../kube-object-warnings";
 import { SiblingsInTabLayout } from "../layout/siblings-in-tab-layout";
 import { NamespaceSelectBadge } from "../namespaces/namespace-select-badge";
 import { WithTooltip } from "../with-tooltip";
@@ -54,6 +55,7 @@ const NonInjectedStatefulSets = observer((props: Dependencies) => {
         renderHeaderTitle="Stateful Sets"
         renderTableHeader={[
           { title: "Name", className: "name", sortBy: columnId.name, id: columnId.name },
+          { className: "warning", showWithColumn: columnId.name },
           {
             title: "Namespace",
             className: "namespace",
@@ -71,6 +73,7 @@ const NonInjectedStatefulSets = observer((props: Dependencies) => {
         ]}
         renderTableContents={(statefulSet) => [
           <WithTooltip>{statefulSet.getName()}</WithTooltip>,
+          <KubeObjectWarningIndicator key="warning" object={statefulSet} />,
           <NamespaceSelectBadge key="namespace" namespace={statefulSet.getNs()} />,
           statefulSet.status?.readyReplicas || 0,
           statefulSet.getReplicas(),

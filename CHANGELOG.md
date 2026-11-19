@@ -8,6 +8,25 @@ The version of the extension API is separate from the application version: it
 follows Freelens, so that extensions written for Freelens keep working (see
 `docs/prolens/releasing.md`).
 
+## [1.7.0] - 2026-11-19
+
+### Added
+
+- Clicking the warning icon of a resource table opens a popover with the
+  object's warnings: its Warning events, merged and newest first, and the
+  problems its status shows, each with reason, message, count and age. The
+  icon is now also in the Deployments, StatefulSets, DaemonSets, ReplicaSets,
+  Jobs and CronJobs tables.
+- The popover's "Ask AI" button opens the Ask AI dialog with an "Explain this
+  warning" question and the warnings, container states, events and the logs
+  of the most affected pod as context.
+
+### Changed
+
+- Container squares in the Pods table are larger (10px), and crash-looping
+  containers, image pull errors and non-zero exits show in red. Their tooltip
+  shows readiness and restarts.
+
 ## [1.6.0] - 2026-11-19
 
 ### Added

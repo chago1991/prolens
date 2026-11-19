@@ -12,6 +12,7 @@ import { Badge } from "../badge";
 import eventStoreInjectable from "../events/store.injectable";
 import { KubeObjectAge } from "../kube-object/age";
 import { KubeObjectListLayout } from "../kube-object-list-layout";
+import { KubeObjectWarningIndicator } from "../kube-object-warnings";
 import { SiblingsInTabLayout } from "../layout/siblings-in-tab-layout";
 import { NamespaceSelectBadge } from "../namespaces/namespace-select-badge";
 import { WithTooltip } from "../with-tooltip";
@@ -62,6 +63,7 @@ const NonInjectedDaemonSets = observer((props: Dependencies) => {
         renderHeaderTitle="Daemon Sets"
         renderTableHeader={[
           { title: "Name", className: "name", sortBy: columnId.name, id: columnId.name },
+          { className: "warning", showWithColumn: columnId.name },
           {
             title: "Namespace",
             className: "namespace",
@@ -78,6 +80,7 @@ const NonInjectedDaemonSets = observer((props: Dependencies) => {
         ]}
         renderTableContents={(daemonSet) => [
           <WithTooltip>{daemonSet.getName()}</WithTooltip>,
+          <KubeObjectWarningIndicator key="warning" object={daemonSet} />,
           <NamespaceSelectBadge key="namespace" namespace={daemonSet.getNs()} />,
           daemonSet.status?.desiredNumberScheduled || 0,
           daemonSet.status?.currentNumberScheduled || 0,

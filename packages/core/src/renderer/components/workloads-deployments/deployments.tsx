@@ -13,6 +13,7 @@ import eventStoreInjectable from "../events/store.injectable";
 import { KubeObjectAge } from "../kube-object/age";
 import { KubeObjectConditionsList } from "../kube-object-conditions";
 import { KubeObjectListLayout } from "../kube-object-list-layout";
+import { KubeObjectWarningIndicator } from "../kube-object-warnings";
 import { SiblingsInTabLayout } from "../layout/siblings-in-tab-layout";
 import { NamespaceSelectBadge } from "../namespaces/namespace-select-badge";
 import { WithTooltip } from "../with-tooltip";
@@ -76,6 +77,7 @@ class NonInjectedDeployments extends React.Component<Dependencies> {
           defaultHiddenTableColumns={[columnId.replicas]}
           renderTableHeader={[
             { title: "Name", className: "name", sortBy: columnId.name, id: columnId.name },
+            { className: "warning", showWithColumn: columnId.name },
             {
               title: "Namespace",
               className: "namespace",
@@ -97,6 +99,7 @@ class NonInjectedDeployments extends React.Component<Dependencies> {
           ]}
           renderTableContents={(deployment) => [
             <WithTooltip>{deployment.getName()}</WithTooltip>,
+            <KubeObjectWarningIndicator key="warning" object={deployment} />,
             <NamespaceSelectBadge key="namespace" namespace={deployment.getNs()} />,
             getReplicas(deployment),
             deployment.status?.readyReplicas || 0,

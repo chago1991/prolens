@@ -1138,13 +1138,82 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                             style="order: 4;"
                           >
                             <div
+                              aria-label="Container container-1: unknown, not ready, 0 restarts"
                               class="StatusBrick"
+                              role="img"
                             />
-                            <div />
+                            <div>
+                              <div
+                                class="title"
+                              >
+                                container-1
+                                 
+                                <span
+                                  class="text-secondary"
+                                >
+                                  unknown
+                                  , default
+                                </span>
+                              </div>
+                              <div
+                                class="name"
+                              >
+                                Ready
+                              </div>
+                              <div
+                                class="value"
+                              >
+                                No
+                              </div>
+                              <div
+                                class="name"
+                              >
+                                Restarts
+                              </div>
+                              <div
+                                class="value"
+                              >
+                                0
+                              </div>
+                            </div>
                             <div
+                              aria-label="Container container-2: unknown, not ready, 0 restarts"
                               class="StatusBrick"
+                              role="img"
                             />
-                            <div />
+                            <div>
+                              <div
+                                class="title"
+                              >
+                                container-2
+                                 
+                                <span
+                                  class="text-secondary"
+                                >
+                                  unknown
+                                </span>
+                              </div>
+                              <div
+                                class="name"
+                              >
+                                Ready
+                              </div>
+                              <div
+                                class="value"
+                              >
+                                No
+                              </div>
+                              <div
+                                class="name"
+                              >
+                                Restarts
+                              </div>
+                              <div
+                                class="value"
+                              >
+                                0
+                              </div>
+                            </div>
                           </div>
                           <div
                             class="TableCell ports"

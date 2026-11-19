@@ -5,6 +5,7 @@
 
 import { kubeEventApiInjectable } from "@freelensapp/kube-api-specifics";
 import { getInjectable } from "@ogre-tools/injectable";
+import { hasWarnings } from "../../common/ask-ai-request";
 import { aiContextSourceInjectionToken } from "../context-source";
 import { formatEvents } from "./format-events";
 
@@ -18,7 +19,8 @@ const eventsAiContextSourceInjectable = getInjectable({
     description: "Recent events: for a resource, its own; otherwise warnings only.",
     orderNumber: 20,
     isAvailableFor: (target) => target.type !== "yaml",
-    isEnabledByDefaultFor: (target) => target.type === "events",
+    // Asked from a warning, the events are what the question is about.
+    isEnabledByDefaultFor: (target) => target.type === "events" || hasWarnings(target),
     collect: async (target) => {
       const api = di.inject(kubeEventApiInjectable);
 
