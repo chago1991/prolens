@@ -14,6 +14,7 @@ import { DurationAbsoluteTimestamp } from "../events";
 import eventStoreInjectable from "../events/store.injectable";
 import { KubeObjectAge } from "../kube-object/age";
 import { KubeObjectListLayout } from "../kube-object-list-layout";
+import { KubeObjectWarningIndicator } from "../kube-object-warnings";
 import { SiblingsInTabLayout } from "../layout/siblings-in-tab-layout";
 import { NamespaceSelectBadge } from "../namespaces/namespace-select-badge";
 import { WithTooltip } from "../with-tooltip";
@@ -126,6 +127,7 @@ const NonInjectedJobs = observer((props: Dependencies) => {
         renderHeaderTitle="Jobs"
         renderTableHeader={[
           { title: "Name", className: "name", sortBy: columnId.name, id: columnId.name },
+          { className: "warning", showWithColumn: columnId.name },
           { title: "Namespace", className: "namespace", sortBy: columnId.namespace, id: columnId.namespace },
           { title: "Resumed", className: "resumed", sortBy: columnId.resumed, id: columnId.resumed },
           { title: "Status", className: "status", sortBy: columnId.status, id: columnId.status },
@@ -138,6 +140,7 @@ const NonInjectedJobs = observer((props: Dependencies) => {
         renderTableContents={(job) => {
           return [
             <WithTooltip>{job.getName()}</WithTooltip>,
+            <KubeObjectWarningIndicator key="warning" object={job} />,
             <NamespaceSelectBadge key="namespace" namespace={job.getNs()} />,
             <BadgeBoolean value={!job.spec.suspend} />,
             <Badge className={getStatusClass(job)} label={getStatusText(job)} tooltip={getStatusText(job)} />,

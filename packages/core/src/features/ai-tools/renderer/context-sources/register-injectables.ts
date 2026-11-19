@@ -9,6 +9,7 @@
 import eventsAiContextSourceInjectable from "./events.injectable";
 import logsAiContextSourceInjectable from "./logs.injectable";
 import manifestAiContextSourceInjectable from "./manifest.injectable";
+import warningsAiContextSourceInjectable from "./warnings.injectable";
 
 import type { DiContainerForInjection } from "@ogre-tools/injectable";
 
@@ -25,6 +26,11 @@ export function registerInjectables(di: DiContainerForInjection): void {
   }
   try {
     di.register(manifestAiContextSourceInjectable);
+  } catch (e) {
+    /* Ignore duplicate registration */
+  }
+  try {
+    di.register(warningsAiContextSourceInjectable);
   } catch (e) {
     /* Ignore duplicate registration */
   }

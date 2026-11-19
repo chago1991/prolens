@@ -49,6 +49,22 @@
       }
     }
 
+    // One square per container, large enough to read at a glance; the
+    // row height does not change.
+    &.containers {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3px;
+
+      .StatusBrick {
+        flex: 0 0 auto;
+        width: 10px;
+        height: 10px;
+        margin: 0;
+      }
+    }
+
     &.restarts {
       flex-grow: 0.3;
     }

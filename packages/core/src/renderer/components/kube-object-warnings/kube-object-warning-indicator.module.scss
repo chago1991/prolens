@@ -1,0 +1,83 @@
+/**
+ * Copyright (c) Freelens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+.indicator {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--colorWarning);
+  cursor: pointer;
+
+  &:hover,
+  &[aria-expanded="true"] {
+    background: color-mix(in srgb, var(--colorWarning) 16%, transparent);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+  }
+}
+
+.count {
+  position: absolute;
+  top: -2px;
+  right: -3px;
+  min-width: 13px;
+  height: 13px;
+  padding: 0 3px;
+  border-radius: 7px;
+  background: var(--colorWarning);
+  color: var(--mainBackground);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 13px;
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item + .item {
+  padding-top: 12px;
+  border-top: 1px solid var(--borderFaintColor);
+}
+
+.itemHeader {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.reason {
+  font-weight: 600;
+  color: var(--colorWarning);
+}
+
+.meta {
+  color: var(--textColorTertiary);
+  font-size: 12px;
+}
+
+.message {
+  margin: 4px 0 0;
+  color: var(--textColorPrimary);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

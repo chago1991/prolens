@@ -29,10 +29,8 @@ const renderState = (
   status: PodContainerStatus | undefined,
   isDefault: boolean,
 ) => {
-  const state = status ? Object.keys(status?.state ?? {})[0] : "";
+  const state = (status ? Object.keys(status?.state ?? {})[0] : "") || "unknown";
   const terminated = status?.state ? (status?.state.terminated ?? "") : "";
-
-  if (!state) return;
   const statusState = status?.state ?? {};
   let stateDetails: ContainerStateRunning | ContainerStateWaiting | ContainerStateTerminated | undefined;
   if (state === "running" || state === "waiting" || state === "terminated") {
@@ -53,6 +51,10 @@ const renderState = (
           {terminated ? ` - ${terminated.reason} (exit code: ${terminated.exitCode})` : ""}
         </span>
       </div>
+      <div className="name">Ready</div>
+      <div className="value">{status?.ready ? "Yes" : "No"}</div>
+      <div className="name">Restarts</div>
+      <div className="value">{status?.restartCount ?? 0}</div>
       {stateDetails && (
         <>
           {state === "running" &&
@@ -82,6 +84,20 @@ const renderState = (
   );
 };
 
+const describeContainer = (
+  container: ContainerWithType | EphemeralContainerWithType,
+  status: PodContainerStatus | undefined,
+) => {
+  const state = (status && Object.keys(status.state ?? {})[0]) || "unknown";
+  const reason = status?.state?.waiting?.reason ?? status?.state?.terminated?.reason;
+
+  return [
+    `Container ${container.name}: ${state}${reason ? ` (${reason})` : ""}`,
+    status?.ready ? "ready" : "not ready",
+    `${status?.restartCount ?? 0} restarts`,
+  ].join(", ");
+};
+
 const renderContainersStatus = (pod: Pod) => {
   const statuses = pod.getContainerStatuses();
   const defaultContainerName = findOptimalDefaultContainerOfPod(pod)?.name;
@@ -94,12 +110,14 @@ const renderContainersStatus = (pod: Pod) => {
           <StatusBrick
             key={container.name}
             className={containerStatusClassName(container, status)}
+            role="img"
+            aria-label={describeContainer(container, status)}
             tooltip={{
               formatters: {
                 tableView: true,
                 nowrap: true,
               },
-              children: renderState(container, status, container.name === defaultContainerName) ?? <></>,
+              children: renderState(container, status, container.name === defaultContainerName),
             }}
           />
         );

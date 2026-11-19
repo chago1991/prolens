@@ -14,10 +14,56 @@ export interface AiResourceRef {
   uid?: string;
 }
 
+/** A warning ProLens shows for an object: a Warning event or a problem in its status. */
+export interface AiWarning {
+  source: "event" | "status";
+  reason: string;
+  message: string;
+  /** How often the event was seen; events only. */
+  count?: number;
+  /** ISO time it was last seen, when known. */
+  timestamp?: string;
+}
+
+export interface AiContainerSummary {
+  name: string;
+  type: "container" | "init" | "ephemeral";
+  state: "running" | "waiting" | "terminated" | "unknown";
+  ready: boolean;
+  restartCount: number;
+  reason?: string;
+  message?: string;
+  exitCode?: number;
+  /** Reason of the previous run's termination, e.g. OOMKilled. */
+  lastTerminationReason?: string;
+}
+
+export interface AiPodSummary {
+  name: string;
+  namespace?: string;
+  phase?: string;
+  containers: AiContainerSummary[];
+}
+
+/**
+ * What ProLens already knows about an object's problems when the user asks
+ * from a warning: the warnings, and the container states of the object's pods.
+ */
+export interface AiDiagnostics {
+  warnings: AiWarning[];
+  /** The pod itself, or the pods of a workload; the most affected first. */
+  pods: AiPodSummary[];
+}
+
 export type AskAiTarget =
   | { type: "cluster" }
   /** `manifest` is the object as the cluster frame has it, when it has it. */
-  | { type: "resource"; resource: AiResourceRef; manifest?: Record<string, unknown> }
+  | {
+      type: "resource";
+      resource: AiResourceRef;
+      manifest?: Record<string, unknown>;
+      diagnostics?: AiDiagnostics;
+    }
   | { type: "events"; namespace?: string }
   | { type: "logs"; pod: AiResourceRef; container?: string; logs?: string }
   | { type: "yaml"; resource: AiResourceRef; yaml: string };
@@ -74,7 +120,26 @@ export const describeTarget = (target: AskAiTarget) => {
   }
 };
 
+export const diagnosticsOf = (target: AskAiTarget) => (target.type === "resource" ? target.diagnostics : undefined);
+
+export const hasWarnings = (target: AskAiTarget) => Boolean(diagnosticsOf(target)?.warnings.length);
+
 export const askAiPresets: AskAiPreset[] = [
+  {
+    id: "explain-warning",
+    label: "Explain this warning",
+    question: (target) => {
+      const reasons = [...new Set(diagnosticsOf(target)?.warnings.map((warning) => warning.reason) ?? [])].slice(0, 3);
+
+      return [
+        `ProLens shows ${reasons.length > 1 ? "warnings" : "a warning"} on ${describeTarget(target)}${reasons.length ? ` (${reasons.join(", ")})` : ""}.`,
+        "Explain what the warnings in the context below mean, identify the most likely root cause, and suggest how to fix it.",
+        "Give the read-only kubectl commands that confirm the diagnosis and, separately, the commands or manifest changes that would fix it.",
+        "Do not run any command that changes the cluster without my explicit approval.",
+      ].join(" ");
+    },
+    appliesTo: hasWarnings,
+  },
   {
     id: "pod-crash",
     label: "Why is this pod crashing?",
@@ -176,6 +241,74 @@ export interface AiPromptInput {
   target: AskAiTarget;
   sections: AiPromptSection[];
 }
+
+const ageOf = (timestamp: string | undefined, now: number) => {
+  const time = timestamp ? Date.parse(timestamp) : Number.NaN;
+
+  if (Number.isNaN(time)) {
+    return undefined;
+  }
+
+  const seconds = Math.max(0, Math.round((now - time) / 1000));
+
+  if (seconds < 120) return `${seconds}s ago`;
+  if (seconds < 7200) return `${Math.round(seconds / 60)}m ago`;
+  if (seconds < 172800) return `${Math.round(seconds / 3600)}h ago`;
+
+  return `${Math.round(seconds / 86400)}d ago`;
+};
+
+const oneLine = (text: string) => text.replace(/\s+/g, " ").trim();
+
+/**
+ * The warnings and container states of `AiDiagnostics` as prompt text.
+ */
+export const formatDiagnostics = ({ warnings, pods }: AiDiagnostics, now = Date.now()) => {
+  const lines: string[] = [];
+
+  if (warnings.length) {
+    lines.push("Warnings:");
+
+    for (const warning of warnings) {
+      const details = [
+        warning.source === "event" ? "event" : "status",
+        warning.count && warning.count > 1 ? `x${warning.count}` : undefined,
+        ageOf(warning.timestamp, now),
+      ].filter(Boolean);
+
+      lines.push(`- ${warning.reason} (${details.join(", ")}): ${oneLine(warning.message)}`);
+    }
+  }
+
+  for (const pod of pods) {
+    lines.push(
+      "",
+      `Pod ${pod.namespace ? `${pod.namespace}/` : ""}${pod.name}${pod.phase ? ` (phase ${pod.phase})` : ""}:`,
+    );
+
+    if (!pod.containers.length) {
+      lines.push("- no container statuses reported yet");
+    }
+
+    for (const container of pod.containers) {
+      const details = [
+        container.type === "container" ? undefined : container.type,
+        container.state,
+        container.reason,
+        container.exitCode !== undefined ? `exit code ${container.exitCode}` : undefined,
+        container.ready ? "ready" : "not ready",
+        `restarts ${container.restartCount}`,
+        container.lastTerminationReason ? `last termination ${container.lastTerminationReason}` : undefined,
+      ].filter(Boolean);
+
+      lines.push(
+        `- ${container.name}: ${details.join(", ")}${container.message ? ` — ${oneLine(container.message)}` : ""}`,
+      );
+    }
+  }
+
+  return lines.join("\n").trim();
+};
 
 export const maxSectionLength = 12_000;
 

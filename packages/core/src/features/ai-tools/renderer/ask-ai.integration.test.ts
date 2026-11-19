@@ -26,7 +26,8 @@ import {
 } from "../common/ai-tools";
 import aiToolProvidersInjectable from "./ai-tool-providers.injectable";
 import askAiDialogStateInjectable from "./ask-ai-dialog-state.injectable";
-import buildAskAiPromptInjectable from "./build-ask-ai-prompt.injectable";
+import buildAskAiPromptInjectable, { availableContextSources } from "./build-ask-ai-prompt.injectable";
+import { aiContextSourceInjectionToken } from "./context-source";
 import launchAiToolInjectable from "./launch-ai-tool.injectable";
 import openAskAiInjectable from "./open-ask-ai.injectable";
 
@@ -45,6 +46,40 @@ const podTarget: AskAiTarget = {
     metadata: { name: "web-1", namespace: "shop", managedFields: [{ manager: "x" }] },
     spec: { containers: [{ name: "web", env: [{ name: "DB_PASSWORD", value: "hunter2" }] }] },
     status: { phase: "Running" },
+  },
+};
+
+const deploymentWarningTarget: AskAiTarget = {
+  type: "resource",
+  resource: { kind: "Deployment", apiVersion: "apps/v1", name: "web", namespace: "shop", uid: "uid-d" },
+  manifest: { apiVersion: "apps/v1", kind: "Deployment", metadata: { name: "web", namespace: "shop" } },
+  diagnostics: {
+    warnings: [
+      {
+        source: "status",
+        reason: "ProgressDeadlineExceeded",
+        message: "ReplicaSet web-7d9 has timed out progressing. token=abcd1234secret",
+      },
+    ],
+    pods: [
+      {
+        name: "web-7d9-x1",
+        namespace: "shop",
+        phase: "Running",
+        containers: [
+          { name: "sidecar", type: "container", state: "running", ready: true, restartCount: 0 },
+          {
+            name: "app",
+            type: "container",
+            state: "waiting",
+            ready: false,
+            restartCount: 12,
+            reason: "CrashLoopBackOff",
+            lastTerminationReason: "OOMKilled",
+          },
+        ],
+      },
+    ],
   },
 };
 
@@ -154,6 +189,42 @@ describe("Ask AI", () => {
       expect(prompt).toContain("starting server");
       expect(prompt).toContain("panic: connection refused password=<redacted>");
       expect(prompt).not.toContain("topsecret");
+    });
+
+    it("asked from a warning, ticks the warnings, events, logs and manifest by default", () => {
+      const sources = availableContextSources(di.injectMany(aiContextSourceInjectionToken), deploymentWarningTarget);
+
+      expect(
+        sources.filter((source) => source.isEnabledByDefaultFor(deploymentWarningTarget)).map((source) => source.id),
+      ).toEqual(["warnings", "manifest", "events", "logs"]);
+    });
+
+    it("leaves events and logs opt-in when not asked from a warning", () => {
+      const sources = availableContextSources(di.injectMany(aiContextSourceInjectionToken), podTarget);
+
+      expect(sources.filter((source) => source.isEnabledByDefaultFor(podTarget)).map((source) => source.id)).toEqual([
+        "manifest",
+      ]);
+    });
+
+    it("sends the warnings, container states and the logs of the most affected container of a workload", async () => {
+      const prompt = await di.inject(buildAskAiPromptInjectable)({
+        target: deploymentWarningTarget,
+        question: "Explain this warning",
+        sourceIds: ["warnings", "logs"],
+        signal: new AbortController().signal,
+      });
+
+      expect(prompt).toContain("### Warnings and container status");
+      expect(prompt).toContain("- ProgressDeadlineExceeded (status): ReplicaSet web-7d9 has timed out progressing.");
+      expect(prompt).toContain("- app: waiting, CrashLoopBackOff, not ready, restarts 12, last termination OOMKilled");
+      expect(prompt).not.toContain("abcd1234secret");
+      expect(callForLogs.mock.calls[0]).toEqual([
+        { name: "web-7d9-x1", namespace: "shop" },
+        { container: "app", tailLines: 200 },
+        expect.anything(),
+      ]);
+      expect(prompt).toContain("### Logs of pod web-7d9-x1");
     });
 
     it("asks for cluster-wide warnings for the cluster", async () => {

@@ -1,0 +1,95 @@
+/**
+ * Copyright (c) Freelens Authors. All rights reserved.
+ * Licensed under MIT License. See LICENSE in root directory for more information.
+ */
+
+.popover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  display: flex;
+  flex-direction: column;
+  width: min(380px, calc(100vw - 16px));
+  background: var(--dialogBackground);
+  color: var(--textColorPrimary);
+  border: 1px solid var(--borderColor);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px var(--boxShadow);
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: left;
+  white-space: normal;
+  cursor: default;
+  overflow: hidden;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 8px 10px 14px;
+  border-bottom: 1px solid var(--borderFaintColor);
+}
+
+.titleIcon {
+  color: var(--colorWarning);
+  font-size: 18px;
+}
+
+.title {
+  flex: 1;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--textColorAccent);
+}
+
+.close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--textColorTertiary);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--borderFaintColor);
+    color: var(--textColorAccent);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+  }
+}
+
+.body {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 280px;
+  padding: 12px 14px;
+  overflow-y: auto;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--borderFaintColor);
+}
