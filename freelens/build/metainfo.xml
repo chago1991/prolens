@@ -64,6 +64,11 @@
   <icon type="stock">prolens</icon>
   <content_rating type="oars-1.1"></content_rating>
   <releases>
+    <release version="1.7.0" date="2026-11-19">
+      <description translatable="no">
+        <p>Warning popover on resource tables with an Ask AI button that explains the warning; larger container status squares.</p>
+      </description>
+    </release>
     <release version="1.6.0" date="2026-11-19">
       <description translatable="no">
         <p>BPF Trace menu on nodes and pods: bpftrace presets, custom programs and the list of trace runs through the kubectl-trace plugin.</p>

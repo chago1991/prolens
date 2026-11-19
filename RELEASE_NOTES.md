@@ -1,39 +1,54 @@
-# ProLens v1.6.0
+# ProLens v1.7.0
 
-ProLens 1.6 brings eBPF tracing to nodes and pods: pick a trace from the
-context menu and watch its output stream into a terminal tab.
+ProLens 1.7 explains warnings where you see them: click the warning icon of a
+resource to read what is wrong, and ask your AI assistant why.
 
 ## Highlights
 
-### BPF Trace
+### Warning popover
 
-- The context menu of a Linux node, and of a pod with a running container, has
-  a **BPF Trace** sub-menu. Each entry runs
-  [bpftrace](https://github.com/bpftrace/bpftrace) on the node through the
-  [kubectl-trace](https://github.com/iovisor/kubectl-trace) plugin and streams
-  the output into a new terminal tab; Ctrl-C stops it and prints the summary.
-- Node traces: new processes, opened files, outbound TCP connections, system
-  calls per process and a histogram of disk I/O sizes.
-- Pod traces follow the main process of the default container: the processes
-  it starts, the files it opens, its TCP connections and its system calls.
-- **Custom program…** puts the command on the prompt for you to write your own
-  program; **List trace runs** shows the trace jobs in the cluster.
-- Needs the plugin (`kubectl krew install trace`) and a namespace in the
-  kubeconfig context that admits privileged pods. See
-  `docs/prolens/bpf-trace.md`.
+- Clicking the warning icon in a resource table opens a popover with the
+  object's warnings: its Warning events and the problems its status shows,
+  such as CrashLoopBackOff, image pull errors, non-zero exits and failing
+  conditions. Each shows its reason, message, how often it was seen and how
+  long ago.
+- The icon is in the Pods table as before, and now also in the Deployments,
+  StatefulSets, DaemonSets, ReplicaSets, Jobs and CronJobs tables.
+- The popover is never cut off by the table, moves above the icon near the
+  bottom of the window, and closes with Escape, its close button or a click
+  outside. It reads the events ProLens already loads, so it adds no requests
+  to the cluster.
+
+### Ask AI about a warning
+
+- **Ask AI** in the popover opens the Ask AI dialog with the assistant you
+  configured and the question "Explain this warning": what it means, the
+  likely root cause, how to fix it, and the kubectl commands to confirm and
+  to fix it.
+- The warnings, the state, readiness and restart count of each container, the
+  manifest, the events and the recent logs of the most affected pod are
+  attached. You can untick any of them and preview the prompt before it is
+  sent; credentials are redacted, and the assistant is told not to change the
+  cluster without your approval.
+
+### Container status
+
+- The container squares in the Pods table are larger, and red now marks a
+  crash-looping container, an image pull error or a non-zero exit. The
+  tooltip shows each container's readiness and restart count.
 
 ## Downloads
 
 | Platform             | Files                                                            |
 | -------------------- | ---------------------------------------------------------------- |
-| macOS, Apple silicon | `ProLens-1.6.0-macos-arm64.dmg`, `ProLens-1.6.0-macos-arm64.zip` |
-| macOS, Intel         | `ProLens-1.6.0-macos-x64.dmg`, `ProLens-1.6.0-macos-x64.zip`     |
-| Windows, x64         | `ProLens-1.6.0-windows-x64.exe` (installer)                      |
-| Windows, ARM64       | `ProLens-1.6.0-windows-arm64.exe` (installer)                    |
-| Linux, x86_64        | `ProLens-1.6.0-linux-x64.AppImage`, `.deb`, `.rpm`               |
-| Linux, ARM64         | `ProLens-1.6.0-linux-arm64.AppImage`, `.deb`, `.rpm`             |
+| macOS, Apple silicon | `ProLens-1.7.0-macos-arm64.dmg`, `ProLens-1.7.0-macos-arm64.zip` |
+| macOS, Intel         | `ProLens-1.7.0-macos-x64.dmg`, `ProLens-1.7.0-macos-x64.zip`     |
+| Windows, x64         | `ProLens-1.7.0-windows-x64.exe` (installer)                      |
+| Windows, ARM64       | `ProLens-1.7.0-windows-arm64.exe` (installer)                    |
+| Linux, x86_64        | `ProLens-1.7.0-linux-x64.AppImage`, `.deb`, `.rpm`               |
+| Linux, ARM64         | `ProLens-1.7.0-linux-arm64.AppImage`, `.deb`, `.rpm`             |
 
-`ProLens-1.6.0-SHA256SUMS.txt` lists the SHA-256 of every file.
+`ProLens-1.7.0-SHA256SUMS.txt` lists the SHA-256 of every file.
 
 ## Installing
 
@@ -48,7 +63,7 @@ warns before the first start:
 - **Windows:** in the SmartScreen dialog, choose **More info**, then
   **Run anyway**.
 - **Linux:** packages are not signed; compare their checksums with
-  `ProLens-1.6.0-SHA256SUMS.txt`.
+  `ProLens-1.7.0-SHA256SUMS.txt`.
 
 ## Requirements
 
