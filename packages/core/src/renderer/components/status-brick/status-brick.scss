@@ -30,10 +30,9 @@
     background-color: var(--colorOk);
   }
 
+  // A restart shows in the Restarts column and in the tooltip, not on the brick.
   &.restarted {
     background-color: var(--colorOk);
-    outline: 1px solid var(--colorWarning);
-    outline-offset: 3px;
   }
 
   &.terminated {

@@ -627,7 +627,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -650,7 +652,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -673,7 +677,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -696,7 +702,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -719,6 +727,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -1545,7 +1554,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -1568,7 +1579,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -1591,7 +1604,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -1614,7 +1629,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -1637,6 +1654,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -2468,7 +2486,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -2491,7 +2511,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -2514,7 +2536,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -2537,7 +2561,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -2560,6 +2586,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -3503,7 +3530,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -3526,7 +3555,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -3549,7 +3580,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -3572,7 +3605,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -3595,6 +3630,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -4473,7 +4509,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -4496,7 +4534,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -4519,7 +4559,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -4542,7 +4584,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -4565,6 +4609,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -5558,7 +5603,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -5581,7 +5628,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -5604,7 +5653,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -5627,7 +5678,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -5650,6 +5703,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -6645,7 +6699,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -6668,7 +6724,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -6691,7 +6749,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -6714,7 +6774,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -6737,6 +6799,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -7694,7 +7757,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -7717,7 +7782,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -7740,7 +7807,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -7763,7 +7832,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -7786,6 +7857,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -8738,7 +8810,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -8761,7 +8835,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -8784,7 +8860,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -8807,7 +8885,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -8830,6 +8910,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -9773,7 +9854,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -9796,7 +9879,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -9819,7 +9904,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -9842,7 +9929,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -9865,6 +9954,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -10808,7 +10898,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -10831,7 +10923,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -10854,7 +10948,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -10877,7 +10973,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -10900,6 +10998,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -11843,7 +11942,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -11866,7 +11967,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -11889,7 +11992,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -11912,7 +12017,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -11935,6 +12042,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -12670,7 +12778,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -12693,7 +12803,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -12716,7 +12828,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -12739,7 +12853,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -12762,6 +12878,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -13714,7 +13831,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -13737,7 +13856,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -13760,7 +13881,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -13783,7 +13906,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -13806,6 +13931,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -14749,7 +14875,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -14772,7 +14900,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -14795,7 +14925,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -14818,7 +14950,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -14841,6 +14975,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -15784,7 +15919,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -15807,7 +15944,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell labels scrollable nowrap sorting"
+                      draggable="true"
                       id="labels"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -15830,7 +15969,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -15853,7 +15994,9 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -15876,6 +16019,7 @@ exports[`cluster/namespaces - edit namespace from new tab > when navigating to n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"

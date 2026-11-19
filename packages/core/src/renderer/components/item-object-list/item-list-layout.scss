@@ -65,3 +65,20 @@
     color: var(--checkbox-color);
   }
 }
+
+// Reordering columns by dragging their headers.
+.TableHead .TableCell[draggable="true"] {
+  cursor: grab;
+
+  &.columnDragging {
+    opacity: 0.4;
+  }
+
+  &.columnDropBefore {
+    box-shadow: inset 2px 0 0 var(--primary);
+  }
+
+  &.columnDropAfter {
+    box-shadow: inset -2px 0 0 var(--primary);
+  }
+}

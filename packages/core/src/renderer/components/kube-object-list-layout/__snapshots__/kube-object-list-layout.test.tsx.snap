@@ -127,7 +127,9 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell name nowrap sorting"
+                draggable="true"
                 id="name"
+                style="order: 1;"
               >
                 <div
                   class="content"
@@ -150,7 +152,9 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell warning-header nowrap"
+                draggable="true"
                 id="warning"
+                style="order: 2;"
               >
                 <div
                   class="content"
@@ -172,7 +176,9 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell namespace nowrap sorting"
+                draggable="true"
                 id="namespace"
+                style="order: 3;"
               >
                 <div
                   class="content"
@@ -195,7 +201,9 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell containers nowrap sorting"
+                draggable="true"
                 id="containers"
+                style="order: 4;"
               >
                 <div
                   class="content"
@@ -218,7 +226,9 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell ports nowrap sorting"
+                draggable="true"
                 id="ports"
+                style="order: 5;"
               >
                 <div
                   class="content"
@@ -241,7 +251,9 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell cpu nowrap sorting"
+                draggable="true"
                 id="cpuUsage"
+                style="order: 6;"
               >
                 <div
                   class="content"
@@ -264,7 +276,9 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell memory nowrap sorting"
+                draggable="true"
                 id="memoryUsage"
+                style="order: 7;"
               >
                 <div
                   class="content"
@@ -287,7 +301,9 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell restarts nowrap sorting"
+                draggable="true"
                 id="restarts"
+                style="order: 8;"
               >
                 <div
                   class="content"
@@ -310,7 +326,9 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell owners nowrap sorting"
+                draggable="true"
                 id="owners"
+                style="order: 9;"
               >
                 <div
                   class="content"
@@ -333,7 +351,9 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell ip nowrap sorting"
+                draggable="true"
                 id="ip"
+                style="order: 10;"
               >
                 <div
                   class="content"
@@ -356,7 +376,9 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell node nowrap sorting"
+                draggable="true"
                 id="node"
+                style="order: 11;"
               >
                 <div
                   class="content"
@@ -379,7 +401,9 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell qos nowrap sorting"
+                draggable="true"
                 id="qos"
+                style="order: 12;"
               >
                 <div
                   class="content"
@@ -402,7 +426,9 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell age nowrap sorting"
+                draggable="true"
                 id="age"
+                style="order: 13;"
               >
                 <div
                   class="content"
@@ -425,7 +451,9 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell status nowrap sorting"
+                draggable="true"
                 id="status"
+                style="order: 14;"
               >
                 <div
                   class="content"
@@ -448,7 +476,9 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell logs nowrap"
+                draggable="true"
                 id="logs"
+                style="order: 15;"
               >
                 <div
                   class="content"
@@ -467,6 +497,7 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
               </div>
               <div
                 class="TableCell menu nowrap"
+                style="order: 100000;"
               >
                 <div
                   class="content"
@@ -493,7 +524,26 @@ exports[`kube-object-list-layout > given pod store > renders 1`] = `
           </div>
           <div
             class="AddRemoveButtons flex gap-2"
-          />
+          >
+            <button
+              class="Button add-button primary big round"
+              type="button"
+            >
+              <i
+                class="Icon material focusable"
+              >
+                <span
+                  class="icon"
+                  data-icon-name="add"
+                >
+                  add
+                </span>
+              </i>
+            </button>
+            <div>
+              Create Pod
+            </div>
+          </div>
         </div>
       </div>
     </div>

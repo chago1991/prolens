@@ -6,6 +6,7 @@
  * This replaces the webpack-based auto-registration system.
  */
 
+import { registerInjectables as registerColumnOrderStorageInjectables } from "./column-order-storage/register-injectables";
 import { registerInjectables as registerColumnResizeStorageInjectables } from "./column-resize-storage/register-injectables";
 import { registerInjectables as registerPageFiltersInjectables } from "./page-filters/register-injectables";
 import itemListLayoutStorageInjectable from "./storage.injectable";
@@ -15,6 +16,11 @@ import type { DiContainerForInjection } from "@ogre-tools/injectable";
 export function registerInjectables(di: DiContainerForInjection): void {
   try {
     di.register(itemListLayoutStorageInjectable);
+  } catch (e) {
+    /* Ignore duplicate registration */
+  }
+  try {
+    registerColumnOrderStorageInjectables(di);
   } catch (e) {
     /* Ignore duplicate registration */
   }

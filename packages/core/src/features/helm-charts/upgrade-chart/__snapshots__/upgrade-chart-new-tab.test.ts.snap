@@ -801,7 +801,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -824,7 +826,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell namespace nowrap sorting"
+                      draggable="true"
                       id="namespace"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -847,7 +851,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell chart nowrap sorting"
+                      draggable="true"
                       id="chart"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -870,7 +876,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell revision nowrap sorting"
+                      draggable="true"
                       id="revision"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -893,7 +901,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -906,7 +916,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -919,7 +931,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 7;"
                     >
                       <div
                         class="content"
@@ -942,7 +956,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell updated nowrap sorting"
+                      draggable="true"
                       id="update"
+                      style="order: 8;"
                     >
                       <div
                         class="content"
@@ -965,6 +981,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -1850,7 +1867,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -1873,7 +1892,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell namespace nowrap sorting"
+                      draggable="true"
                       id="namespace"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -1896,7 +1917,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell chart nowrap sorting"
+                      draggable="true"
                       id="chart"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -1919,7 +1942,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell revision nowrap sorting"
+                      draggable="true"
                       id="revision"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -1942,7 +1967,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -1955,7 +1982,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -1968,7 +1997,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 7;"
                     >
                       <div
                         class="content"
@@ -1991,7 +2022,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell updated nowrap sorting"
+                      draggable="true"
                       id="update"
+                      style="order: 8;"
                     >
                       <div
                         class="content"
@@ -2014,6 +2047,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -2065,6 +2099,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 1;"
                           >
                             <div
                               class="badge flat"
@@ -2077,6 +2112,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell namespace"
+                            style="order: 2;"
                           >
                             <div
                               class="badge NamespaceSelectBadge flat clickable"
@@ -2092,6 +2128,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell chart"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -2104,6 +2141,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell revision"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -2113,6 +2151,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -2125,6 +2164,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -2137,11 +2177,13 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell some-status status"
+                            style="order: 7;"
                           >
                             Some-status
                           </div>
                           <div
                             class="TableCell updated"
+                            style="order: 8;"
                           >
                             <div
                               class="badge flat"
@@ -2154,6 +2196,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell menu"
+                            style="order: 100000;"
                           >
                             <div>
                               <i
@@ -3042,7 +3085,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -3065,7 +3110,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell namespace nowrap sorting"
+                      draggable="true"
                       id="namespace"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -3088,7 +3135,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell chart nowrap sorting"
+                      draggable="true"
                       id="chart"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -3111,7 +3160,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell revision nowrap sorting"
+                      draggable="true"
                       id="revision"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -3134,7 +3185,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -3147,7 +3200,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -3160,7 +3215,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 7;"
                     >
                       <div
                         class="content"
@@ -3183,7 +3240,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell updated nowrap sorting"
+                      draggable="true"
                       id="update"
+                      style="order: 8;"
                     >
                       <div
                         class="content"
@@ -3206,6 +3265,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -3257,6 +3317,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 1;"
                           >
                             <div
                               class="badge flat"
@@ -3269,6 +3330,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell namespace"
+                            style="order: 2;"
                           >
                             <div
                               class="badge NamespaceSelectBadge flat clickable"
@@ -3284,6 +3346,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell chart"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -3296,6 +3359,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell revision"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -3305,6 +3369,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -3317,6 +3382,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -3329,11 +3395,13 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell some-status status"
+                            style="order: 7;"
                           >
                             Some-status
                           </div>
                           <div
                             class="TableCell updated"
+                            style="order: 8;"
                           >
                             <div
                               class="badge flat"
@@ -3346,6 +3414,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell menu"
+                            style="order: 100000;"
                           >
                             <div>
                               <i
@@ -4288,7 +4357,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -4311,7 +4382,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell namespace nowrap sorting"
+                      draggable="true"
                       id="namespace"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -4334,7 +4407,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell chart nowrap sorting"
+                      draggable="true"
                       id="chart"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -4357,7 +4432,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell revision nowrap sorting"
+                      draggable="true"
                       id="revision"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -4380,7 +4457,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -4393,7 +4472,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -4406,7 +4487,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 7;"
                     >
                       <div
                         class="content"
@@ -4429,7 +4512,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell updated nowrap sorting"
+                      draggable="true"
                       id="update"
+                      style="order: 8;"
                     >
                       <div
                         class="content"
@@ -4452,6 +4537,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -4503,6 +4589,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 1;"
                           >
                             <div
                               class="badge flat"
@@ -4515,6 +4602,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell namespace"
+                            style="order: 2;"
                           >
                             <div
                               class="badge NamespaceSelectBadge flat clickable"
@@ -4530,6 +4618,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell chart"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -4542,6 +4631,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell revision"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -4551,6 +4641,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -4563,6 +4654,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -4575,11 +4667,13 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell some-status status"
+                            style="order: 7;"
                           >
                             Some-status
                           </div>
                           <div
                             class="TableCell updated"
+                            style="order: 8;"
                           >
                             <div
                               class="badge flat"
@@ -4592,6 +4686,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell menu"
+                            style="order: 100000;"
                           >
                             <div>
                               <i
@@ -5570,7 +5665,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -5593,7 +5690,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell namespace nowrap sorting"
+                      draggable="true"
                       id="namespace"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -5616,7 +5715,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell chart nowrap sorting"
+                      draggable="true"
                       id="chart"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -5639,7 +5740,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell revision nowrap sorting"
+                      draggable="true"
                       id="revision"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -5662,7 +5765,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -5675,7 +5780,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -5688,7 +5795,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 7;"
                     >
                       <div
                         class="content"
@@ -5711,7 +5820,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell updated nowrap sorting"
+                      draggable="true"
                       id="update"
+                      style="order: 8;"
                     >
                       <div
                         class="content"
@@ -5734,6 +5845,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -5785,6 +5897,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 1;"
                           >
                             <div
                               class="badge flat"
@@ -5797,6 +5910,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell namespace"
+                            style="order: 2;"
                           >
                             <div
                               class="badge NamespaceSelectBadge flat clickable"
@@ -5812,6 +5926,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell chart"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -5824,6 +5939,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell revision"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -5833,6 +5949,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -5845,6 +5962,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -5857,11 +5975,13 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell some-status status"
+                            style="order: 7;"
                           >
                             Some-status
                           </div>
                           <div
                             class="TableCell updated"
+                            style="order: 8;"
                           >
                             <div
                               class="badge flat"
@@ -5874,6 +5994,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell menu"
+                            style="order: 100000;"
                           >
                             <div>
                               <i
@@ -7009,7 +7130,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -7032,7 +7155,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell namespace nowrap sorting"
+                      draggable="true"
                       id="namespace"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -7055,7 +7180,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell chart nowrap sorting"
+                      draggable="true"
                       id="chart"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -7078,7 +7205,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell revision nowrap sorting"
+                      draggable="true"
                       id="revision"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -7101,7 +7230,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -7114,7 +7245,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -7127,7 +7260,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 7;"
                     >
                       <div
                         class="content"
@@ -7150,7 +7285,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell updated nowrap sorting"
+                      draggable="true"
                       id="update"
+                      style="order: 8;"
                     >
                       <div
                         class="content"
@@ -7173,6 +7310,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -7224,6 +7362,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 1;"
                           >
                             <div
                               class="badge flat"
@@ -7236,6 +7375,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell namespace"
+                            style="order: 2;"
                           >
                             <div
                               class="badge NamespaceSelectBadge flat clickable"
@@ -7251,6 +7391,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell chart"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -7263,6 +7404,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell revision"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -7272,6 +7414,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -7284,6 +7427,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -7296,11 +7440,13 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell some-status status"
+                            style="order: 7;"
                           >
                             Some-status
                           </div>
                           <div
                             class="TableCell updated"
+                            style="order: 8;"
                           >
                             <div
                               class="badge flat"
@@ -7313,6 +7459,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell menu"
+                            style="order: 100000;"
                           >
                             <div>
                               <i
@@ -8450,7 +8597,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -8473,7 +8622,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell namespace nowrap sorting"
+                      draggable="true"
                       id="namespace"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -8496,7 +8647,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell chart nowrap sorting"
+                      draggable="true"
                       id="chart"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -8519,7 +8672,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell revision nowrap sorting"
+                      draggable="true"
                       id="revision"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -8542,7 +8697,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -8555,7 +8712,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -8568,7 +8727,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 7;"
                     >
                       <div
                         class="content"
@@ -8591,7 +8752,9 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell updated nowrap sorting"
+                      draggable="true"
                       id="update"
+                      style="order: 8;"
                     >
                       <div
                         class="content"
@@ -8614,6 +8777,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -8665,6 +8829,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 1;"
                           >
                             <div
                               class="badge flat"
@@ -8677,6 +8842,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell namespace"
+                            style="order: 2;"
                           >
                             <div
                               class="badge NamespaceSelectBadge flat clickable"
@@ -8692,6 +8858,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell chart"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -8704,6 +8871,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell revision"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -8713,6 +8881,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -8725,6 +8894,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -8737,11 +8907,13 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell some-status status"
+                            style="order: 7;"
                           >
                             Some-status
                           </div>
                           <div
                             class="TableCell updated"
+                            style="order: 8;"
                           >
                             <div
                               class="badge flat"
@@ -8754,6 +8926,7 @@ exports[`New Upgrade Helm Chart Dock Tab > given a namespace is selected > when 
                           </div>
                           <div
                             class="TableCell menu"
+                            style="order: 100000;"
                           >
                             <div>
                               <i

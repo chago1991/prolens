@@ -700,6 +700,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                   >
                     <div
                       class="TableCell icon nowrap"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -707,7 +708,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -730,7 +733,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell description nowrap"
+                      draggable="true"
                       id="description"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -743,7 +748,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -756,7 +763,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -769,7 +778,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell repository nowrap sorting"
+                      draggable="true"
                       id="repo"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -792,6 +803,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -1575,6 +1587,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                   >
                     <div
                       class="TableCell icon nowrap"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -1582,7 +1595,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -1605,7 +1620,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell description nowrap"
+                      draggable="true"
                       id="description"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -1618,7 +1635,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -1631,7 +1650,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -1644,7 +1665,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell repository nowrap sorting"
+                      draggable="true"
                       id="repo"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -1667,6 +1690,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -1704,6 +1728,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -1714,6 +1739,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -1726,6 +1752,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -1738,6 +1765,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -1750,6 +1778,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -1757,6 +1786,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -1782,6 +1812,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -1792,6 +1823,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -1804,6 +1836,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -1816,6 +1849,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -1828,6 +1862,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -1835,6 +1870,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -2618,6 +2654,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                   >
                     <div
                       class="TableCell icon nowrap"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -2625,7 +2662,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -2648,7 +2687,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell description nowrap"
+                      draggable="true"
                       id="description"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -2661,7 +2702,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -2674,7 +2717,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -2687,7 +2732,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell repository nowrap sorting"
+                      draggable="true"
                       id="repo"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -2710,6 +2757,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -2747,6 +2795,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -2757,6 +2806,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -2769,6 +2819,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -2781,6 +2832,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -2793,6 +2845,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -2800,6 +2853,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -2825,6 +2879,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -2835,6 +2890,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -2847,6 +2903,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -2859,6 +2916,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -2871,6 +2929,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -2878,6 +2937,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -3718,6 +3778,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                   >
                     <div
                       class="TableCell icon nowrap"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -3725,7 +3786,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -3748,7 +3811,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell description nowrap"
+                      draggable="true"
                       id="description"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -3761,7 +3826,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -3774,7 +3841,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -3787,7 +3856,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell repository nowrap sorting"
+                      draggable="true"
                       id="repo"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -3810,6 +3881,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -3847,6 +3919,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -3857,6 +3930,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -3869,6 +3943,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -3881,6 +3956,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -3893,6 +3969,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -3900,6 +3977,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -3925,6 +4003,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -3935,6 +4014,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -3947,6 +4027,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -3959,6 +4040,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -3971,6 +4053,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -3978,6 +4061,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -4967,6 +5051,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                   >
                     <div
                       class="TableCell icon nowrap"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -4974,7 +5059,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -4997,7 +5084,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell description nowrap"
+                      draggable="true"
                       id="description"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -5010,7 +5099,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -5023,7 +5114,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -5036,7 +5129,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell repository nowrap sorting"
+                      draggable="true"
                       id="repo"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -5059,6 +5154,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -5096,6 +5192,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -5106,6 +5203,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -5118,6 +5216,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -5130,6 +5229,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -5142,6 +5242,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -5149,6 +5250,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -5174,6 +5276,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -5184,6 +5287,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -5196,6 +5300,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -5208,6 +5313,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -5220,6 +5326,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -5227,6 +5334,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -6226,6 +6334,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                   >
                     <div
                       class="TableCell icon nowrap"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -6233,7 +6342,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -6256,7 +6367,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell description nowrap"
+                      draggable="true"
                       id="description"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -6269,7 +6382,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -6282,7 +6397,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -6295,7 +6412,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell repository nowrap sorting"
+                      draggable="true"
                       id="repo"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -6318,6 +6437,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -6355,6 +6475,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -6365,6 +6486,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -6377,6 +6499,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -6389,6 +6512,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -6401,6 +6525,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -6408,6 +6533,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -6433,6 +6559,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -6443,6 +6570,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -6455,6 +6583,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -6467,6 +6596,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -6479,6 +6609,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -6486,6 +6617,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -7475,6 +7607,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                   >
                     <div
                       class="TableCell icon nowrap"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -7482,7 +7615,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -7505,7 +7640,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell description nowrap"
+                      draggable="true"
                       id="description"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -7518,7 +7655,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -7531,7 +7670,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -7544,7 +7685,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell repository nowrap sorting"
+                      draggable="true"
                       id="repo"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -7567,6 +7710,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -7604,6 +7748,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -7614,6 +7759,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -7626,6 +7772,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -7638,6 +7785,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -7650,6 +7798,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -7657,6 +7806,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -7682,6 +7832,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -7692,6 +7843,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -7704,6 +7856,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -7716,6 +7869,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -7728,6 +7882,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -7735,6 +7890,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -8728,6 +8884,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                   >
                     <div
                       class="TableCell icon nowrap"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -8735,7 +8892,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -8758,7 +8917,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell description nowrap"
+                      draggable="true"
                       id="description"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -8771,7 +8932,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -8784,7 +8947,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -8797,7 +8962,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell repository nowrap sorting"
+                      draggable="true"
                       id="repo"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -8820,6 +8987,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -8857,6 +9025,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -8867,6 +9036,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -8879,6 +9049,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -8891,6 +9062,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -8903,6 +9075,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -8910,6 +9083,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -8935,6 +9109,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -8945,6 +9120,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -8957,6 +9133,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -8969,6 +9146,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -8981,6 +9159,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -8988,6 +9167,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -9987,6 +10167,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                   >
                     <div
                       class="TableCell icon nowrap"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -9994,7 +10175,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -10017,7 +10200,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell description nowrap"
+                      draggable="true"
                       id="description"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -10030,7 +10215,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell version nowrap"
+                      draggable="true"
                       id="version"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -10043,7 +10230,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell app-version nowrap"
+                      draggable="true"
                       id="app-version"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -10056,7 +10245,9 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell repository nowrap sorting"
+                      draggable="true"
                       id="repo"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -10079,6 +10270,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -10116,6 +10308,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -10126,6 +10319,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -10138,6 +10332,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -10150,6 +10345,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -10162,6 +10358,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -10169,6 +10366,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"
@@ -10194,6 +10392,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                         >
                           <div
                             class="TableCell icon"
+                            style="order: 1;"
                           >
                             <figure>
                               <div
@@ -10204,6 +10403,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 2;"
                           >
                             <div
                               class="badge flat"
@@ -10216,6 +10416,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell description"
+                            style="order: 3;"
                           >
                             <div
                               class="badge flat"
@@ -10228,6 +10429,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell version"
+                            style="order: 4;"
                           >
                             <div
                               class="badge flat"
@@ -10240,6 +10442,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell app-version"
+                            style="order: 5;"
                           >
                             <div
                               class="badge flat"
@@ -10247,6 +10450,7 @@ exports[`opening dock tab for installing helm chart > given application is start
                           </div>
                           <div
                             class="TableCell some-repository repository"
+                            style="order: 6;"
                           >
                             <div
                               class="badge flat"

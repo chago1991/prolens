@@ -465,7 +465,9 @@ exports[`entity running technical tests > when navigated to catalog > renders 1`
                     >
                       <div
                         class="TableCell entityName nowrap sorting"
+                        draggable="true"
                         id="name"
+                        style="order: 1;"
                       >
                         <div
                           class="content"
@@ -489,7 +491,9 @@ exports[`entity running technical tests > when navigated to catalog > renders 1`
                       <div
                         class="TableCell nowrap sorting"
                         data-testid="catalog-kind-column"
+                        draggable="true"
                         id="kind"
+                        style="order: 2;"
                       >
                         <div
                           class="content"
@@ -513,7 +517,9 @@ exports[`entity running technical tests > when navigated to catalog > renders 1`
                       <div
                         class="TableCell sourceCell nowrap sorting"
                         data-testid="catalog-source-column"
+                        draggable="true"
                         id="source"
+                        style="order: 3;"
                       >
                         <div
                           class="content"
@@ -537,7 +543,9 @@ exports[`entity running technical tests > when navigated to catalog > renders 1`
                       <div
                         class="TableCell labelsCell scrollable nowrap"
                         data-testid="catalog-labels-column"
+                        draggable="true"
                         id="labels"
+                        style="order: 4;"
                       >
                         <div
                           class="content"
@@ -551,7 +559,9 @@ exports[`entity running technical tests > when navigated to catalog > renders 1`
                       <div
                         class="TableCell statusCell nowrap sorting"
                         data-testid="catalog-status-column"
+                        draggable="true"
                         id="status"
+                        style="order: 5;"
                       >
                         <div
                           class="content"
@@ -574,6 +584,7 @@ exports[`entity running technical tests > when navigated to catalog > renders 1`
                       </div>
                       <div
                         class="TableCell menu nowrap"
+                        style="order: 100000;"
                       >
                         <div
                           class="content"
@@ -610,6 +621,7 @@ exports[`entity running technical tests > when navigated to catalog > renders 1`
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -650,16 +662,19 @@ exports[`entity running technical tests > when navigated to catalog > renders 1`
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               Mock
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             >
                               <div
                                 class="badge clickable scrollable"
@@ -670,6 +685,7 @@ exports[`entity running technical tests > when navigated to catalog > renders 1`
                             </div>
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class=""
@@ -677,6 +693,7 @@ exports[`entity running technical tests > when navigated to catalog > renders 1`
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -1351,7 +1368,9 @@ exports[`entity running technical tests > when navigated to catalog > when detai
                     >
                       <div
                         class="TableCell entityName nowrap sorting"
+                        draggable="true"
                         id="name"
+                        style="order: 1;"
                       >
                         <div
                           class="content"
@@ -1375,7 +1394,9 @@ exports[`entity running technical tests > when navigated to catalog > when detai
                       <div
                         class="TableCell nowrap sorting"
                         data-testid="catalog-kind-column"
+                        draggable="true"
                         id="kind"
+                        style="order: 2;"
                       >
                         <div
                           class="content"
@@ -1399,7 +1420,9 @@ exports[`entity running technical tests > when navigated to catalog > when detai
                       <div
                         class="TableCell sourceCell nowrap sorting"
                         data-testid="catalog-source-column"
+                        draggable="true"
                         id="source"
+                        style="order: 3;"
                       >
                         <div
                           class="content"
@@ -1423,7 +1446,9 @@ exports[`entity running technical tests > when navigated to catalog > when detai
                       <div
                         class="TableCell labelsCell scrollable nowrap"
                         data-testid="catalog-labels-column"
+                        draggable="true"
                         id="labels"
+                        style="order: 4;"
                       >
                         <div
                           class="content"
@@ -1437,7 +1462,9 @@ exports[`entity running technical tests > when navigated to catalog > when detai
                       <div
                         class="TableCell statusCell nowrap sorting"
                         data-testid="catalog-status-column"
+                        draggable="true"
                         id="status"
+                        style="order: 5;"
                       >
                         <div
                           class="content"
@@ -1460,6 +1487,7 @@ exports[`entity running technical tests > when navigated to catalog > when detai
                       </div>
                       <div
                         class="TableCell menu nowrap"
+                        style="order: 100000;"
                       >
                         <div
                           class="content"
@@ -1496,6 +1524,7 @@ exports[`entity running technical tests > when navigated to catalog > when detai
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -1536,16 +1565,19 @@ exports[`entity running technical tests > when navigated to catalog > when detai
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               Mock
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             >
                               <div
                                 class="badge clickable scrollable"
@@ -1556,6 +1588,7 @@ exports[`entity running technical tests > when navigated to catalog > when detai
                             </div>
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class=""
@@ -1563,6 +1596,7 @@ exports[`entity running technical tests > when navigated to catalog > when detai
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
