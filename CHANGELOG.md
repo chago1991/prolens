@@ -8,6 +8,15 @@ The version of the extension API is separate from the application version: it
 follows Freelens, so that extensions written for Freelens keep working (see
 `docs/prolens/releasing.md`).
 
+## [1.6.0] - 2026-11-19
+
+### Added
+
+- A "BPF Trace" sub-menu on Linux nodes and on pods with a running container
+  runs bpftrace through the kubectl-trace plugin in a terminal tab: presets
+  for new processes, opened files, TCP connections and system-call counts, a
+  custom program, and the list of trace runs. See `docs/prolens/bpf-trace.md`.
+
 ## [1.5.0] - 2026-11-19
 
 ### Added

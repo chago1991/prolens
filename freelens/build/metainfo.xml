@@ -64,6 +64,11 @@
   <icon type="stock">prolens</icon>
   <content_rating type="oars-1.1"></content_rating>
   <releases>
+    <release version="1.6.0" date="2026-11-19">
+      <description translatable="no">
+        <p>BPF Trace menu on nodes and pods: bpftrace presets, custom programs and the list of trace runs through the kubectl-trace plugin.</p>
+      </description>
+    </release>
     <release version="1.5.0" date="2026-11-19">
       <description translatable="no">
         <p>Cluster tabs at the top of the window; resource list columns reordered by dragging their headers; a create button on every resource list; lighter table styling.</p>
