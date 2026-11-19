@@ -8,6 +8,26 @@ The version of the extension API is separate from the application version: it
 follows Freelens, so that extensions written for Freelens keep working (see
 `docs/prolens/releasing.md`).
 
+## [1.5.0] - 2026-11-19
+
+### Added
+
+- Tabs across the top of the window: one per open cluster, labelled with the
+  page open in it (such as "Pods - my-cluster"), and a tab for the welcome
+  page. A dot shows whether the cluster is connected. Closing a tab, with its
+  button or a middle click, hides the cluster without disconnecting it and
+  opens its neighbour.
+- Columns of resource lists can be reordered by dragging their headers. The
+  order is kept per table, and the column menu resets it.
+- Every resource list has a create button, which opens the "Create resource"
+  editor with a manifest for the kind and the selected namespace.
+
+### Changed
+
+- Table rows have a faint separator, and links in table cells are underlined.
+- The status brick of a container that restarted is no longer outlined in
+  orange; restarts show in the Restarts column and the tooltip.
+
 ## [1.4.0] - 2026-11-18
 
 ### Added

@@ -1,51 +1,40 @@
-# ProLens v1.4.0
+# ProLens v1.5.0
 
-ProLens 1.4 adds Kubernetes Gateway API support: every Gateway API resource
-the cluster serves, visual editors for listeners and HTTP routing, and a
-topology of the traffic path from the gateway class to the pods.
+ProLens 1.5 keeps several clusters at hand in tabs, lets you arrange the
+columns of every resource list, and adds a create button to all of them.
 
 ## Highlights
 
-### Gateway API
+### Cluster tabs
 
-- **Network → Gateway API** in the cluster sidebar holds an **Overview**, a
-  **Topology** and a page for each resource: **Gateway Classes**,
-  **Gateways**, **HTTP Routes**, **GRPC Routes**, **TCP Routes**,
-  **TLS Routes**, **UDP Routes**, **Reference Grants**,
-  **Backend TLS Policies** and **Listener Sets**.
-- A page is shown only when the cluster serves the resource and you may list
-  it. Versions come from API discovery, standard and experimental channels
-  alike. Without the CRDs, the overview explains how to install them.
-- Details show listeners and their status, attached routes, parents and the
-  listeners a route attaches to, matches, filters, weighted backends and
-  timeouts, and flag missing backends, rejected routes and cross-namespace
-  references without a ReferenceGrant.
-- Listeners of gateways and listener sets, and the hostnames and rules of HTTP
-  routes, can be edited visually. Changes are validated and checked against
-  RBAC before they are applied, and resources that look like production ask
-  for their name to be typed.
-- The **Topology** draws GatewayClass → Gateway → Listener → Route → Service
-  → EndpointSlice → Pod, with backend weights and problems highlighted, and
-  follows changes in the cluster.
+- Every cluster you open gets a tab at the top of the window, labelled with
+  the page open in it, such as **Pods - my-cluster**, with a dot that shows
+  whether it is connected. The **Welcome** tab leads back to the catalog.
+- Click a tab to switch clusters. Closing a tab, with **×** or a middle click,
+  hides the cluster without disconnecting it.
 
-### Cilium
+### Resource lists
 
-- When Cilium is the Gateway API controller, a gateway shows its load
-  balancer Service, CiliumEnvoyConfig, and the Hubble Relay and Hubble UI of
-  the cluster.
+- Drag a column header onto another to move the column. The order is kept for
+  each table; **Reset column order** in the column menu restores the default.
+- The round **+** button in the corner of every resource list opens the
+  **Create resource** editor with a manifest for that kind, in the selected
+  namespace.
+- Rows have a faint separator, links are underlined, and the container status
+  of a restarted container is no longer outlined in orange.
 
 ## Downloads
 
 | Platform             | Files                                                            |
 | -------------------- | ---------------------------------------------------------------- |
-| macOS, Apple silicon | `ProLens-1.4.0-macos-arm64.dmg`, `ProLens-1.4.0-macos-arm64.zip` |
-| macOS, Intel         | `ProLens-1.4.0-macos-x64.dmg`, `ProLens-1.4.0-macos-x64.zip`     |
-| Windows, x64         | `ProLens-1.4.0-windows-x64.exe` (installer)                      |
-| Windows, ARM64       | `ProLens-1.4.0-windows-arm64.exe` (installer)                    |
-| Linux, x86_64        | `ProLens-1.4.0-linux-x64.AppImage`, `.deb`, `.rpm`               |
-| Linux, ARM64         | `ProLens-1.4.0-linux-arm64.AppImage`, `.deb`, `.rpm`             |
+| macOS, Apple silicon | `ProLens-1.5.0-macos-arm64.dmg`, `ProLens-1.5.0-macos-arm64.zip` |
+| macOS, Intel         | `ProLens-1.5.0-macos-x64.dmg`, `ProLens-1.5.0-macos-x64.zip`     |
+| Windows, x64         | `ProLens-1.5.0-windows-x64.exe` (installer)                      |
+| Windows, ARM64       | `ProLens-1.5.0-windows-arm64.exe` (installer)                    |
+| Linux, x86_64        | `ProLens-1.5.0-linux-x64.AppImage`, `.deb`, `.rpm`               |
+| Linux, ARM64         | `ProLens-1.5.0-linux-arm64.AppImage`, `.deb`, `.rpm`             |
 
-`ProLens-1.4.0-SHA256SUMS.txt` lists the SHA-256 of every file.
+`ProLens-1.5.0-SHA256SUMS.txt` lists the SHA-256 of every file.
 
 ## Installing
 
@@ -60,7 +49,7 @@ warns before the first start:
 - **Windows:** in the SmartScreen dialog, choose **More info**, then
   **Run anyway**.
 - **Linux:** packages are not signed; compare their checksums with
-  `ProLens-1.4.0-SHA256SUMS.txt`.
+  `ProLens-1.5.0-SHA256SUMS.txt`.
 
 ## Requirements
 
