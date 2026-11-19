@@ -910,7 +910,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     >
                       <div
                         class="TableCell entityName nowrap sorting"
+                        draggable="true"
                         id="name"
+                        style="order: 1;"
                       >
                         <div
                           class="content"
@@ -934,7 +936,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell nowrap sorting"
                         data-testid="catalog-kind-column"
+                        draggable="true"
                         id="kind"
+                        style="order: 2;"
                       >
                         <div
                           class="content"
@@ -958,7 +962,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell sourceCell nowrap sorting"
                         data-testid="catalog-source-column"
+                        draggable="true"
                         id="source"
+                        style="order: 3;"
                       >
                         <div
                           class="content"
@@ -982,7 +988,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell labelsCell scrollable nowrap"
                         data-testid="catalog-labels-column"
+                        draggable="true"
                         id="labels"
+                        style="order: 4;"
                       >
                         <div
                           class="content"
@@ -996,7 +1004,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell statusCell nowrap sorting"
                         data-testid="catalog-status-column"
+                        draggable="true"
                         id="status"
+                        style="order: 5;"
                       >
                         <div
                           class="content"
@@ -1019,6 +1029,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       </div>
                       <div
                         class="TableCell menu nowrap"
+                        style="order: 100000;"
                       >
                         <div
                           class="content"
@@ -1055,6 +1066,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -1095,19 +1107,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               KubernetesCluster
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="connecting"
@@ -1117,6 +1133,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -1145,6 +1162,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -1185,19 +1203,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               WebLink
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="available"
@@ -1207,6 +1229,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -1235,6 +1258,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -1275,19 +1299,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               KubernetesCluster
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               local
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="connecting"
@@ -1297,6 +1325,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -1940,7 +1969,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     >
                       <div
                         class="TableCell entityName nowrap sorting"
+                        draggable="true"
                         id="name"
+                        style="order: 1;"
                       >
                         <div
                           class="content"
@@ -1964,7 +1995,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell nowrap sorting"
                         data-testid="catalog-kind-column"
+                        draggable="true"
                         id="kind"
+                        style="order: 2;"
                       >
                         <div
                           class="content"
@@ -1988,7 +2021,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell sourceCell nowrap sorting"
                         data-testid="catalog-source-column"
+                        draggable="true"
                         id="source"
+                        style="order: 3;"
                       >
                         <div
                           class="content"
@@ -2012,7 +2047,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell labelsCell scrollable nowrap"
                         data-testid="catalog-labels-column"
+                        draggable="true"
                         id="labels"
+                        style="order: 4;"
                       >
                         <div
                           class="content"
@@ -2026,7 +2063,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell statusCell nowrap sorting"
                         data-testid="catalog-status-column"
+                        draggable="true"
                         id="status"
+                        style="order: 5;"
                       >
                         <div
                           class="content"
@@ -2049,6 +2088,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       </div>
                       <div
                         class="TableCell menu nowrap"
+                        style="order: 100000;"
                       >
                         <div
                           class="content"
@@ -2085,6 +2125,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -2125,19 +2166,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               KubernetesCluster
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="connecting"
@@ -2147,6 +2192,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -2175,6 +2221,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -2215,19 +2262,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               WebLink
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="available"
@@ -2237,6 +2288,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -2265,6 +2317,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -2305,19 +2358,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               KubernetesCluster
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               local
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="connecting"
@@ -2327,6 +2384,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -3002,7 +3060,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     >
                       <div
                         class="TableCell entityName nowrap sorting"
+                        draggable="true"
                         id="name"
+                        style="order: 1;"
                       >
                         <div
                           class="content"
@@ -3026,7 +3086,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell nowrap sorting"
                         data-testid="catalog-kind-column"
+                        draggable="true"
                         id="kind"
+                        style="order: 2;"
                       >
                         <div
                           class="content"
@@ -3050,7 +3112,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell sourceCell nowrap sorting"
                         data-testid="catalog-source-column"
+                        draggable="true"
                         id="source"
+                        style="order: 3;"
                       >
                         <div
                           class="content"
@@ -3074,7 +3138,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell labelsCell scrollable nowrap"
                         data-testid="catalog-labels-column"
+                        draggable="true"
                         id="labels"
+                        style="order: 4;"
                       >
                         <div
                           class="content"
@@ -3088,7 +3154,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell statusCell nowrap sorting"
                         data-testid="catalog-status-column"
+                        draggable="true"
                         id="status"
+                        style="order: 5;"
                       >
                         <div
                           class="content"
@@ -3111,6 +3179,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       </div>
                       <div
                         class="TableCell menu nowrap"
+                        style="order: 100000;"
                       >
                         <div
                           class="content"
@@ -3147,6 +3216,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -3187,19 +3257,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               KubernetesCluster
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="connecting"
@@ -3209,6 +3283,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -3237,6 +3312,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -3277,19 +3353,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               WebLink
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="available"
@@ -3299,6 +3379,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -3327,6 +3408,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -3367,19 +3449,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               KubernetesCluster
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               local
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="connecting"
@@ -3389,6 +3475,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -4316,7 +4403,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     >
                       <div
                         class="TableCell entityName nowrap sorting"
+                        draggable="true"
                         id="name"
+                        style="order: 1;"
                       >
                         <div
                           class="content"
@@ -4340,7 +4429,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell nowrap sorting"
                         data-testid="catalog-kind-column"
+                        draggable="true"
                         id="kind"
+                        style="order: 2;"
                       >
                         <div
                           class="content"
@@ -4364,7 +4455,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell sourceCell nowrap sorting"
                         data-testid="catalog-source-column"
+                        draggable="true"
                         id="source"
+                        style="order: 3;"
                       >
                         <div
                           class="content"
@@ -4388,7 +4481,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell labelsCell scrollable nowrap"
                         data-testid="catalog-labels-column"
+                        draggable="true"
                         id="labels"
+                        style="order: 4;"
                       >
                         <div
                           class="content"
@@ -4402,7 +4497,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell statusCell nowrap sorting"
                         data-testid="catalog-status-column"
+                        draggable="true"
                         id="status"
+                        style="order: 5;"
                       >
                         <div
                           class="content"
@@ -4425,6 +4522,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       </div>
                       <div
                         class="TableCell menu nowrap"
+                        style="order: 100000;"
                       >
                         <div
                           class="content"
@@ -4461,6 +4559,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -4501,19 +4600,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               KubernetesCluster
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="connecting"
@@ -4523,6 +4626,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -4551,6 +4655,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -4591,19 +4696,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               WebLink
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="available"
@@ -4613,6 +4722,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -4641,6 +4751,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -4681,19 +4792,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               KubernetesCluster
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               local
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="connecting"
@@ -4703,6 +4818,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -5598,7 +5714,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     >
                       <div
                         class="TableCell entityName nowrap sorting"
+                        draggable="true"
                         id="name"
+                        style="order: 1;"
                       >
                         <div
                           class="content"
@@ -5622,7 +5740,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell nowrap sorting"
                         data-testid="catalog-kind-column"
+                        draggable="true"
                         id="kind"
+                        style="order: 2;"
                       >
                         <div
                           class="content"
@@ -5646,7 +5766,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell sourceCell nowrap sorting"
                         data-testid="catalog-source-column"
+                        draggable="true"
                         id="source"
+                        style="order: 3;"
                       >
                         <div
                           class="content"
@@ -5670,7 +5792,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell labelsCell scrollable nowrap"
                         data-testid="catalog-labels-column"
+                        draggable="true"
                         id="labels"
+                        style="order: 4;"
                       >
                         <div
                           class="content"
@@ -5684,7 +5808,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell statusCell nowrap sorting"
                         data-testid="catalog-status-column"
+                        draggable="true"
                         id="status"
+                        style="order: 5;"
                       >
                         <div
                           class="content"
@@ -5707,6 +5833,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       </div>
                       <div
                         class="TableCell menu nowrap"
+                        style="order: 100000;"
                       >
                         <div
                           class="content"
@@ -5743,6 +5870,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -5783,19 +5911,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               KubernetesCluster
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="connecting"
@@ -5805,6 +5937,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -5833,6 +5966,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -5873,19 +6007,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               WebLink
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="available"
@@ -5895,6 +6033,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -5923,6 +6062,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -5963,19 +6103,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               KubernetesCluster
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               local
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="connecting"
@@ -5985,6 +6129,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -6648,7 +6793,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     >
                       <div
                         class="TableCell entityName nowrap sorting"
+                        draggable="true"
                         id="name"
+                        style="order: 1;"
                       >
                         <div
                           class="content"
@@ -6672,7 +6819,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell nowrap sorting"
                         data-testid="catalog-kind-column"
+                        draggable="true"
                         id="kind"
+                        style="order: 2;"
                       >
                         <div
                           class="content"
@@ -6696,7 +6845,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell sourceCell nowrap sorting"
                         data-testid="catalog-source-column"
+                        draggable="true"
                         id="source"
+                        style="order: 3;"
                       >
                         <div
                           class="content"
@@ -6720,7 +6871,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell labelsCell scrollable nowrap"
                         data-testid="catalog-labels-column"
+                        draggable="true"
                         id="labels"
+                        style="order: 4;"
                       >
                         <div
                           class="content"
@@ -6734,7 +6887,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell statusCell nowrap sorting"
                         data-testid="catalog-status-column"
+                        draggable="true"
                         id="status"
+                        style="order: 5;"
                       >
                         <div
                           class="content"
@@ -6757,6 +6912,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       </div>
                       <div
                         class="TableCell menu nowrap"
+                        style="order: 100000;"
                       >
                         <div
                           class="content"
@@ -6793,6 +6949,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -6833,19 +6990,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               KubernetesCluster
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="connecting"
@@ -6855,6 +7016,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -6883,6 +7045,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -6923,19 +7086,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               WebLink
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="available"
@@ -6945,6 +7112,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -6973,6 +7141,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -7013,19 +7182,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               KubernetesCluster
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               local
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="connecting"
@@ -7035,6 +7208,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -7869,7 +8043,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                     >
                       <div
                         class="TableCell entityName nowrap sorting"
+                        draggable="true"
                         id="name"
+                        style="order: 1;"
                       >
                         <div
                           class="content"
@@ -7893,7 +8069,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell nowrap sorting"
                         data-testid="catalog-kind-column"
+                        draggable="true"
                         id="kind"
+                        style="order: 2;"
                       >
                         <div
                           class="content"
@@ -7917,7 +8095,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell sourceCell nowrap sorting"
                         data-testid="catalog-source-column"
+                        draggable="true"
                         id="source"
+                        style="order: 3;"
                       >
                         <div
                           class="content"
@@ -7941,7 +8121,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell labelsCell scrollable nowrap"
                         data-testid="catalog-labels-column"
+                        draggable="true"
                         id="labels"
+                        style="order: 4;"
                       >
                         <div
                           class="content"
@@ -7955,7 +8137,9 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       <div
                         class="TableCell statusCell nowrap sorting"
                         data-testid="catalog-status-column"
+                        draggable="true"
                         id="status"
+                        style="order: 5;"
                       >
                         <div
                           class="content"
@@ -7978,6 +8162,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                       </div>
                       <div
                         class="TableCell menu nowrap"
+                        style="order: 100000;"
                       >
                         <div
                           class="content"
@@ -8014,6 +8199,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -8054,19 +8240,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               KubernetesCluster
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="connecting"
@@ -8076,6 +8266,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -8104,6 +8295,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -8144,19 +8336,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               WebLink
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               unknown
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="available"
@@ -8166,6 +8362,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i
@@ -8194,6 +8391,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                           >
                             <div
                               class="TableCell entityName"
+                              style="order: 1;"
                             >
                               <div
                                 class="Avatar rounded catalogAvatar"
@@ -8234,19 +8432,23 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell"
+                              style="order: 2;"
                             >
                               KubernetesCluster
                             </div>
                             <div
                               class="TableCell sourceCell"
+                              style="order: 3;"
                             >
                               local
                             </div>
                             <div
                               class="TableCell labelsCell scrollable"
+                              style="order: 4;"
                             />
                             <div
                               class="TableCell statusCell"
+                              style="order: 5;"
                             >
                               <span
                                 class="connecting"
@@ -8256,6 +8458,7 @@ exports[`opening catalog entity details panel > when navigated to the catalog > 
                             </div>
                             <div
                               class="TableCell menu"
+                              style="order: 100000;"
                             >
                               <div>
                                 <i

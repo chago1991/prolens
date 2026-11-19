@@ -599,7 +599,9 @@ exports[`Viewing Custom Resources with extra columns > renders 1`] = `
                   </div>
                   <div
                     class="TableCell name nowrap sorting"
+                    draggable="true"
                     id="name"
+                    style="order: 1;"
                   >
                     <div
                       class="content"
@@ -623,7 +625,9 @@ exports[`Viewing Custom Resources with extra columns > renders 1`] = `
                   <div
                     class="TableCell some-column nowrap sorting"
                     data-testid="custom-resource-column-title-some-column"
+                    draggable="true"
                     id="Some Column"
+                    style="order: 3;"
                   >
                     <div
                       class="content"
@@ -646,7 +650,9 @@ exports[`Viewing Custom Resources with extra columns > renders 1`] = `
                   </div>
                   <div
                     class="TableCell age nowrap sorting"
+                    draggable="true"
                     id="age"
+                    style="order: 4;"
                   >
                     <div
                       class="content"
@@ -669,6 +675,7 @@ exports[`Viewing Custom Resources with extra columns > renders 1`] = `
                   </div>
                   <div
                     class="TableCell menu nowrap"
+                    style="order: 100000;"
                   >
                     <div
                       class="content"
@@ -720,6 +727,7 @@ exports[`Viewing Custom Resources with extra columns > renders 1`] = `
                         </div>
                         <div
                           class="TableCell name"
+                          style="order: 1;"
                         >
                           <div
                             class="badge flat"
@@ -732,10 +740,12 @@ exports[`Viewing Custom Resources with extra columns > renders 1`] = `
                         </div>
                         <div
                           class="TableCell"
+                          style="order: 2;"
                         />
                         <div
                           class="TableCell some-column"
                           data-testid="custom-resource-column-cell-some-column-for-some-resource"
+                          style="order: 3;"
                         >
                           <div
                             class="badge flat"
@@ -748,6 +758,7 @@ exports[`Viewing Custom Resources with extra columns > renders 1`] = `
                         </div>
                         <div
                           class="TableCell age"
+                          style="order: 4;"
                         >
                           <div
                             class="badge flat"
@@ -760,6 +771,7 @@ exports[`Viewing Custom Resources with extra columns > renders 1`] = `
                         </div>
                         <div
                           class="TableCell menu"
+                          style="order: 100000;"
                         >
                           <div>
                             <i
@@ -789,7 +801,26 @@ exports[`Viewing Custom Resources with extra columns > renders 1`] = `
               </div>
               <div
                 class="AddRemoveButtons flex gap-2"
-              />
+              >
+                <button
+                  class="Button add-button primary big round"
+                  type="button"
+                >
+                  <i
+                    class="Icon material focusable"
+                  >
+                    <span
+                      class="icon"
+                      data-icon-name="add"
+                    >
+                      add
+                    </span>
+                  </i>
+                </button>
+                <div>
+                  Create SomeResource
+                </div>
+              </div>
             </div>
           </div>
         </main>

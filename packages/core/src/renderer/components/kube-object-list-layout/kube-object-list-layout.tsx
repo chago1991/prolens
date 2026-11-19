@@ -18,6 +18,8 @@ import React from "react";
 import clusterFrameContextForNamespacedResourcesInjectable from "../../cluster-frame-context/for-namespaced-resources.injectable";
 import subscribeStoresInjectable from "../../kube-watch-api/subscribe-stores.injectable";
 import { ResourceKindMap, ResourceNames } from "../../utils/rbac";
+import createResourceTabInjectable from "../dock/create-resource/create-resource-tab.injectable";
+import createResourceTabStoreInjectable from "../dock/create-resource/store.injectable";
 import { ItemListLayout } from "../item-object-list/list-layout";
 import kubeSelectedUrlParamInjectable from "../kube-detail-params/kube-selected-url.injectable";
 import toggleKubeDetailsPaneInjectable from "../kube-detail-params/toggle-details.injectable";
@@ -67,7 +69,22 @@ interface Dependencies {
   kubeSelectedUrlParam: PageParam<string>;
   toggleKubeDetailsPane: ToggleKubeDetailsPane;
   generalColumns: GeneralKubeObjectListLayoutColumn[];
+  openCreateResource: (title: string, yaml: string) => void;
 }
+
+/** A starting manifest for the "Create resource" editor opened from a list. */
+export const resourceSkeleton = (
+  api: Pick<SubscribableStore["api"], "apiVersionWithGroup" | "kind" | "isNamespaced">,
+  namespace?: string,
+) =>
+  [
+    `apiVersion: ${api.apiVersionWithGroup}`,
+    `kind: ${api.kind}`,
+    "metadata:",
+    "  name: ",
+    ...(api.isNamespaced ? [`  namespace: ${namespace ?? "default"}`] : []),
+    "",
+  ].join("\n");
 
 const matchesApiFor = (api: SubscribableStore["api"]) => (column: GeneralKubeObjectListLayoutColumn) =>
   column.kind === api.kind &&
@@ -204,6 +221,8 @@ class NonInjectedKubeObjectListLayout<
       generalColumns,
       sortingCallbacks = {},
       customizeTableRowProps,
+      openCreateResource,
+      addRemoveButtons,
       ...layoutProps
     } = this.props;
     const resourceName = this.props.resourceName || ResourceNames[ResourceKindMap[store.api.kind]] || store.api.kind;
@@ -313,6 +332,18 @@ class NonInjectedKubeObjectListLayout<
         }
         spinnerTestId="kube-object-list-layout-spinner"
         {...layoutProps}
+        addRemoveButtons={{
+          onAdd: () => {
+            const namespaces = this.props.clusterFrameContext.contextNamespaces;
+
+            openCreateResource(
+              `Create ${store.api.kind}`,
+              resourceSkeleton(store.api, namespaces.length === 1 ? namespaces[0] : undefined),
+            );
+          },
+          addTooltip: `Create ${store.api.kind}`,
+          ...addRemoveButtons,
+        }}
         customizeTableRowProps={getTableRowCustomizations}
       />
     );
@@ -334,6 +365,11 @@ export const KubeObjectListLayout = withInjectables<
     kubeSelectedUrlParam: di.inject(kubeSelectedUrlParamInjectable),
     toggleKubeDetailsPane: di.inject(toggleKubeDetailsPaneInjectable),
     generalColumns: di.injectMany(kubeObjectListLayoutColumnInjectionToken),
+    openCreateResource: (title, yaml) => {
+      const tab = di.inject(createResourceTabInjectable)({ title });
+
+      di.inject(createResourceTabStoreInjectable).setData(tab.id, yaml);
+    },
   }),
 }) as <K extends KubeObject, A extends KubeApi<K, D>, D extends KubeJsonApiDataFor<K> = KubeJsonApiDataFor<K>>(
   props: KubeObjectListLayoutProps<K, A, D>,

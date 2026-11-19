@@ -35,6 +35,11 @@ export interface TableCellProps extends React.DOMAttributes<HTMLDivElement> {
   resizable?: boolean;
 
   /**
+   * Whether the cell can be dragged, to reorder the columns
+   */
+  draggable?: boolean;
+
+  /**
    * Callback when resize is initiated from a header cell
    */
   onResizeStart?: (event: MouseEvent) => void;

@@ -12,6 +12,7 @@
 import { withInjectables } from "@ogre-tools/injectable-react";
 import { observer } from "mobx-react";
 import { useEffect } from "react";
+import { ClusterTabs } from "../../../../features/cluster-tabs/renderer/cluster-tabs";
 import watchHistoryStateInjectable from "../../../remote-helpers/watch-history-state.injectable";
 import { Gutter } from "../../gutter";
 import { Map } from "../../map";
@@ -42,7 +43,9 @@ const NonInjectedTopBar = observer(
             {toItemWhichWorksWithWindowDraggingAndDoubleClicking}
           </Map>
 
-          <div className={styles.separator} />
+          <div className={styles.separator}>
+            <ClusterTabs />
+          </div>
 
           <Map items={itemsOnRight.get()} getSeparator={() => <Gutter size="sm" />}>
             {toItemWhichWorksWithWindowDraggingAndDoubleClicking}

@@ -755,7 +755,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -778,7 +780,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                     </div>
                     <div
                       class="TableCell warning-header nowrap"
+                      draggable="true"
                       id="warning"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -800,7 +804,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                     </div>
                     <div
                       class="TableCell namespace nowrap sorting"
+                      draggable="true"
                       id="namespace"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -823,7 +829,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                     </div>
                     <div
                       class="TableCell containers nowrap sorting"
+                      draggable="true"
                       id="containers"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -846,7 +854,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                     </div>
                     <div
                       class="TableCell ports nowrap sorting"
+                      draggable="true"
                       id="ports"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -869,7 +879,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                     </div>
                     <div
                       class="TableCell cpu nowrap sorting"
+                      draggable="true"
                       id="cpuUsage"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -892,7 +904,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                     </div>
                     <div
                       class="TableCell memory nowrap sorting"
+                      draggable="true"
                       id="memoryUsage"
+                      style="order: 7;"
                     >
                       <div
                         class="content"
@@ -915,7 +929,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                     </div>
                     <div
                       class="TableCell restarts nowrap sorting"
+                      draggable="true"
                       id="restarts"
+                      style="order: 8;"
                     >
                       <div
                         class="content"
@@ -938,7 +954,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                     </div>
                     <div
                       class="TableCell owners nowrap sorting"
+                      draggable="true"
                       id="owners"
+                      style="order: 9;"
                     >
                       <div
                         class="content"
@@ -961,7 +979,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 13;"
                     >
                       <div
                         class="content"
@@ -984,7 +1004,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 14;"
                     >
                       <div
                         class="content"
@@ -1007,7 +1029,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                     </div>
                     <div
                       class="TableCell logs nowrap"
+                      draggable="true"
                       id="logs"
+                      style="order: 15;"
                     >
                       <div
                         class="content"
@@ -1026,6 +1050,7 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -1077,6 +1102,7 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                           </div>
                           <div
                             class="TableCell name"
+                            style="order: 1;"
                           >
                             <div
                               class="badge flat"
@@ -1089,9 +1115,11 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                           </div>
                           <div
                             class="TableCell warning-header"
+                            style="order: 2;"
                           />
                           <div
                             class="TableCell namespace"
+                            style="order: 3;"
                           >
                             <div
                               class="badge NamespaceSelectBadge flat clickable"
@@ -1107,6 +1135,7 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                           </div>
                           <div
                             class="TableCell containers"
+                            style="order: 4;"
                           >
                             <div
                               class="StatusBrick"
@@ -1119,6 +1148,7 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                           </div>
                           <div
                             class="TableCell ports"
+                            style="order: 5;"
                           >
                             <span
                               class="PodPortsCell none"
@@ -1128,6 +1158,7 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                           </div>
                           <div
                             class="TableCell cpu"
+                            style="order: 6;"
                           >
                             <span>
                               N/A
@@ -1135,6 +1166,7 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                           </div>
                           <div
                             class="TableCell memory"
+                            style="order: 7;"
                           >
                             <span>
                               N/A
@@ -1142,14 +1174,17 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                           </div>
                           <div
                             class="TableCell restarts"
+                            style="order: 8;"
                           >
                             0
                           </div>
                           <div
                             class="TableCell owners"
+                            style="order: 9;"
                           />
                           <div
                             class="TableCell age"
+                            style="order: 13;"
                           >
                             <div
                               class="badge flat"
@@ -1162,11 +1197,13 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                           </div>
                           <div
                             class="TableCell waiting status"
+                            style="order: 14;"
                           >
                             Waiting
                           </div>
                           <div
                             class="TableCell logs"
+                            style="order: 15;"
                           >
                             <i
                               class="Icon material interactive focusable"
@@ -1186,6 +1223,7 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                           </div>
                           <div
                             class="TableCell menu"
+                            style="order: 100000;"
                           >
                             <div>
                               <i
@@ -1215,7 +1253,26 @@ exports[`workloads / pods > when navigating to workloads / pods view > given a n
                 </div>
                 <div
                   class="AddRemoveButtons flex gap-2"
-                />
+                >
+                  <button
+                    class="Button add-button primary big round"
+                    type="button"
+                  >
+                    <i
+                      class="Icon material focusable"
+                    >
+                      <span
+                        class="icon"
+                        data-icon-name="add"
+                      >
+                        add
+                      </span>
+                    </i>
+                  </button>
+                  <div>
+                    Create Pod
+                  </div>
+                </div>
               </div>
             </div>
           </main>
@@ -2109,7 +2166,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given no 
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -2132,7 +2191,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given no 
                     </div>
                     <div
                       class="TableCell warning-header nowrap"
+                      draggable="true"
                       id="warning"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -2154,7 +2215,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given no 
                     </div>
                     <div
                       class="TableCell namespace nowrap sorting"
+                      draggable="true"
                       id="namespace"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -2177,7 +2240,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given no 
                     </div>
                     <div
                       class="TableCell containers nowrap sorting"
+                      draggable="true"
                       id="containers"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -2200,7 +2265,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given no 
                     </div>
                     <div
                       class="TableCell ports nowrap sorting"
+                      draggable="true"
                       id="ports"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -2223,7 +2290,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given no 
                     </div>
                     <div
                       class="TableCell cpu nowrap sorting"
+                      draggable="true"
                       id="cpuUsage"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -2246,7 +2315,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given no 
                     </div>
                     <div
                       class="TableCell memory nowrap sorting"
+                      draggable="true"
                       id="memoryUsage"
+                      style="order: 7;"
                     >
                       <div
                         class="content"
@@ -2269,7 +2340,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given no 
                     </div>
                     <div
                       class="TableCell restarts nowrap sorting"
+                      draggable="true"
                       id="restarts"
+                      style="order: 8;"
                     >
                       <div
                         class="content"
@@ -2292,7 +2365,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given no 
                     </div>
                     <div
                       class="TableCell owners nowrap sorting"
+                      draggable="true"
                       id="owners"
+                      style="order: 9;"
                     >
                       <div
                         class="content"
@@ -2315,7 +2390,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given no 
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 13;"
                     >
                       <div
                         class="content"
@@ -2338,7 +2415,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given no 
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 14;"
                     >
                       <div
                         class="content"
@@ -2361,7 +2440,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given no 
                     </div>
                     <div
                       class="TableCell logs nowrap"
+                      draggable="true"
                       id="logs"
+                      style="order: 15;"
                     >
                       <div
                         class="content"
@@ -2380,6 +2461,7 @@ exports[`workloads / pods > when navigating to workloads / pods view > given no 
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -2411,7 +2493,26 @@ exports[`workloads / pods > when navigating to workloads / pods view > given no 
                 </div>
                 <div
                   class="AddRemoveButtons flex gap-2"
-                />
+                >
+                  <button
+                    class="Button add-button primary big round"
+                    type="button"
+                  >
+                    <i
+                      class="Icon material focusable"
+                    >
+                      <span
+                        class="icon"
+                        data-icon-name="add"
+                      >
+                        add
+                      </span>
+                    </i>
+                  </button>
+                  <div>
+                    Create Pod
+                  </div>
+                </div>
               </div>
             </div>
           </main>
@@ -3305,7 +3406,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given pod
                     </div>
                     <div
                       class="TableCell name nowrap sorting"
+                      draggable="true"
                       id="name"
+                      style="order: 1;"
                     >
                       <div
                         class="content"
@@ -3328,7 +3431,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given pod
                     </div>
                     <div
                       class="TableCell warning-header nowrap"
+                      draggable="true"
                       id="warning"
+                      style="order: 2;"
                     >
                       <div
                         class="content"
@@ -3350,7 +3455,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given pod
                     </div>
                     <div
                       class="TableCell namespace nowrap sorting"
+                      draggable="true"
                       id="namespace"
+                      style="order: 3;"
                     >
                       <div
                         class="content"
@@ -3373,7 +3480,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given pod
                     </div>
                     <div
                       class="TableCell containers nowrap sorting"
+                      draggable="true"
                       id="containers"
+                      style="order: 4;"
                     >
                       <div
                         class="content"
@@ -3396,7 +3505,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given pod
                     </div>
                     <div
                       class="TableCell ports nowrap sorting"
+                      draggable="true"
                       id="ports"
+                      style="order: 5;"
                     >
                       <div
                         class="content"
@@ -3419,7 +3530,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given pod
                     </div>
                     <div
                       class="TableCell cpu nowrap sorting"
+                      draggable="true"
                       id="cpuUsage"
+                      style="order: 6;"
                     >
                       <div
                         class="content"
@@ -3442,7 +3555,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given pod
                     </div>
                     <div
                       class="TableCell memory nowrap sorting"
+                      draggable="true"
                       id="memoryUsage"
+                      style="order: 7;"
                     >
                       <div
                         class="content"
@@ -3465,7 +3580,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given pod
                     </div>
                     <div
                       class="TableCell restarts nowrap sorting"
+                      draggable="true"
                       id="restarts"
+                      style="order: 8;"
                     >
                       <div
                         class="content"
@@ -3488,7 +3605,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given pod
                     </div>
                     <div
                       class="TableCell owners nowrap sorting"
+                      draggable="true"
                       id="owners"
+                      style="order: 9;"
                     >
                       <div
                         class="content"
@@ -3511,7 +3630,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given pod
                     </div>
                     <div
                       class="TableCell age nowrap sorting"
+                      draggable="true"
                       id="age"
+                      style="order: 13;"
                     >
                       <div
                         class="content"
@@ -3534,7 +3655,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given pod
                     </div>
                     <div
                       class="TableCell status nowrap sorting"
+                      draggable="true"
                       id="status"
+                      style="order: 14;"
                     >
                       <div
                         class="content"
@@ -3557,7 +3680,9 @@ exports[`workloads / pods > when navigating to workloads / pods view > given pod
                     </div>
                     <div
                       class="TableCell logs nowrap"
+                      draggable="true"
                       id="logs"
+                      style="order: 15;"
                     >
                       <div
                         class="content"
@@ -3576,6 +3701,7 @@ exports[`workloads / pods > when navigating to workloads / pods view > given pod
                     </div>
                     <div
                       class="TableCell menu nowrap"
+                      style="order: 100000;"
                     >
                       <div
                         class="content"
@@ -3602,7 +3728,26 @@ exports[`workloads / pods > when navigating to workloads / pods view > given pod
                 </div>
                 <div
                   class="AddRemoveButtons flex gap-2"
-                />
+                >
+                  <button
+                    class="Button add-button primary big round"
+                    type="button"
+                  >
+                    <i
+                      class="Icon material focusable"
+                    >
+                      <span
+                        class="icon"
+                        data-icon-name="add"
+                      >
+                        add
+                      </span>
+                    </i>
+                  </button>
+                  <div>
+                    Create Pod
+                  </div>
+                </div>
               </div>
             </div>
           </main>

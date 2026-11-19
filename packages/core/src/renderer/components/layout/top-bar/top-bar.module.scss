@@ -32,6 +32,9 @@
 
 .separator {
   flex-grow: 1;
+  align-self: stretch;
+  display: flex;
+  min-width: 0;
 }
 
 :global(.is-mac) .topBar {

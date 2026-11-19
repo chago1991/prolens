@@ -23,6 +23,8 @@ import { MenuItem } from "../menu";
 import { MenuActions } from "../menu/menu-actions";
 import { NoItems } from "../no-items";
 import { Table, TableCell, TableHead, TableRow } from "../table";
+import { effectiveColumnOrder, isCustomColumnOrder, moveColumn } from "./column-order";
+import columnOrderStorageInjectable from "./column-order-storage/storage.injectable";
 import columnResizeStorageInjectable from "./column-resize-storage/storage.injectable";
 import pageFiltersStoreInjectable from "./page-filters/store.injectable";
 
@@ -39,6 +41,7 @@ import type { AddRemoveButtonsProps } from "../add-remove-buttons";
 import type { ConfirmDialogParams } from "../confirm-dialog";
 import type { OpenConfirmDialog } from "../confirm-dialog/open.injectable";
 import type { TableProps, TableRowProps, TableSortCallbacks } from "../table";
+import type { ColumnOrderStorageState } from "./column-order-storage/storage.injectable";
 import type { ColumnResizeStorageState } from "./column-resize-storage/storage.injectable";
 import type { ItemListStore } from "./list-layout";
 import type { Filter, PageFiltersStore } from "./page-filters/store";
@@ -95,7 +98,20 @@ interface Dependencies {
   toggleTableColumnVisibility: ToggleTableColumnVisibility;
   isTableColumnHidden: IsTableColumnHidden;
   columnResizeStorage: StorageLayer<ColumnResizeStorageState>;
+  columnOrderStorage: StorageLayer<ColumnOrderStorageState>;
 }
+
+interface ColumnDrag {
+  readonly columnId: string;
+  readonly targetId?: string;
+  readonly placement?: "before" | "after";
+}
+
+/** The flex order of the row menu cell: after every column. */
+const lastColumnOrder = 100_000;
+
+/** The key a header cell is ordered by: its id, or its position for a cell without one. */
+const columnKeyOf = (cell: TableCellProps | null | undefined, index: number) => cell?.id ?? `#${index}`;
 
 @observer
 export class NonInjectedItemListLayoutContent<
@@ -108,6 +124,8 @@ export class NonInjectedItemListLayoutContent<
 
   @observable private accessor columnFlexGrow = new Map<string, number>();
   @observable private accessor resizeGuideX: number | null = null;
+  @observable private accessor savedColumnOrder: string[] | undefined = undefined;
+  @observable private accessor columnDrag: ColumnDrag | null = null;
 
   // mobx-react 9 forbids reading this.props inside a derivation. getRow/getTableRow
   // (and the showColumn they call) are invoked from foreign derivations — the inner
@@ -122,6 +140,89 @@ export class NonInjectedItemListLayoutContent<
     this.observableProps = props;
     autoBindReact(this);
     this.loadSavedColumnWidths();
+    this.savedColumnOrder = props.tableId ? props.columnOrderStorage.get()[props.tableId] : undefined;
+  }
+
+  /**
+   * The flex `order` of each column, by its key. Header and row cells are
+   * laid out by the same orders, so that a reordered column stays aligned
+   * without the cells being rendered in another order.
+   */
+  private columnOrders(renderTableHeader: ItemListLayoutContentProps<Item, PreLoadStores>["renderTableHeader"]) {
+    const defaults = (renderTableHeader ?? []).map((cell, index) => columnKeyOf(cell, index));
+    const order = effectiveColumnOrder(this.savedColumnOrder, defaults);
+
+    return { defaults, order, positions: new Map(order.map((key, index) => [key, index + 1])) };
+  }
+
+  @action
+  private saveColumnOrder(order: string[] | undefined) {
+    const { tableId, columnOrderStorage } = this.props;
+
+    this.savedColumnOrder = order;
+
+    if (!tableId) return;
+
+    const state = { ...columnOrderStorage.get() };
+
+    if (order) state[tableId] = order;
+    else delete state[tableId];
+
+    columnOrderStorage.set(state);
+  }
+
+  private columnDragProps(columnId: string) {
+    const drag = this.columnDrag;
+
+    return {
+      draggable: true,
+      className: cssNames({
+        columnDragging: drag?.columnId === columnId,
+        columnDropBefore: drag?.targetId === columnId && drag.placement === "before",
+        columnDropAfter: drag?.targetId === columnId && drag.placement === "after",
+      }),
+      onDragStart: action((event: React.DragEvent<HTMLDivElement>) => {
+        if (this.resizeState || (event.target as HTMLElement).classList?.contains("resize-handle")) {
+          event.preventDefault();
+
+          return;
+        }
+
+        event.dataTransfer.effectAllowed = "move";
+        event.dataTransfer.setData("text/plain", columnId);
+        this.columnDrag = { columnId };
+      }),
+      onDragOver: action((event: React.DragEvent<HTMLDivElement>) => {
+        const current = this.columnDrag;
+
+        if (!current || current.columnId === columnId) return;
+
+        event.preventDefault();
+        event.dataTransfer.dropEffect = "move";
+
+        const box = event.currentTarget.getBoundingClientRect();
+        const placement = event.clientX < box.left + box.width / 2 ? "before" : "after";
+
+        if (current.targetId !== columnId || current.placement !== placement) {
+          this.columnDrag = { columnId: current.columnId, targetId: columnId, placement };
+        }
+      }),
+      onDrop: action((event: React.DragEvent<HTMLDivElement>) => {
+        const current = this.columnDrag;
+
+        event.preventDefault();
+        this.columnDrag = null;
+
+        if (!current?.targetId || !current.placement) return;
+
+        const { order } = this.columnOrders(this.props.renderTableHeader);
+
+        this.saveColumnOrder(moveColumn(order, current.columnId, current.targetId, current.placement));
+      }),
+      onDragEnd: action(() => {
+        this.columnDrag = null;
+      }),
+    };
   }
 
   componentDidUpdate() {
@@ -337,6 +438,7 @@ export class NonInjectedItemListLayoutContent<
     // reads this.props, which is forbidden here (foreign derivation).
     const isColumnShown = ({ id: columnId, showWithColumn }: TableCellProps) =>
       !isConfigurable || !tableId || !isTableColumnHidden(tableId, columnId, showWithColumn);
+    const { positions } = this.columnOrders(renderTableHeader);
 
     // The key matters for a non-virtual list, where <Table> renders these rows
     // as a list; the virtual one wraps each in a keyed <div> (getRow).
@@ -368,6 +470,7 @@ export class NonInjectedItemListLayoutContent<
                 {...cellProps}
                 style={{
                   ...cellProps.style,
+                  order: positions.get(columnKeyOf(headCell, index)) ?? cellProps.style?.order,
                   flex:
                     headCell?.id && this.columnFlexGrow.has(headCell.id)
                       ? `${this.columnFlexGrow.get(headCell.id)} 0`
@@ -380,7 +483,7 @@ export class NonInjectedItemListLayoutContent<
           return null;
         })}
         {renderItemMenu && (
-          <TableCell className="menu">
+          <TableCell className="menu" style={{ order: lastColumnOrder }}>
             <div onClick={stopPropagation}>{renderItemMenu(item, store)}</div>
           </TableCell>
         )}
@@ -495,6 +598,7 @@ export class NonInjectedItemListLayoutContent<
     }
 
     const enabledItems = this.props.getItems().filter((item) => !customizeTableRowProps?.(item).disabled);
+    const { positions } = this.columnOrders(renderTableHeader);
 
     return (
       <TableHead showTopLine nowrap>
@@ -509,26 +613,32 @@ export class NonInjectedItemListLayoutContent<
             )}
           </Observer>
         )}
-        {renderTableHeader.filter(isDefined).map(
-          (cellProps, index) =>
-            this.showColumn(cellProps) && (
-              <TableCell
-                key={cellProps.id ?? index}
-                onResizeStart={cellProps.id ? (event) => this.handleResizeStart(cellProps.id!, event) : undefined}
-                onResizeReset={cellProps.id ? () => this.handleResizeReset(cellProps.id!) : undefined}
-                {...cellProps}
-                resizable={cellProps.id !== "logs" && !!cellProps.id}
-                style={{
-                  ...cellProps.style,
-                  flex:
-                    cellProps.id && this.columnFlexGrow.has(cellProps.id)
-                      ? `${this.columnFlexGrow.get(cellProps.id)} 0`
-                      : cellProps.style?.flex,
-                }}
-              />
-            ),
-        )}
-        <TableCell className="menu">
+        {renderTableHeader.map((cellProps, index) => {
+          if (!cellProps || !this.showColumn(cellProps)) return null;
+
+          const dragProps = cellProps.id ? this.columnDragProps(cellProps.id) : undefined;
+
+          return (
+            <TableCell
+              key={cellProps.id ?? index}
+              onResizeStart={cellProps.id ? (event) => this.handleResizeStart(cellProps.id!, event) : undefined}
+              onResizeReset={cellProps.id ? () => this.handleResizeReset(cellProps.id!) : undefined}
+              {...dragProps}
+              {...cellProps}
+              className={cssNames(cellProps.className, dragProps?.className)}
+              resizable={cellProps.id !== "logs" && !!cellProps.id}
+              style={{
+                ...cellProps.style,
+                order: positions.get(columnKeyOf(cellProps, index)) ?? cellProps.style?.order,
+                flex:
+                  cellProps.id && this.columnFlexGrow.has(cellProps.id)
+                    ? `${this.columnFlexGrow.get(cellProps.id)} 0`
+                    : cellProps.style?.flex,
+              }}
+            />
+          );
+        })}
+        <TableCell className="menu" style={{ order: lastColumnOrder }}>
           {isConfigurable && tableId ? this.renderColumnVisibilityMenu(tableId) : undefined}
         </TableCell>
       </TableHead>
@@ -603,6 +713,18 @@ export class NonInjectedItemListLayoutContent<
     return !isConfigurable || !tableId || !this.props.isTableColumnHidden(tableId, columnId, showWithColumn);
   }
 
+  renderResetColumnOrder() {
+    const { defaults, order } = this.columnOrders(this.props.renderTableHeader);
+
+    if (!isCustomColumnOrder(order, defaults)) return null;
+
+    return (
+      <MenuItem key="reset-column-order" onClick={() => this.saveColumnOrder(undefined)}>
+        Reset column order
+      </MenuItem>
+    );
+  }
+
   renderColumnVisibilityMenu(tableId: string) {
     const { renderTableHeader = [] } = this.props;
 
@@ -626,6 +748,7 @@ export class NonInjectedItemListLayoutContent<
               />
             </MenuItem>
           ))}
+        {this.renderResetColumnOrder()}
       </MenuActions>
     );
   }
@@ -642,6 +765,7 @@ export const ItemListLayoutContent = withInjectables<Dependencies, ItemListLayou
       toggleTableColumnVisibility: di.inject(toggleTableColumnVisibilityInjectable),
       isTableColumnHidden: di.inject(isTableColumnHiddenInjectable),
       columnResizeStorage: di.inject(columnResizeStorageInjectable),
+      columnOrderStorage: di.inject(columnOrderStorageInjectable),
     }),
   },
 ) as <Item extends ItemObject, PreLoadStores extends boolean>(

@@ -59,3 +59,13 @@
     }
   }
 }
+
+// Flat rows with a faint separator, and links that read as links.
+.Table.selectable .TableRow {
+  box-shadow: inset 0 -1px 0 var(--borderFaintColor);
+}
+
+.TableRow .TableCell a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
