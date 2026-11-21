@@ -899,7 +899,12 @@ jobs:
           for f in *.sha256; do
             sha256sum --check --strict "$f"
           done
-          printf '%s\n' "${missing[@]}" > "$RUNNER_TEMP/missing.txt"
+          # printf with no arguments would still write one empty line, and
+          # the notes would then report missing files when there are none.
+          : > "$RUNNER_TEMP/missing.txt"
+          if [[ ${#missing[@]} -gt 0 ]]; then
+            printf '%s\n' "${missing[@]}" > "$RUNNER_TEMP/missing.txt"
+          fi
           if [[ ${#missing[@]} -gt 0 ]]; then
             printf '::error::Missing %s\n' "${missing[@]}"
             if [[ $ALLOW_PARTIAL != true ]]; then
